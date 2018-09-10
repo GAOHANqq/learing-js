@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <p></p>
+            <p></p>
+        </div>
+        <p></p>
+
+        <script>
+            let oWrap = document.getElementById("wrap");//从document找
+            let aP = oWrap.getElementsByTagName("p");//从oWrap节点找
+            console.log(aP);
+
+            let aP2 = document.querySelectorAll("#wrap p");//不兼容IE7及以下
+            console.log(aP2);
+            aP2[1].innerHTML = "999";
+
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

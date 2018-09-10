@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+
+        <script>
+            //基础数据类型
+                // number string boolean undefined object null symbol
+            //引用数据类型
+                //内置对象
+
+            console.log(document);
+            console.dir(document);
+            console.log(console);
+
+
+            let x = {name:"张三",age:18}
+                //添加属性
+                x.sex = "男";
+
+                //symbol的使用  防止添加属性时覆盖原有的属性
+                x[Symbol("age")] = 25;
+
+                //symbol的取值方法
+                let y = Symbol("age");
+                    x.y = 30;
+                    console.log(x.y)
+             console.log(x);
+
+            //函数  在数据类型上属于object
+            function a(){};
+            a.name = "张三";
+            console.dir(a);
+
+            // 函数的使用
+            function f() {
+                alert(1);
+                console.log(2);
+                document.getElementById("wrap").innerHTML = "box"
+            };
+            //主动执行
+            f();
+            //被动执行
+            document.onclick = f;//被动执行时函数名不写括号
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

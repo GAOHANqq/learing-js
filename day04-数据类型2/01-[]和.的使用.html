@@ -18,7 +18,22 @@
         <div id="wrap"></div>
         
         <script>
-            
+            let x = {
+                666 : 1000,
+                name:"王师傅",
+                age : 18
+            };
+            let name = "age"
+
+            console.log(x.name);    //点方法
+            console.log(x["name"]); //方括号方法
+            console["log"]("用[]号代替了.使用console.log");
+            console.log(x[name]);   //[]中的name是变量名
+
+            console.log(x[666]);  //数字类型的键,只能用中括号取值,类似数组
+
+
+
         </script>
     </body>
 </html>

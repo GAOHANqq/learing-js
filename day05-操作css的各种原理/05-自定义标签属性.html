@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap" afei = "自定义标签属性"></div>
+        
+        <script>
+
+            /*自定义的标签属性:
+            *   getAttribute()      获取
+            *   setAtribute()       设置
+            *   removeAttribute     移除
+            *
+            * 以上三个也可以操作合法标签属性,但是一般不使用
+            *
+            *
+            * */
+            let oWrap = document.getElementById("wrap");
+            // oWrap.afei = "666";   报错
+
+
+            //获取自定义标签属性
+                console.log(oWrap.getAttribute("afei"));
+            //设置自定义标签属性
+                oWrap.setAttribute("afei","456");
+                oWrap.setAttribute("gaohan",789)
+                //第一个值:自定义属性 第二个值:设置为 什么
+
+            //移除自定义属性
+            oWrap.removeAttribute("gaohan");
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap.box{
+                height:200px;
+                background-color: pink;
+                border:5px dashed #666;
+            }
+            #content.wrap{
+                height:200px;
+                background-color: green;
+                border:5px dashed #666;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap" style=" width: 100px;"></div>
+        <div id="content"class="content" style=" width: 150px;">123</div>
+        <script>
+            let oWrap = document.getElementById("wrap");
+            let oContent = document.getElementById("content");
+            //修改类名法操作style的多个属性
+            oWrap.className = "box";
+            //含有类名时添加新的类名的方法
+            oContent.className += " wrap";
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

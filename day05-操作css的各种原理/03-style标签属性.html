@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+
+        </style>
+    </head>
+    <body>
+        <div id="wrap" style="width: 100px;">123</div>
+        
+        <script>
+            /*
+            style
+                style属性:存储着这个节点的所有行内样式的对象
+
+
+            */
+            let oWrap = document.getElementById("wrap");
+
+            // oWrap.style += "height:100px;background-color:red";//不可以这样
+            // oWrap.innerHTML += "456";  //这样可以
+            //获取对象不可以+=,回去内容可以+=
+
+            //驼峰法:
+                // 操作复合样式
+            oWrap.style.backgroundColor = "red";
+
+            //操作style的多个属性
+            // console.dir(oWrap.style.cssText);
+            // oWrap.style.cssText += "height:100px;border:3px solid green;"
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

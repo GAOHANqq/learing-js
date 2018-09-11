@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        <input type="text" id="input" value="">
+        <button type="submit" id="btn">提交</button>
+        <script>
+            //火狐低版本 innerContent
+            let oWrap = document.getElementById("wrap");
+                // oWrap.innerText = "大家好"; //只是内容,不解析标签
+                oWrap.innerHTML = "大家<b>好</b>" //解析标签
+
+            //弹窗弹出输入的内容
+            let oInput = document.getElementById("input").value;
+            let oBtn = document.getElementById("btn");
+
+
+                oBtn.onclick = function(){
+                    alert(oInput.value);
+                };
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+    </head>
+    <body>
+        <div style="" id="wrap" class="box" title="我是一个DIV">123456</div>
+        
+        <script>
+            /*如何操作元素的标签属性
+                写  读
+                合法的标签属性直接 . 操作
+                    css比较特殊,需用className操作
+            */
+            let oDiv = document.getElementById("wrap");
+
+            oDiv.title = "狗蛋";      //写(赋值)
+            console.log(oDiv.title); //读(读取)
+
+            oDiv.className = "wrap";
+            console.log(oDiv.className);
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

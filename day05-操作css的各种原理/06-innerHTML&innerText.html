@@ -16,16 +16,19 @@
     </head>
     <body>
         <div id="wrap"></div>
-        <input type="text" id="input" value="">
+        <input type="text" id="input">
         <button type="submit" id="btn">提交</button>
+
         <script>
-            //火狐低版本 innerContent
+            //innerHTML
+
+            //innerText    火狐低版本 textContent
             let oWrap = document.getElementById("wrap");
                 // oWrap.innerText = "大家好"; //只是内容,不解析标签
                 oWrap.innerHTML = "大家<b>好</b>" //解析标签
 
             //弹窗弹出输入的内容
-            let oInput = document.getElementById("input").value;
+            let oInput = document.getElementById("input");
             let oBtn = document.getElementById("btn");
 
 

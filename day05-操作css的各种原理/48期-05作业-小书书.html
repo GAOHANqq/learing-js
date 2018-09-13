@@ -11,14 +11,22 @@
             ol,ul,li{margin:0;padding:0;list-style:none;}
             img{border:none;}
             .content{
-                width: 210px;
+                width: 250px;
                 height: 450px;
                 margin:200px auto;
             }
+            #txt{
+                width:244px;
+                resize:none;
+                font-size:20px;
+            }
             .wrap p{
-                text-indent: 10px;
+                /*word-wrap:break-word; 达到宽度自动换行*/
+                font-size:20px;
+                text-indent: 2em;
+                margin-top:20px;
                 padding-bottom:3px;
-                border-bottom:2px dashed #ddd;
+                border-bottom:2px dotted #ddd;
             }
         </style>
     </head>
@@ -30,7 +38,7 @@
         </div>
         <script>
             let oWrap = document.getElementsByClassName("wrap");
-            let oTxt = document.getElementById("txt")
+            let oTxt = document.getElementById("txt");
             let oBtn = document.getElementById("btn");
 
             oBtn.onclick = function(){

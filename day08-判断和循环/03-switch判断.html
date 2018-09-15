@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            let a = 3;
+
+            switch( a ){
+                case 1:
+                    console.log("今天是周一");
+                    break;
+                case 2:
+                    console.log("今天是周二");
+                    break;
+                case 3:
+                    console.log("今天是周三");
+                    break;
+                case 4:
+                    console.log("今天是周四");
+                    break;
+                case 5:
+                    console.log("今天是周五");
+                    break;
+                case 6:
+                    console.log("今天是周六");
+                    break;
+                default:
+                    console.log("今天是周日");
+                    break;
+            }
+
+            //月份
+            let b = 2;
+            let y = new Date().getFullYear();
+            switch( b ){
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    console.log("这个月有30天");
+                    break;
+                case 2:
+                    if( y%400==0 || y%4==0 && y%100!=0){
+                        console.log("这个月有28天");
+                    }
+                    else{
+                        console.log("这个月有29天");
+                    }
+                    break;
+                default:
+                    console.log("这个月有31天");
+                    break;
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

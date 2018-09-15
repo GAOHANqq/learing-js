@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap"></div>
+    <button id="btn">点击隐藏</button>
+    <script>
+        let oWrap = document.getElementById("wrap");
+        let oBtn = document.getElementById("btn");
+
+        let tmp = true;
+        //1)方法1:
+        // oBtn.onclick = function(){
+        //     if( tmp ){
+        //         oWrap.style.display = "none";
+        //         tmp = false;
+        //         oBtn.innerHTML = "点击显示";
+        //     }
+        //     else{
+        //         oWrap.style.display = "block";
+        //         tmp = true;
+        //         oBtn.innerHTML = "点击隐藏";
+        //     }
+        // };
+        //2)方法2:
+        //流程控制
+        // oBtn.onclick = function(){
+        //     if( tmp ){
+        //         oWrap.style.display = "none";
+        //         oBtn.innerHTML = "点击显示";
+        //     }
+        //     else{
+        //         oWrap.style.display = "block";
+        //         oBtn.innerHTML = "点击隐藏";
+        //     }
+        //     tmp = !tmp;
+        // };
+
+        // 3)方法3:
+        // 三目控制
+        oBtn.onclick = function(){
+            oWrap.style.display = tmp?"block":"none";
+            oBtn.innerHTML = tmp?"点击隐藏":"点击显示";
+            tmp = !tmp;
+        };
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

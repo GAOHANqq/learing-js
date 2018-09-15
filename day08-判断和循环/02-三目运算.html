@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            // 三目运算:   条件?真语句:假语句
+                //当条件为真时:执行真语句
+                //当条件为假时:执行假语句
+
+            //当条件,真语句,假语句都是一条时,可以用三目运算改写if语句
+            let a = 10;
+            if( a > 5 ){
+                alert("a>5");
+            }
+            else{
+                alert("a<=5");
+            };
+
+            //使用三目改写
+            4 > 5 ? alert(1) : alert(2);
+            alert(4>5?1:2);
+            // 使用三目取值
+
+            let x = 10;
+            let y = 20;
+            let z = x > y ? 70 : 80;
+            console.log(z);
+
+
+            let val = true;
+
+            let name = "val is" + val?"狗蛋":"大锤";
+
+            console.log(name); //狗蛋
+                //原因:   + 的运算优先级高于三目,三目的运算优先级只高于 = ,
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

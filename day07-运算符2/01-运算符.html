@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            /*
+             基础数据类型 : (栈内存)
+                          number string boolean null undefined symbol
+
+             引用数据类型 : (对内存)
+                           object
+            */
+
+            // 算数运算符 + - * / % ++ --
+            // 赋值运算符 = += -= /= %=
+            // 比较运算符 == === != !== > < >= <=
+            // 逻辑运算符 &&(与) ||(或) !(非)
+            // 逗号操作符 ,
+                //逗号的使用,表示语句未结束,或者一条语句中执行多个事件
+                let a = 10,b = 2,c = 5; //多个定义
+                let x = (1,2,3,4,5);    //x的最终值为5
+            console.log(a);
+            console.log(b);
+            console.log(c);
+            console.log(x);
+
+            //object的比较相不相等要看地址
+                let n = [10];
+                let m = [10];
+            console.log(n == m);    //false
+            console.log(n === m);   //false
+
+            //字符串比较大小是进行逐位比较,即比较的是ASCII码
+                let i = "55";
+                let j = "30";
+                let p = "56"
+            console.log(i > j); //true  逐位:5>3
+            console.log(i > p); //false 逐位:5=5 5>6
+
+            //$$ 与
+                    //只考虑boolean值时:真真为真,其他为假
+                    //真正的应用:遇到假,就停,取假值本身,否则取后面的值
+
+            //哪些数据转为boolean值时为假: undefined null false 0 "" NaN
+                let s = 5 && 0;
+                console.log(s);
+           // || 或
+                //只考虑boolean值时:假假为假,其他为真
+                //真正的应用:遇到真,就停,取真值本身,否则取后面的值
+
+           // ! 非
+                //只考虑boolean值时:取反
+                //真正的应用:取数据对应相反的Boolean值 !!
+
+            let l = !!0;
+            console.log(l);
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

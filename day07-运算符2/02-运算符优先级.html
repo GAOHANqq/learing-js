@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            /*
+
+            . [] ()
+            ++ -- ! typeof
+            * / %
+            + -
+            << >> >>>
+            < <= > >=
+            &&
+            ||
+            ?:
+            ,
+
+             */
+
+            // let a = 5 && 6 || 0;
+            // console.log(a);
+
+
+            //浏览器运行时,采用惰性运算
+            let b = 2;
+            let a = 5 || 6 && (b = 3);// 最后运算||,||右边的值对结果没有影响,故直接得到前面得值
+            console.log(a);
+            console.log(b);
+
+            let i = 2;
+            let j = 0 || 6 && (i = 3);// 最后运算||,||右边的值对结果有有影响,故后面进行运算
+            console.log(i);
+            console.log(j);
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

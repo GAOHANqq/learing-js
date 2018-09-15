@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            /*
+
+            JS使用32位二进制
+
+            let a = 15;
+
+            15的二进制
+            00000000 00000000 00000000 00001111(第一个0表示符号位)
+
+        1)-15的二进制
+               1)取15的二进制
+                00000000 00000000 00000000 00001111
+               2)取反
+                11111111 11111111 11111111 11110000
+               3)反码+1
+                11111111 11111111 11111111 11110001
+
+        2) ~ 按位取非
+             用于快速得到一个数的相反数减1
+                原理:// 5的二进制:0----0101
+                    // 取反:    1----1010
+                    //得到10进制数: 减1以后再取反
+                    //减一:      1----1001
+                    //取反:      1----0110    -6
+        3) << 移位运算
+            用于快速得到一个数乘以2的n次方
+                即:       2 << 3;
+                等价于:    2*2的3次方
+            */
+
+
+            //  ~
+            let a = -8;
+            let b = ~a;
+            console.log(b);
+
+            // <<
+
+            let c = 10;
+            let d = c << 3;
+            console.log(d);
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

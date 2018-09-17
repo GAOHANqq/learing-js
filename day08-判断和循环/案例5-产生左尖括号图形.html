@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Author" >
+		<title>生产左尖括号图形</title>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			#box{
+				width:250px;
+				height:250px;
+				border:1px dashed black;
+				margin:50px auto;
+				position:relative;
+			}
+			#box div{
+				width:50px;
+				height:50px;
+				background:#abcdef;
+				position:absolute;
+				left:0;
+				top:0;
+				text-align:center;
+				font:bold 20px/50px 'Arial';
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script type="text/javascript">
+            let oBox = document.getElementById('box');
+			//var aDiv = oBox.getElementsByTagName('div');
+            let n = 5;
+            let str = '';
+            let m = Math.floor(n/2); // m=2
+			for (let i=0;i<n;i++ )
+			{
+				if ( i<=m )
+				{
+					str += '<div style="left:'+i*50+'px;top:'+i*50+'px">'+i+'</div>';
+				}else{
+					str += '<div style="left:'+(n-1-i)*50+'px;top:'+i*50+'px">'+i+'</div>';
+				}
+
+			}
+			oBox.innerHTML = str;
+			//for (let i=0;i<n;i++ )
+			//{
+			//	aDiv[i].style.color = Math.random();
+			//	aDiv[i].style.background = Math.random();
+			//}
+		</script>
+	</body>
+</html>

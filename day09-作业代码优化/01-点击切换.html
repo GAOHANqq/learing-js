@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap{
+            position:relative;
+            width: 255px;
+            margin: 50px auto;
+            text-align:center;
+        }
+        #wrap h2{
+            color:red;
+        }
+        #wrap ul{
+            position:relative;
+            width: 255px;
+            height: 340px;
+        }
+        #wrap ul li{
+            position:absolute;
+            top:0;
+            left:0;
+            display:none;
+        }
+        #wrap ul li img{
+            width: 255px;
+            height: 340px;
+
+        }
+        #wrap span{
+            position:absolute;
+            left: 0;
+            display:block;
+            width: 100%;
+            height: 30px;
+            line-height:30px;
+            color:#fff;
+            background-color:rgba(0,0,0,.3);
+        }
+        #wrap .t-top{
+            top:32px;
+        }
+        #wrap .t-bottom{
+            bottom:53px;
+        }
+        #wrap div{
+            position:absolute;
+            top:50%;
+            margin-top:-25px;
+            width: 30px;
+            height: 50px;
+            background:url("images/btn.png") no-repeat;
+        }
+        #wrap .left{
+            left:0;
+            background-position: -85px -8px;
+        }
+        #wrap .right{
+            right:0;
+            background-position: -132px -8px;
+        }
+        #wrap .left:hover{
+            background-position: -3px -8px;
+        }
+        #wrap .right:hover{
+            background-position: -50px -8px;
+        }
+        #wrap button{
+            margin-top:30px;
+        }
+        #wrap ul li.show{
+            display:block;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h2>韩国十大感人催泪电影</h2>
+        <ul>
+            <li class="show"><img  src="images/1.jpg" alt=""></li>
+            <li><img src="images/2.jpg" alt=""></li>
+            <li><img src="images/3.jpg" alt=""></li>
+            <li><img src="images/4.jpg" alt=""></li>
+            <li><img src="images/5.jpg" alt=""></li>
+            <li><img src="images/6.jpg" alt=""></li>
+            <li><img src="images/7.jpg" alt=""></li>
+            <li><img src="images/8.jpg" alt=""></li>
+            <li><img src="images/9.jpg" alt=""></li>
+            <li><img src="images/10.jpg" alt=""></li>
+        </ul>
+        <span class="desc t-bottom"></span>
+        <span class="desc t-top"></span>
+        <div class="btn left"></div>
+        <div class="btn right"></div>
+
+        <button class="tab">正常模式</button>
+        <button class="tab">循环模式</button>
+    </div>
+
+    <script>
+        let oAlt = ["我脑海里的橡皮擦",
+            "比悲伤更悲伤的故事",
+            "雏菊",
+            "只有你",
+            "婚纱",
+            "悲伤电影",
+            "哼唱",
+            "触不到的爱恋",
+            "七号房的礼物",
+            "假如爱有天意"];
+        let oImg    = document.querySelectorAll("#wrap ul li");
+        let oSpan   = document.getElementsByClassName("desc");
+        let oBtn    = document.getElementsByClassName("btn");
+        let aTab = document.getElementsByClassName("tab");
+
+        let i = 0;
+        let length = oImg.length;
+        let flag = true;
+
+
+
+        // 模式选择
+        aTab[0].onclick = function(){
+            this.style.backgroundColor = "#6cc";
+            aTab[1].style.backgroundColor = "";
+            flag = true;
+        };
+        aTab[1].onclick = function(){
+            this.style.backgroundColor = "#6cc";
+            aTab[0].style.backgroundColor = "";
+            flag = !flag;
+        };
+
+        //初始情况
+        window.onload = function (){
+            aTab[0].style.backgroundColor = "#6cc";
+            changeDesc();
+        }
+
+        //next
+        oBtn[1].onclick = function(){
+                oImg[i].className = "";
+                i++;
+                if( i > length-1 ) {
+                    i = flag?length - 1:0;
+                    // if(flag){
+                    //     i = length - 1;
+                    // }
+                    // else{
+                    //     i = 0;
+                    // }
+                }
+                changeImg();
+                changeDesc();
+
+        };
+
+        //prve
+        oBtn[0].onclick = function(){
+            oImg[i].className = "";
+            i--;
+            if( i <0 ) {
+                i = flag?0:length - 1;
+            }
+            changeImg();
+            changeDesc();
+        };
+        function changeImg(){
+            oImg[i].className = "show";
+            oImg.alt = oAlt[i];
+        };
+        function changeDesc(){
+            oSpan[1].innerHTML = i+1 + "/" + length;
+            oSpan[0].innerHTML = oAlt[i];
+        };
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

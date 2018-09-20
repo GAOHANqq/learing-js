@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+    // 1)
+            for(let i=0;i<5;i++){
+                //switch里面的break只对switch有用,对外层for不起作用
+                switch (i){
+                    case 3:
+                        break;
+                };
+                console.log(i);
+            };
+    // 2)
+            for (let i=1;i<5;i++) {
+                for(let j=0;j<i;j++){
+                    if(i*j === 6){
+                        break;//只能跳出内层的for循环
+                    };
+                    console.log(`i===${i},j===${j}`);
+                };
+            };
+    //3)
+            //给外层for循环添加标志,可以使内层break跳出外层的for循环
+            aaa:for (let i=1;i<5;i++) {
+                for(let j=0;j<i;j++){
+                    if(i*j === 6){
+                        break aaa;//只能跳出内层的for循环
+                    };
+                    console.log(`i===${i},j===${j}`);
+                };
+            };
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

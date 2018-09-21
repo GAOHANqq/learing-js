@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap{
+            width: 620px;
+        }
+        #wrap span{
+            display:inline-block;
+            width: 60px;
+            height: 25px;
+            border:1px solid blue;
+            margin:5px 2px;
+            text-align: center;
+            line-height:25px;
+            font-size:14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+    </div>
+
+    <script>
+        let oWrap = document.getElementById("wrap");
+        let s = "";
+
+        for(let i=1;i<=9;i++){
+            let html ="";
+            for(let j=1;j<=i;j++){
+               html += `<span>${j}x${i}=${i*j}</span>`;
+            };
+            html += "<br>";
+            s += html;
+        };
+        s += "<hr>";
+
+        for(let i=1;i<=9;i++){
+            let html = "";
+            for(let j=i;j<=9;j++){
+                html += `<span>${i}x${j}=${j*i}</span>`;
+            }
+            html += "<br>";
+            s += html;
+        }
+
+
+
+        oWrap.innerHTML += s;//在循环外部操作dom,可以优化执行速度
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

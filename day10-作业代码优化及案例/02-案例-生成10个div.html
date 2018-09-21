@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                width: 750px;
+                height: 50px;
+                margin:50px auto 0;
+            }
+            #wrap div{
+                margin:5px;
+                float:left;
+                width: 60px;
+                height: 50px;
+                background-color: #fe90f0;
+                color:#000;
+                line-height:50px;
+                font-size: 14px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="btn">点击</button>
+        <div id="wrap">
+        </div>
+
+        <script>
+            oWrap = document.getElementById("wrap");
+            oBtn = document.getElementById("btn");
+            let s = "";
+
+            oBtn.onclick = function(){
+                let html = "";
+                for(let i=0;i<10;i++){
+                    html += `<div>${i}</div>`
+                }
+                s += html;
+                oWrap.innerHTML = s;
+            };
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap{
+            user-select: none;
+            width: 500px;
+            height: 360px;
+            margin: 50px auto;
+        }
+        #img{
+            position:relative;
+            width: 100%;
+            height: 310px;
+        }
+        #img ul{
+            width: 100%;
+            height: 100%;
+        }
+        #img ul li{
+            display:none;
+            position:absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #img ul li.show{
+            display:block;
+        }
+        #img ul li img{
+            width: 500px;
+            height: 310px;
+        }
+
+        #tab{
+            overflow:hidden;
+            width: 100%;
+            height: 50px;
+        }
+        #tab ul{
+            width: 200%;
+            height: 100%;
+        }
+        #tab ul li{
+            float:left;
+            width: 10%;
+            height: 100%;
+            line-height: 50px;
+            text-align: center;
+            background-color: #333;
+            font-size: 12px;
+            color: #a5a5a5;
+            cursor: pointer;
+        }
+        #tab ul li.active{
+            background-color: #f4c300;
+            color: #7e4a1c;
+        }
+        #btn .btn{
+            position:absolute;
+            top:50%;
+            margin-top:-30px;
+            width: 35px;
+            height: 60px;
+            background:url("images/btn.png") no-repeat;
+        }
+        #btn .left{
+            left:0;
+            background-position: -85px -8px;
+        }
+        #btn .right{
+            right:-2px;
+            background-position: -128px -8px;
+        }
+        #btn .left:hover{
+            background-position: -6px -8px;
+        }
+        #btn .right:hover{
+            background-position: -50px -8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="img">
+            <ul>
+                <li class="show"><a href=""><img src="images/1.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/2.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/3.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/4.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/5.png" alt=""></a></li>
+            </ul>
+            <div id="btn">
+                <div class="btn left"></div>
+                <div class="btn right"></div>
+            </div>
+        </div>
+
+        <div id="tab">
+            <ul>
+                <li class="active">欧洲传奇登场</li>
+                <li>标王赛季揭秘</li>
+                <li>中秋活动送礼</li>
+                <li>FO4M不删档</li>
+                <li>CEFL天梯赛</li>
+            </ul>
+        </div>
+
+
+    </div>
+
+    <script>
+        let aImgLi = document.querySelectorAll("#img ul li"),
+            aTabLi = document.querySelectorAll("#tab ul li"),
+            flag = 0,
+            length = aImgLi.length,
+            aBtn = document.querySelectorAll("#btn .btn")
+        ;
+
+        aBtn[0].onclick = function(){
+            Hide();
+            flag--;
+
+            if(flag < 0){
+                flag = length-1;
+            }
+            show();
+
+        }
+
+        aBtn[1].onclick = function(){
+            Hide();
+            flag++;
+
+            if(flag === length){
+                flag = 0;
+            }
+            show();
+
+        }
+
+        for(let i=0;i<length;i++){
+            aTabLi[i].onclick = function(){
+                if(flag != i){
+                    Hide();
+                    aTabLi[i].className = "active";
+                    aImgLi[i].className = "show";
+                    flag = i;
+                }
+            }
+        }
+
+        function Hide(){
+            aTabLi[flag].className = "";
+            aImgLi[flag].className = "";
+        }
+        function show(){
+            aImgLi[flag].className = "show";
+            aTabLi[flag].className = "active";
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

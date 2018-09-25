@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+
+            //参数
+                //形参
+                //实参
+                //不定参 arguments(所有实参的集合)
+
+            //形参只针对函数内部起作用,在调用时()中的为实参
+            function a(x,y){
+                 alert(x+y);
+            }
+            a(3,4);
+
+            // function a(形参){
+            //     alert(形参);
+            // }
+            // a(实参);
+
+            //当实参和形参不对应时,返回undefined
+            function b(x,y,z){
+                console.log(x);
+                console.log(y);
+                console.log(z);
+            }
+            b(1,2); //1 2 undefined
+
+
+            //不定参的使用
+                //求n个数的和,根据实参的个数
+
+            function sum(){
+                //不定参 -- 是个类数组,存储着所有实参
+                console.log(arguments);
+                let s = 0;
+                for(let i=0,len=arguments.length;i<len;i++){
+                    s += arguments[i];
+                };
+                alert(s);
+            }
+
+            sum(1,2,3);
+            sum(1,2);
+            sum(1,2,3,4);
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

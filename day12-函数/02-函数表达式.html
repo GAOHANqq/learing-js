@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            //不可以直接加括号执行
+            function a(){
+                alert(3);
+            };
+            a();
+
+            //可以直接加括号执行
+            let b = function(){
+                alert(2);
+            }();
+
+
+            //匿名函数直接运行
+            (function c(){
+                alert("匿名函数一");
+            })();
+
+            (function(){
+                alert("匿名函数二");
+            }());
+
+            +function(){
+                alert("匿名函数三");
+            }();
+
+            -function(){
+                alert("匿名函数四");
+            }();
+
+            ~function(){
+                alert("匿名函数五");
+            }();
+
+            !function(){
+                alert("匿名函数六");
+            }();
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

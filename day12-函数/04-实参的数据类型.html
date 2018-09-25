@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            //实参容许所有数据类型
+            // function a(x){
+            //     alert(x);
+            // };
+            // a(1);
+            // a(null);
+            // a(true);
+            // a(NaN);
+            // a("你好");
+            // a([4,5,6]);
+            // a({y:123});
+
+            function a(b){
+                alert(b());
+            }
+            a( function b(){alert(1)} );
+
+
+            //函数递归10层没有返回值会报错
+            // function c(){
+            //     c();
+            // }
+            // c();
+
+            //阶乘运算
+            function sum(d){
+                if(d===1){return 1};
+                return (d*sum(d-1));
+            }
+            alert(sum(5));
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

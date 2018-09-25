@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+
+        //方法一
+            let  a = function(){
+                alert(1);
+            }
+            a(); //函数加括号自执行
+
+        // 方法二
+            b();
+            function b(){
+                alert(1);
+            }
+
+      //方法二允许先调用再定义,方法一允许
+
+
+            let c = function d(){
+                alert(2);
+                console.log(d);
+            }
+            c();
+
+        //d在外面会报错,在内部可以使用,在内部时,d === c
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

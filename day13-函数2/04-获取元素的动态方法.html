@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <p class="goudan"></p>
+            <p class="goudan"></p>
+            <p class="goudan"></p>
+        </div>
+        
+        <script>
+
+            //动态
+                //getElementsByClassName
+                //getElementsByTagName
+                //getElementsByName
+            //静态
+                //querySelectAll
+
+
+            // let oWrap = document.getElementById("wrap");
+            //
+            // oWrap.id = "456";
+            //
+            // oWrap.title = "小书";
+
+
+            let aP = document.getElementsByClassName("goudan");
+
+            // aP[0].className = "xiaoshu";  //改变了第一个p的class
+            // aP[0].innerHTML = "123456789";//这里加到了第二个p中
+
+            op = aP[0];
+            op.className = 'xiaoshu';
+            op.innerHTML = "444444";  //改变的都是第一个
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

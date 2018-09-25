@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                width: 1000px;
+                user-select: none;
+            }
+            #wrap ul li{
+                height: 50px;
+                border-bottom:1px solid red;
+                font-size: 12px;
+            }
+            #wrap ul li p,#wrap ul li input,#wrap ul li div{
+                float:left;
+            }
+            #wrap ul li p{
+                line-height: 50px;
+                margin:0 20px 0 50px;
+            }
+            #wrap ul li input{
+                font-size: 12px;
+                margin-top: 15px;
+                margin-left: 50px;
+
+            }
+            #wrap ul li div{
+                width: 40px;
+                height: 20px;
+                font-size: 12px;
+                text-align: center;
+                line-height: 20px;
+                background-color: #000;
+                color: #fff;
+                margin:15px 0 0 20px;
+                cursor: pointer;
+            }
+            #wrap ul li div.hide{
+                display: none;
+            }
+            #wrap ul li div.show{
+                display: block;
+            }
+            #wrap ul li p.hide{
+                display: none;
+            }
+            #wrap ul li p.show{
+                display: block;
+            }
+            #wrap ul li input.hide{
+                display: none;
+            }
+            #wrap ul li input.show{
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <ul>
+                <li>
+                    <p>可编辑的框</p>
+                    <input type="text" placeholder="可编辑的框"  class="hide">
+                    <div class="xiugai show">修改</div>
+                    <div class="queding hide">确定</div>
+                </li>
+                <li>
+                    <p>可编辑的框</p>
+                    <input type="text" placeholder="可编辑的框" class="hide">
+                    <div class="xiugai show">修改</div>
+                    <div class="queding hide">确定</div>
+                </li>
+                <li>
+                    <p>可编辑的框</p>
+                    <input type="text" placeholder="可编辑的框" class="hide">
+                    <div class="xiugai show">修改</div>
+                    <div class="queding hide">确定</div>
+                </li>
+                <li>
+                    <p>可编辑的框</p>
+                    <input type="text" placeholder="可编辑的框" class="hide">
+                    <div class="xiugai show">修改</div>
+                    <div class="queding hide">确定</div>
+                </li>
+            </ul>
+        </div>
+        
+        <script>
+            let aP = document.querySelectorAll("#wrap ul li p");
+            let aInp = document.querySelectorAll("#wrap ul li input");
+            let aXiu = document.querySelectorAll("#wrap ul li .xiugai");
+            let aQue = document.querySelectorAll("#wrap ul li .queding");
+            let len = aP.length;
+
+            function xClick(i){
+                aXiu[i].className = "xiugai hide";
+                aQue[i].className = "queding show";
+
+                aP[i].className = "hide";
+                aInp[i].className = "show";
+            }
+
+            function aClick(i){
+                aQue[i].className = "queding hide";
+                aXiu[i].className = "xiugai show";
+
+                aP[i].className = "show";
+                aInp[i].className = "hide";
+
+                aP[i].innerHTML = aInp[i].value;
+            }
+
+            for(let i=0;i<len;i++){
+                aXiu[i].onclick = function(){
+                    xClick(i);
+                }
+
+                aQue[i].onclick = function(){
+                    aClick(i);
+                }
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

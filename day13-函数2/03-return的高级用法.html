@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+        //1)
+            // function a(){
+            //     return [1,2,3];
+            // }
+            //
+            // console.log( a()[2] ); //3
+
+        //2)
+            // function a(){
+            //     return {
+            //         5 : [1,2,3],
+            //         Tom: 456
+            //     }
+            // }
+            //
+            // console.log( a()[5][1] );   //2
+            // console.log( a()["Tom"] );   //456
+            // console.log( a().Tom );   //456
+
+        //3)
+            // function a(){
+            //     return function(){
+            //         alert(5);
+            //     }
+            // }
+            //
+            // console.log( a() ); //函数体
+            // a()(); //弹窗5
+
+
+        //4)
+            // document.onclick = function(){
+            //   alert(5);
+            // }
+
+
+
+                function click(){
+                    alert(5);
+                }
+                document.onclick = click;
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

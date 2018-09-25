@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            //每个函数都有返回值, return
+                  //函数默认返回undefined
+
+            // return
+                 // 1) 改变返回值
+                 // 2) 终止函数
+
+            // function a(){
+            //     alert(2);
+            //     alert(3);
+            // }
+            //
+            // let x = a(); //函数返回值  undefined
+            // console.log(x);
+
+            function a(){
+                alert(2);
+                alert(3);
+
+                return "小书"; //return改变函数返回值
+            }
+
+            let x = a();
+            console.log(x);
+
+
+            //return终止函数
+            function b(){
+                alert (1);
+                return 2;
+                alert(3);
+            }
+            b();
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

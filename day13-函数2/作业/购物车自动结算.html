@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                width: 1000px;
+                margin: 20px auto;
+            }
+            table{
+                border-collapse: collapse;
+            }
+            #wrap thead td,#wrap tfoot td{
+                background-color: #c36;
+                color:#fff;
+                font-size: 16px;
+            }
+            #wrap tbody tr,td{
+                width: 250px;
+                height: 100px;
+                text-align: center;
+            }
+            #wrap tbody td{
+                border: 1px solid #000;
+
+            }
+
+            #wrap tbody td img{
+                display:inline-block;
+                width: 70px;
+            }
+            /*#wrap tbody td{*/
+                /*display: inline-block;*/
+                /*width: 180px;*/
+                /*height: 50px;*/
+                /*text-align: center;*/
+                /*line-height: 50px;*/
+
+                /*font-weight: bolder;*/
+                /*border: 1px solid #ccc;*/
+            /*}*/
+            #wrap tbody td span{
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                line-height: 50px;
+                background-color: #ccc;
+                border:1px solid #ccc;
+                cursor: pointer;
+            }
+            #wrap tbody td span.num{
+                width: 80px;
+                background-color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <td>商品</td>
+                        <td>单价</td>
+                        <td>数量</td>
+                        <td>小计</td>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><img src="img/shop1.jpg" alt=""></td>
+                        <td class="price"></td>
+                        <td>
+                            <span class="left btn">-</span><span class="num">0</span><span class="right btn">+</span>
+                        </td>
+                        <td class="totalPrice">0</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/shop2.jpg" alt=""></td>
+                        <td class="price"></td>
+                        <td>
+                            <span class="left btn">-</span><span class="num">0</span><span class="right btn">+</span>
+                        </td>
+                        <td class="totalPrice">0</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/shop3.jpg" alt=""></td>
+                        <td class="price"></td>
+                        <td>
+                            <span class="left btn">-</span><span class="num">0</span><span class="right btn">+</span>
+                        </td>
+                        <td class="totalPrice">0</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/shop4.jpg" alt=""></td>
+                        <td class="price"></td>
+                        <td>
+                            <span class="left btn">-</span><span class="num">0</span><span class="right btn">+</span>
+                        </td>
+                        <td class="totalPrice">0</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td><p>已选中商品:<span>0</span>个</p></td>
+                        <td><p>合计费用:<span>0</span>￥</p></td>
+                    </tr>
+                </tfoot>
+
+            </table>
+        </div>
+        
+        <script>
+            let aLeft = document.querySelectorAll("#wrap tbody td .left");
+            let aRight = document.querySelectorAll("#wrap tbody td .right");
+            let aPrice = document.getElementsByClassName("price");
+            let aNum = document.getElementsByClassName("num");
+            let aTotalPrice =document.getElementsByClassName("totalPrice");
+            let aTotal = document.querySelectorAll("#wrap tfoot td span")
+
+            let goods = [
+                            {
+                                id:0,
+                                price:8,
+                                num:0
+                            },
+                            {
+                                id:1,
+                                price:10,
+                                num:0
+                            },
+                            {
+                                id:2,
+                                price:12.5,
+                                num:0
+                            },
+                            {
+                                id:3,
+                                price:23,
+                                num:0
+                            }
+                        ];
+
+            //单价
+            for(let i=0,len = aPrice.length;i<len;i++){
+                aPrice[i].innerHTML = goods[i].price;
+
+                // --
+                aLeft[i].onclick = function(){
+                    goods[i].num--;
+                    if(goods[i].num<=0){
+                        goods[i].num=0;
+                    }
+                    aNum[i].innerHTML = goods[i].num;
+                    aTotalPrice[i].innerHTML = goods[i].num * goods[i].price
+
+                    let sum = 0;
+                    let totalPrice = 0;
+                    for(let i=0,len = aPrice.length;i<len;i++){
+                        sum -= -goods[i].num;
+                        totalPrice += goods[i].num * goods[i].price;
+                        if(goods[i].num<=0){
+                            goods[i].num=0;
+                        }
+                    }
+                    aTotal[0].innerHTML = sum;
+                    aTotal[1].innerHTML = totalPrice;
+                }
+
+                // ++
+                aRight[i].onclick = function(){
+                    goods[i].num++;
+                    aNum[i].innerHTML = goods[i].num;
+                    aTotalPrice[i].innerHTML = goods[i].num * goods[i].price;
+
+                    let sum = 0;
+                    let totalPrice = 0;
+                    for(let i=0,len = aPrice.length;i<len;i++){
+                        sum += goods[i].num;
+                        totalPrice += goods[i].num * goods[i].price;
+
+                    }
+                    aTotal[0].innerHTML = sum;
+                    aTotal[1].innerHTML = totalPrice;
+
+
+                }
+
+            }
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        #wrap{
+            position:relative;
+            width: 300px;
+            height: 100px;
+            margin:50px auto;
+            font-size: 14px;
+            user-select: none;
+        }
+        #wrap p{
+            width: 30%;
+            height: 100%;
+            text-align:center;
+            line-height:100px;
+            color:red;
+        }
+        #wrap .star{
+            position:absolute;
+            top:0;
+            left:30%;
+            width: 85px;
+        }
+        #wrap .star ul{
+            width: 200%;
+        }
+        #wrap .star ul li {
+            float: left;
+            width: 10%;
+            height: 20px;
+            margin-top: 38px;
+            background: url("img/star.png") no-repeat;
+            cursor: pointer;
+        }
+        #wrap .star ul li.show{
+            background-position: -1px -28px;
+        }
+        #wrap .text{
+            position:absolute;
+            top:0;
+            right:0;
+            width: 35%;
+            height: 100%;
+            font-size: 16px;
+            border:1px solid #999;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <p>星级评分:</p>
+            <div class="star">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="text"></div>
+        </div>
+        <script>
+            let aStar = document.querySelectorAll("#wrap .star ul li");
+            let aUl = document.querySelectorAll("#wrap .star ul");
+            let oText = document.getElementsByClassName("text");
+            let len = aStar.length;
+            let info = [" 提示：请认真给当前文章打分","很差","较差","中等","推荐","力荐"];
+            let flag = -1;
+
+            for(let i=0;i<len;i++){
+                //移入事件
+                aStar[i].onmouseenter = function(){
+                    for(let j=0;j<=i;j++){
+                        aStar[j].className = j<=i?"show":"";
+                        oText[0].innerHTML = info[i];
+                        flag = -1;
+                    }
+                };
+
+                //点击事件
+                aStar[i].onclick = function(){
+                    flag = i;
+                };
+
+                // 移出事件
+                aUl[0].onmouseleave = function(){
+                    for(let j=0;j<=i;j++) {
+                        aStar[j].className = j<=flag?"show":"";
+                        oText[0].innerHTML = info[flag+1];
+                    }
+                };
+            }
+
+        </script>
+        <!--上面是根据老师的做的代码优化-->
+
+        <!--<script>-->
+            <!--自己写的-->
+            <!--let aStar = document.querySelectorAll("#wrap .star ul li");-->
+            <!--let aUl = document.querySelectorAll("#wrap .star ul");-->
+            <!--let oText = document.getElementsByClassName("text");-->
+            <!--let len = aStar.length;-->
+            <!--let info = ["很差","较差","中等","推荐","力荐"];-->
+            <!--let flag = true;-->
+            <!--oText[0].innerHTML = " 提示：请认真给当前文章打分";-->
+            <!--let index = oText[0].innerHTML;-->
+
+            <!--function enter(i){-->
+                <!--for(let j=0;j<=i;j++){-->
+                    <!--// aStar[j].style.backgroundPositionY = "-28px";-->
+                    <!--aStar[j].className = "show"-->
+                    <!--oText[0].innerHTML = info[i];-->
+                <!--}-->
+            <!--}-->
+            <!--function leave(i){-->
+                <!--for(let j=0;j<=i;j++){-->
+                    <!--aStar[j].style.backgroundPositionY = "0px";-->
+                    <!--oText[0].innerHTML = index;-->
+                <!--}-->
+            <!--}-->
+
+            <!--for(let i=0;i<len;i++){-->
+                <!--//移入事件-->
+                <!--aStar[i].onmouseenter = function(){-->
+                    <!--enter(i);-->
+                <!--};-->
+
+                <!--// 移出事件-->
+                <!--aStar[i].onmouseleave = function(){-->
+                    <!--leave(i);-->
+                <!--};-->
+
+                <!--//点击事件-->
+                <!--aStar[i].onclick = function(){-->
+
+                    <!--for(let j=0;j<=i;j++){-->
+                        <!--aStar[j].style.backgroundPositionY = "-28px";-->
+                        <!--oText[0].innerHTML = info[i];-->
+                    <!--}-->
+                    <!--removeEventListener(onmouseleave,function(){-->
+                        <!--leave(i);-->
+                    <!--})-->
+                <!--};-->
+            <!--}-->
+
+
+        <!--</script>-->
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

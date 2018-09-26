@@ -73,6 +73,7 @@
             width: 35px;
             height: 60px;
             background:url("images/btn.png") no-repeat;
+            cursor: pointer;
         }
         #btn .left{
             left:0;
@@ -127,47 +128,75 @@
             aBtn = document.querySelectorAll("#btn .btn")
         ;
 
-        aBtn[0].onclick = function(){
-            Hide();
-            flag--;
-
-            if(flag < 0){
-                flag = length-1;
-            }
-            show();
-
-        }
-
-        aBtn[1].onclick = function(){
-            Hide();
-            flag++;
-
-            if(flag === length){
-                flag = 0;
-            }
-            show();
-
-        }
-
-        for(let i=0;i<length;i++){
-            aTabLi[i].onclick = function(){
-                if(flag !== i){
-                    Hide();
-                    aTabLi[i].className = "active";
-                    aImgLi[i].className = "show";
-                    flag = i;
-                }
-            }
-        }
-
-        function Hide(){
+        // function Hide(){
+        //     aTabLi[flag].className = "";
+        //     aImgLi[flag].className = "";
+        // }
+        // function show(){
+        //     aImgLi[flag].className = "show";
+        //     aTabLi[flag].className = "active";
+        // }
+        function change(x){
             aTabLi[flag].className = "";
             aImgLi[flag].className = "";
-        }
-        function show(){
+
+            flag = x;
+
             aImgLi[flag].className = "show";
             aTabLi[flag].className = "active";
         }
+        //左箭头
+        aBtn[0].onclick = function(){
+            // Hide();
+            // flag--;
+            //
+            // if(flag < 0){
+            //     flag = length-1;
+            // }
+            // show();
+
+            let x = flag;
+            x--;
+            if(x < 0){
+                x = length-1;
+            }
+            change(x);
+
+        }
+        //右箭头
+        aBtn[1].onclick = function(){
+            // Hide();
+            // flag++;
+            //
+            // if(flag === length){
+            //     flag = 0;
+            // }
+            // show();
+
+            let x = flag;
+            x ++;
+            if(x === length){
+                x = 0;
+            }
+            change(x);
+
+        }
+        //tab
+        for(let i=0;i<length;i++){
+            aTabLi[i].onclick = function(){
+                // if(flag !== i){
+                //     Hide();
+                //     flag = i;
+                //     aTabLi[flag].className = "active";
+                //     aImgLi[flag].className = "show";
+                //     flag = i;
+                    if(flag === i)return;
+                    change(i);
+
+            }
+        }
+
+
     </script>
 </body>
 </html>

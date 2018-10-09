@@ -25,18 +25,26 @@
                 width: 100%;
                 height: 100px;
                 margin-bottom:2px;
+                background-color: #000;
                 color:#fff;
                 font-size: 30px;
                 text-align: center;
                 line-height: 100px;
                 cursor: pointer;
             }
+            #wrap .left ul.on{
+                background-color: #f60;
+            }
             #wrap .left ul li{
+                display:none;
                 position:absolute;
                 top:0;
                 right:0;
                 width: 800px;
                 height: 600px;
+            }
+            #wrap .left ul li.show{
+                display:block;
             }
             #wrap .left ul li img{
                 width: 800px;
@@ -71,22 +79,25 @@
                 line-height: 50px;
                 cursor: pointer;
             }
-            #wrap .left .sun,#wrap .left .song,#wrap .left .quan{
-                background-color: #000;
+            #wrap .tab ul li.on{
+                background-color: #f60;
             }
-            #wrap .left .sun li,#wrap .left .song li,#wrap .left .quan li{
-                display: none;
-            }
-            #wrap .left .sun li.show,#wrap .left .song li.show,#wrap .left .quan li.show{
-                display: block;
-            }
+            /*#wrap .left .sun,#wrap .left .song,#wrap .left .quan{*/
+                /*background-color: #000;*/
+            /*}*/
+            /*#wrap .left .sun.on,#wrap .left .song.on,#wrap .left .quan.on{*/
+                /*background-color: #f60;*/
+            /*}*/
+            /*#wrap .left .ul li.show,#wrap .left .ul li.show,#wrap .left .ul li.show{*/
+                /*display: block;*/
+            /*}*/
 
         </style>
     </head>
     <body>
         <div id="wrap">
             <div class="left">
-                <ul class="sun">
+                <ul class="on">
                     <p>孙艺珍</p>
                     <li class="show"><img src="img/1.jpg" alt=""></li>
                     <li><img src="img/2.jpg" alt=""></li>
@@ -94,7 +105,7 @@
                     <li><img src="img/4.jpg" alt=""></li>
                     <li><img src="img/5.jpg" alt=""></li>
                 </ul>
-                <ul class="song">
+                <ul>
                     <p>宋慧乔</p>
                     <li><img src="img/01.jpg" alt=""></li>
                     <li><img src="img/02.jpg" alt=""></li>
@@ -102,7 +113,7 @@
                     <li><img src="img/04.jpg" alt=""></li>
                     <li><img src="img/05.jpg" alt=""></li>
                 </ul>
-                <ul class="quan">
+                <ul>
                     <p>全智贤</p>
                     <li><img src="img/001.jpg" alt=""></li>
                     <li><img src="img/002.jpg" alt=""></li>
@@ -114,7 +125,7 @@
             <div class="right"></div>
             <div class="tab">
                 <ul>
-                    <li>1</li>
+                    <li class="on">1</li>
                     <li>2</li>
                     <li>3</li>
                     <li>4</li>
@@ -130,14 +141,14 @@
             let ulLen = aLeftUl.length;
             let len = aTabli.length;
             let index = 0;
-
+            console.log(aLeftli);
             //左边ul的改变
             for(let i=0;i<ulLen;i++){
-                aLeftUl[i].onmouseenter = function(){
-                    aLeftUl[index].style.backgroundColor = "";
+                aLeftUl[i].onclick = function(){
+                    aLeftUl[index].className = "";
                     index = i;
-                    this.style.backgroundColor = "#f60";
-
+                    aLeftUl[index].className += "on";
+                    // aLeftUl[index][index].className += "show";
 
 
                 }
@@ -153,11 +164,11 @@
 
             for(let i=0;i<len;i++){
                 aTabli[i].onmouseenter = function(){
-                    aTabli[index].style.backgroundColor = "";
+                    aTabli[index].className = "";
                     index = i;
-                    aTabli[index].style.backgroundColor = "#f60";
+                    aTabli[index].className += "on";
 
-                    aLeftli[index].className += "show";
+                    // aLeftli[index].className = "show";
                 }
             }
         </script>

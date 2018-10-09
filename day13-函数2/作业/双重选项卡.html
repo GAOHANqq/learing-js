@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap{
+            position:relative;
+            width: 1010px;
+            height: 600px;
+            margin:20px auto;
+            user-select: none;
+        }
+        #wrap .left{
+            float:left;
+            width: 20%;
+            height: 50%;
+        }
+        #wrap .left ul{
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+        }
+
+        #wrap .left ul li{
+            width: 100%;
+            height: 100px;
+            margin-bottom:2px;
+            background-color: #000;
+            color:#fff;
+            font-size: 30px;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+        }
+        #wrap .left ul li.on{
+            background-color: #f60;
+        }
+
+        #wrap .right{
+            position:relative;
+            float:right;
+            width: 800px;
+            height: 100%;
+        }
+        #wrap .right .img{
+            display:none;
+            position:absolute;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+        }
+        #wrap .right .img.show{
+            display: block;
+        }
+        #wrap .right .img li{
+            display: none;
+            float:right;
+            position:absolute;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+        }
+        #wrap .right .img li.show{
+            display:block;
+        }
+
+        #wrap .right .img li img{
+            width: 800px;
+            height: 600px;
+        }
+
+        #wrap .right .tab{
+            display:none;
+            position: absolute;
+            bottom:20px;
+            left:50px;
+            width: 360px;
+            height: 50px;
+        }
+        #wrap .right .tab.show{
+            display:block;
+        }
+        #wrap .right .tab li{
+            float:left;
+            width: 50px;
+            height: 100%;
+            margin-left:20px;
+            background-color: #000;
+            color:#fff;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+        }
+        #wrap .right .tab li.on{
+            background-color: #f60;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="left">
+            <ul>
+                <li class="on">孙艺珍</li>
+                <li>宋慧乔</li>
+                <li>全智贤</li>
+            </ul>
+        </div>
+
+        <div class="right">
+            <!--孙艺珍-->
+            <ul  class="img show">
+                <li class="show"><img src="img/1.jpg" alt=""></li>
+                <li><img src="img/2.jpg" alt=""></li>
+                <li><img src="img/3.jpg" alt=""></li>
+                <li><img src="img/4.jpg" alt=""></li>
+                <li><img src="img/5.jpg" alt=""></li>
+            </ul>
+            <ul class="tab show">
+                <li class="on">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+            <!--宋慧乔-->
+            <ul  class="img">
+                <li class="show"><img src="img/01.jpg" alt=""></li>
+                <li><img src="img/02.jpg" alt=""></li>
+                <li><img src="img/03.jpg" alt=""></li>
+                <li><img src="img/04.jpg" alt=""></li>
+                <li><img src="img/05.jpg" alt=""></li>
+            </ul>
+            <ul class="tab">
+                <li class="on">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+            <!--全智贤-->
+            <ul class="img">
+                <li class="show"><img src="img/001.jpg" alt=""></li>
+                <li><img src="img/002.jpg" alt=""></li>
+                <li><img src="img/003.jpg" alt=""></li>
+                <li><img src="img/004.jpg" alt=""></li>
+                <li><img src="img/005.jpg" alt=""></li>
+            </ul>
+            <ul class="tab">
+                <li class="on">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        (function(){
+            let aLeftli = document.querySelectorAll("#wrap .left ul li");
+            let aImgUl = document.querySelectorAll("#wrap .right ul.img");
+            let aTabUl = document.querySelectorAll("#wrap .right ul.tab");
+            let index = 0;
+            let len=aLeftli.length;
+
+            function tab(i){
+                //左侧的tab
+                aLeftli[i].onclick = function(){
+                    if(i !== index){
+                        aLeftli[index].className = "";
+                        aImgUl[index].className = "img";
+                        aTabUl[index].className = "tab";
+                        index = i;
+                        this.className += "on";
+                        aImgUl[index].className = "show img";
+                        aTabUl[index].className = "show tab";
+                    }
+                    Imgchange(0);
+                }
+
+                //右侧
+                let aImgLi = aImgUl[i].querySelectorAll("li");
+                let aTabLi = aTabUl[i].querySelectorAll("li");
+                let len1   = aTabLi.length;
+                let index1 = 0;
+
+                for(let j=0;j<len1;j++){
+                    aTabLi[j].onclick = function(){
+                        if(j === index1){return;}
+                        // aTabLi[index1].className = "";
+                        // aImgLi[index1].className = "";
+                        //
+                        // index1 = j;
+                        // this.className += "on";
+                        // aImgLi[index1].className = "show";
+                        Imgchange(j);
+                    }
+                }
+                function Imgchange(x){
+                    aTabLi[index1].className = "";
+                    aImgLi[index1].className = "";
+
+                    index1 = x;
+                    aTabLi[index1].className = "on";
+                    aImgLi[index1].className = "show";
+                }
+            }
+
+            for(let i=0;i<len;i++){
+                tab(i);
+            }
+        })();
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

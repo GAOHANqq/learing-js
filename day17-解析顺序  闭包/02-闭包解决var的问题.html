@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+
+            <p>a</p>
+            <p>b</p>
+            <p>c</p>
+            <p>d</p>
+            <p>e</p>
+        </div>
+        
+        <script>
+            // (function () {
+            //     var num = 10;//外部函数的参数或者变量
+            //     document.onclick = function () {
+            //         num++;
+            //         alert(num);
+            //     }
+            // })();
+
+            // ES6中,作用域嵌套作用域可以产生闭包,作用域可以是爷孙级之间
+            //      父级作用域:for循环的()  let使其产生5个不同的作用域
+            //                           var则是同一个作用域
+            //      子级作用域:function的{}
+
+            // let  aP = document.getElementsByTagName("p");
+            //
+            // for(let i=0;i<5;i++){
+            //     aP[i].onclick = function(){
+            //         alert(i);
+            //     };
+            // }
+// ----------------------------------------------------
+
+            // let  aP = document.getElementsByTagName("p");
+            //
+            // for(var i=0;i<5;i++){
+            //     aP[i].onclick = function(){
+            //         alert(i);//每次都会弹出5
+            //     };
+            // }
+
+
+            //使用闭包解决es5访问不到i的问题
+            let  aP = document.getElementsByTagName("p");
+
+            // function a(x){
+            //     aP[x].onclick = function(){
+            //         alert(x);
+            //     };
+            // }
+            // for(var i=0;i<5;i++){
+            //     a(i);
+            // }
+
+            //内部函数使用外部函数的参数或变量才能构成闭包
+            for(var i=0;i<5;i++){
+
+                !function (i){
+                    aP[i].onclick = function(){
+                        alert(i);
+                    };
+                }(i);
+            }
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

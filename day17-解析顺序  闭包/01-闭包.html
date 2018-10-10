@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            /*
+            全局变量不会被回收,开发时要尽量避免使用,防止代码污染
+            局部变量使用过后会被回收,不再占用内存
+
+            同一个函数多次执行会开辟新的作用域
+
+            闭包:一个使用了外部函数的参数或者变量的函数
+                内部持续引用,变量不会被回收
+
+                不想让局部变量被回收时,使用闭包
+
+            */
+
+            // function a(){
+            //     var x = 10;
+            //
+            //     function  b() {
+            //         x++;
+            //         alert(x);
+            //     }
+            //
+            //     b();
+            // }
+            // a();  //弹出11
+//------------------------------------------------------------
+            // function a(){
+            //     var x = 10;
+            //
+            //     function  b() {
+            //         x++;
+            //         alert(x);
+            //     }
+            //
+            //    return b;
+            // }
+            //
+            // a();  //啥都不弹出
+ //------------------------------------------
+            function a(){
+                var x = 10;
+
+                function  b() {
+                    x++;
+                    alert(x);
+                }
+
+               return b;
+            }
+
+            var c = a();
+            c();
+            c();
+            c();
+            c();
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

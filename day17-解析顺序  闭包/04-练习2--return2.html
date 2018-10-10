@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            var a = 5;
+            function fn(){
+                var a = 10;
+                alert(a);
+                function b(){
+                    a ++;
+                    alert(a);
+                }
+                return b;
+            }
+            var c = fn();
+            c();
+            fn()();
+            c();
+
+            /*
+            解析:1.定义: var a
+                        function b(){...}
+                        var c
+                2.执行:a = 5;
+                      c = fn();===>产生新的作用域:
+                                                1.定义:var a
+                                                      function b(){...}
+                                                2.执行: a = 10;
+                                                       alert(a); //10
+                                                        return b;
+                       c();相当于b();===>产生新的作用域
+                                                            1.定义:
+                                                            2.执行: a++(自己没有去父级找) //11
+                                                                   alert(a); //11
+                       fn()();    fn()产生新的作用域:
+                                                1.定义:var a
+                                                      function b(){...}
+                                                2.执行: a = 10;
+                                                       alert(a); //10
+                                                        return b;
+                                   fn()()相当于b();===>产生新的作用域
+                                                            1.定义:
+                                                            2.执行: a++(自己没有去父级找) //11
+                                                                   alert(a); //11
+                        c();相当于b();===>产生新的作用域
+                                                            1.定义:
+                                                            2.执行: a++(自己没有去父级找) //12
+                                                                   alert(a); //11
+
+            */
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

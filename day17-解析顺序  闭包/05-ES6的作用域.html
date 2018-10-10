@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            /*
+
+        ES6   关键词:let const function class
+             function作用域与ES5相同
+             let const作用域解析规则相同
+                1)只能先let在使用,不会被提前解析
+                2)暂时性死区:只要在作用域里面let过变量,就不允许提前使用
+                3)f域or循环中使用let,其()就是作用域
+                4)let的作用域是最近的{}
+            const不允许重新赋值常量
+
+
+           */
+
+            // alert(a);   //报错
+            // let a = 10;
+
+            let a = 20;
+            function b(){
+                //暂时性死区:只要在作用域里面let过变量,就不允许提前使用
+                alert(a);  //报错
+                // let a = 30;
+            }
+            b();
+
+            // const g = 10;
+            //     g = 80; //报错
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

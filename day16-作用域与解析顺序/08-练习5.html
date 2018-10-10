@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            a();
+            var a = function(){alert(1)};
+            a();
+            function a(){alert(2)};
+            a();
+            var a = function(){alert(3)};
+            a();
+            //解析: 1)两个var a 保留最后一个即 var a = function(){alert(3)};
+        //            function a(){alert(2)};
+        //         2) a();  //2
+        //            a = function(){alert(1)};(给a赋值成一个函数)
+        //            a();  //1
+        //            a();  //1
+        //            a = function(){alert(3)};(给a赋值成一个函数)
+        //            a();  //3
+
+        //    故依次弹出 2 1 1 3
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

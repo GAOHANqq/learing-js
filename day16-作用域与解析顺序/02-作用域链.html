@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            var x = 10;
+
+            function a(){
+                var y = 5;
+                return x + y;
+            }
+            //先从自己的作用域找,找不到再从父级的作用域找,一直找不到则会报错
+            console.log(a());  //15
+
+
+            // var x = 10;
+            //
+            // function a(){
+            //     var x = 15;
+            //     var y = 5;
+            //     return x + y;
+            // }
+            // console.log(a());  //20
+
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

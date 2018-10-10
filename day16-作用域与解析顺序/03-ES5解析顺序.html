@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            /*
+
+            解析顺序:
+                    先解析var和function,再从上到下执行代码
+
+                第一步:    定义步骤
+                    找出当前作用域里面所有的var和function定义的变量名,
+                    此时var定义的变量,不会被赋值,仅仅只是初始值undefined
+                    此时function定义的函数是个完整的函数,可以直接使用
+                第二步:    执行
+                    从上到下执行
+
+
+
+
+            */
+
+            // alert(x);       //undefined
+            // var  x = 10;
+            //  解析顺序: 1)定义:var x
+            //           2)执行:alert(x)  //undefined
+            //                 x = 10;
+
+
+
+
+            var  x = 10;
+            alert(x);       //10
+
+            a();
+            function a(){
+                alert(1);
+            }
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

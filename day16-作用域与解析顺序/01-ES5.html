@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+
+            /*
+
+            var function定义的变量,作用域为往上里变量最近的函数
+
+           --1) script标签是最大的作用域,即全局作用域
+           --2) 如果var function 在全局作用域里定义了变量,则相当于给window添加了属性
+
+           --3) 任意作用域中,不加var直接定义变量,则为全局变量,但实际开发不允许这么做
+
+            */
+
+
+            // function a(){
+            //     b = 10;
+            // }
+            // a();
+
+            // 面试题:
+
+            function a(){
+                var x = y =5;
+            }
+            a();
+            // console.log(x);   //报错
+            console.log(y);     //5
+            // 原因:x被var定义,属于局部变量,y没有被var定义,属于全局变量,可以访问得到
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

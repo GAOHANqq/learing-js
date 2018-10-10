@@ -18,9 +18,21 @@
         <div id="wrap"></div>
         
         <script>
-            let a = 1;
-            let a = 1;
-            let a1 = 1;
+            fn();
+            alert(a);
+            var a = 10;
+            alert(a);
+            function fn(){
+                var a = 1;
+                //a = 1;
+            }
+            //解析:1)var a function fn(){...}
+            //                     fn(){}中:var a
+        //        2)fn(); // 函数内部赋值 a = 1;
+        //          alert(a);// undefined
+        //          a = 10;
+        //          alert(a); //10
+        //    故依次弹出 undefined 10
         </script>
     </body>
 </html>

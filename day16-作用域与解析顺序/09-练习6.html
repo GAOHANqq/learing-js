@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            var a = 10;
+            function fn(){
+                alert(a);
+                var a = 1;
+                alert(a);
+            }
+            fn();
+            alert(a);
+            //解析:1)var a
+        //          function fn(){}
+        //                   fn(){}中 var a
+        //        2)a =10
+        //              {}中:alert(a); //undefined
+        //                   a = 1;
+        //                  alert(a); //1
+        //          alert(a); //10
+        //    故依次弹出 undefined 1 10
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

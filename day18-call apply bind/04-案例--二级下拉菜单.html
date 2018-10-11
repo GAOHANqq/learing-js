@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                width: 200px;
+                margin:50px 0 0 100px;
+                border:1px solid #999;
+                user-select:none;
+            }
+            #wrap .title{
+                width: 100%;
+                height: 30px;
+                font-size: 16px;
+                line-height: 30px;
+                text-indent: 5px;
+                background-color: #abcdef;
+                color:#fff;
+                cursor: pointer;
+                border-bottom:1px dashed #fff;
+            }
+            #wrap .list{
+                display: none;
+            }
+            #wrap .list li{
+                width: 100%;
+                height: 20px;
+                font-size: 14px;
+                line-height: 20px;
+                text-indent: 20px;
+                border-bottom: 1px dashed #eee;
+                cursor: pointer;
+            }
+            #wrap .list.show{
+                display: block;
+            }
+            #wrap .list li:hover{
+                background-color: #eee;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="nav">
+                <p class="title">同事</p>
+                <ul class="list">
+                    <li>Tom</li>
+                    <li>Rick</li>
+                    <li>Deral</li>
+                    <li>Mary</li>
+                </ul>
+            </div>
+            <div class="nav">
+                <p class="title">好友</p>
+                <ul class="list">
+                    <li>陈举</li>
+                    <li>刘飞飞</li>
+                    <li>刘林</li>
+                    <li>刘海磊</li>
+                </ul>
+            </div>
+            <div class="nav">
+                <p class="title">VIP用户</p>
+                <ul class="list">
+                    <li>李荣</li>
+                    <li>李宇飞</li>
+                    <li>孙艺珍</li>
+                    <li>宋慧乔</li>
+                </ul>
+            </div>
+
+        </div>
+        
+        <script>
+            // let  aDiv = document.getElementsByClassName("nav");
+            let  aTitle = document.getElementsByClassName("title");
+            let  aList = document.getElementsByClassName("list");
+            let len=aTitle.length;
+
+        //方法一
+            let index = 0;
+            for(let i=0;i<len;i++){
+                aTitle[i].onclick = function(){
+                    aList[index].classList.remove("show");
+                    index = i;
+                    aList[index].classList.add("show");
+                }
+            }
+        //方法二
+            // for(let i=0;i<len;i++){
+            //     aTitle[i].onclick = function(){
+            //
+            //         for(let j=0;j<len;j++){
+            //             let arr = i===j?"add":"remove";
+            //             aList[j].classList[arr]("show");
+            //         }
+            //
+            //     }
+            // }
+
+
+            // if( i===j ){
+            //     // aList[i].className = "list show";
+            //     aList[j].classList.add("show");
+            // }else{
+            //     aList[j].classList.remove("show");
+            // }
+
+            /*
+            can i use 网站可以查询api是否兼容
+
+            H5中新的API
+                classlist:存的是DOM节点的所有class
+
+            */
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+
+            //bind不可以自执行函数,bind被动执行(产生的是新函数)
+                //可以理解为复制函数,但是改变了函数的this执向
+            function a(x,y){
+                console.log(x);
+                console.log(y);
+                console.log(this);//window
+            }
+
+            // a.bind(document);  无效果,即不能够用来函数自执行
+            function b(x){
+                x(7,5);
+            }
+            b(a);
+            b(a.bind(document));//document
+            b(a.bind(10));//number
+
+        //bind的作用:产生一个新函数,改变函数的this执向
+
+            // document.onclick = function(){
+            //     console.log(this);//document
+            // }
+
+            // document.onclick = function(){
+            //     console.log(this);//{name:"高翰"}
+            // }.bind({name:"高翰"});
+
+        //要传参时:
+            document.onclick = function(x,y){
+                console.log(x);
+                console.log(y);
+                console.log(this);//{name:"高翰"}
+            }.bind({name:"高翰"},5,4);
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

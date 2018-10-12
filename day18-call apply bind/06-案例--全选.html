@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>全选</title>
+  <style type="text/css">
+	.wrap{
+		width: 400px;
+		margin:100px auto;
+		text-align:center;
+		border:1px solid #999;
+		-webkit-user-select:none;
+	}
+	.wrap input{
+		margin:20px 0;
+	}
+	.wrap label{
+		cursor:pointer;
+	}
+  
+  </style>
+ </head>
+ <body>
+	<div class="wrap">
+		<div class="list">
+			<input type="checkbox" id="input1" /><label for="input1">数学</label>
+			<input type="checkbox" id="input2" /><label for="input2">语文</label>
+			<input type="checkbox" id="input3" /><label for="input3">英语</label>
+			<input type="checkbox" id="input4" /><label for="input4">化学</label>
+			<input type="checkbox" id="input5" /><label for="input5">物理</label>
+			<input type="checkbox" id="input6" /><label for="input6">体育</label>
+		</div>
+		<br/><br/>
+		<div class="btn">
+			<input type="checkbox" id="all"/><label for="all">全选</label>
+		</div>
+		
+	</div>		
+ </body>
+ <script>
+
+	 //在原生的表单元素input里面,checked/disabled在JS中以布尔值的形式显示
+
+ 	let aInput = document.querySelectorAll(".wrap .list input");
+    let oBtn = document.querySelectorAll(".wrap .btn input");
+    let len = aInput.length;
+     let num = 0;
+ 			//全选
+ 			oBtn[0].onchange = function(){
+				let x = oBtn[0].checked === true?true:false;
+				for(let i=0;i<len;i++){
+					aInput[i].checked = x;
+				}
+ 			}
+
+
+			for(let i=0;i<len;i++){
+                aInput[i].onchange = function(){
+				//方法一
+				// 		if( this.checked ){
+				// 		    num ++;
+				// 		}else{
+				// 		    num --;
+				// 		}
+                //     	oBtn.checked = num===len;
+				//方法二:
+                    let bool = true;
+                    for(let j=0;j<len;j++){
+                        if( !aInput[j].checked ){
+                            bool = false;
+                            break;
+                        }
+                    }
+                    oBtn[0].checked = bool;
+				}
+			}
+ </script>
+</html>

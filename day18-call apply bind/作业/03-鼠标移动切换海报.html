@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                width: 1200px;
+                height: 400px;
+                padding:20px 0 10px 0;
+                margin:100px auto;
+                border-top:3px dashed #abcdef;
+                border-bottom:3px dashed #abcdef;
+                user-select:none;
+            }
+            #wrap .title{
+                position:relative;
+                width: 100%;
+                height: 60px;
+            }
+            #wrap .title p{
+                position:relative;
+                float:left;
+                width: 200px;
+                height: 100%;
+                background-color: #000;
+                color:#fff;
+                text-align: center;
+                line-height: 60px;
+            }
+            #wrap .title p:after{
+                position:absolute;
+                top:20px;
+                z-index:99;
+                right:-20px;
+                display: block;
+                content: "";
+                width: 0;
+                height: 0;
+                border:10px solid transparent;
+                border-left-color:#000;
+            }
+            #wrap .title .list{
+                position: absolute;
+                top:0;
+                right:0;
+                width: 1000px;
+                height: 100%;
+                background-color: #f5f5f5;
+            }
+            #wrap .title .list li{
+                float:left;
+                margin-left:30px;
+                line-height: 60px;
+                cursor: pointer;
+                transition: .2s ease-in;
+            }
+            #wrap .title .list li a{
+                text-decoration: none;
+                color:#000;
+            }
+            #wrap .title .list li a:hover{
+                color:red;
+            }
+            #wrap .title .list li a.on{
+                padding-bottom:18px;
+                border-bottom:2px solid red;
+            }
+
+            /*图片显示*/
+            #wrap .img-wrap{
+                position:relative;
+                width: 100%;
+                height: 300px;
+                margin-top:30px;
+            }
+            #wrap .img-wrap .img{
+                display:none;
+                position: absolute;
+                top:0;
+                left:0;
+                width: 100%;
+                height: 100%;
+            }
+            #wrap .img-wrap .img.show{
+                display:block;
+            }
+            #wrap .img-wrap .img li{
+                float:left;
+                width: 304px;
+                height: 256px;
+            }
+            #wrap .img-wrap .img li:not(:nth-child(3)){
+                margin-right:144px;
+            }
+            #wrap .img-wrap .img li img{
+                width: 304px;
+                height: 256px;
+            }
+            #wrap .img-wrap .img li p{
+                margin-top:10px;
+                font-size: 14px;
+            }
+            #wrap .img-wrap .img li a{
+                text-decoration:none;
+                color:#000;
+            }
+            #wrap .img-wrap .img li a:hover{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="title">
+                <p>独家精品策划</p>
+                <ul class="list">
+                    <li><a href="javascript:;" class="on">全部</a></li>
+                    <li><a href="javascript:;">时装周</a></li>
+                    <li><a href="javascript:;">潮我看齐</a></li>
+                    <li><a href="javascript:;">搭配速成班</a></li>
+                    <li><a href="javascript:;">恋物趣</a></li>
+                    <li><a href="javascript:;">谁最有范</a></li>
+                </ul>
+            </div>
+            <div class="img-wrap">
+                <!--1-->
+                <ul class="img show">
+                    <li>
+                        <a href="javascript:;"><img src="img/haibao/01.jpg" alt=""></a>
+                        <a href="javascript:;"><p>潮我看齐：罗志祥携手CTO男团</p></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/haibao/02.jpg" alt=""></a>
+                        <a href="javascript:;"><p>2019春夏巴黎时装周</p></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/haibao/03.jpg" alt=""></a>
+                        <a href="javascript:;"><p>搭配速成班：宋轶亲身教你3种心机约会装！</p></a>
+                    </li>
+                </ul>
+                <!--2-->
+                <ul class="img">
+                    <li>
+                        <a href="javascript:;"><img src="img/haibao/04.jpg" alt=""></a>
+                        <a href="javascript:;"> <p>2019春夏巴黎时装周</p></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/haibao/05.jpg" alt=""></a>
+                        <a href="javascript:;"><p>2019春夏米兰时装周</p></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/haibao/06.jpg" alt=""></a>
+                        <a href="javascript:;"><p>London2019</p></a>
+                    </li>
+                </ul>
+                <!--3-->
+                <ul class="img">
+                    <li>
+                        <a href="javascript:;"><img src="img/haibao/07.jpg" alt=""></a>
+                        <a href="javascript:;"><p>潮我看齐：罗志祥携手CTO男团</p></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/haibao/08.jpg" alt=""></a>
+                        <a href="javascript:;"><p>潮我看齐之马思纯，难道只用简单笑容就治愈了我？</p></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/haibao/09.jpg" alt=""></a>
+                        <a href="javascript:;"><p>潮我看齐：果汁女孩文咏珊</p></a>
+                    </li>
+                </ul>
+                <!--4-->
+                <ul class="img">
+                    <li>
+                        <a href="javascript:;"><img src="img/haibao/10.jpg" alt=""></a>
+                        <a href="javascript:;"><p>搭配速成班：宋轶亲身教你3种心机约会装！</p></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/haibao/11.jpg" alt=""></a>
+                        <a href="javascript:;"><p>搭配速成班：520恋爱系CP搭</p></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/haibao/12.jpg" alt=""></a>
+                        <a href="javascript:;"><p>搭配速成班：文艺少女郑能量的荷兰之旅</p></a>
+                    </li>
+                </ul>
+                <!--5-->
+                <ul class="img">
+                    <li>
+                        <a href="javascript:;"><img src="img/haibao/13.jpg" alt=""></a>
+                        <a href="javascript:;"><p>恋物趣vol.13：一把神奇“信物”，开启人生无限可能</p></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/haibao/14.jpg" alt=""></a>
+                        <a href="javascript:;"><p>恋物趣vol.11：我陪你走过最浪漫的路就是爱情的套路</p></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/haibao/15.jpg" alt=""></a>
+                        <a href="javascript:;"><p>恋物趣_ IWC万国表达文西女士腕表：女生们的时髦与品位全在这块腕表上！</p></a>
+                    </li>
+                </ul>
+                <!--6-->
+                <ul class="img">
+                    <li>
+                        <a href="javascript:;"><img src="img/haibao/16.jpg" alt=""></a>
+                        <a href="javascript:;"><p>「谁最有范」之莫文蔚</p></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/haibao/17.jpg" alt=""></a>
+                        <a href="javascript:;"><p>「谁最有范」之春夏，灵动之气的耿直girl</p></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/haibao/18.jpg" alt=""></a>
+                        <a href="javascript:;"><p>「谁最有范」跟戚薇学穿搭打赢新年第一仗</p></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <script>
+            let aTitle = document.querySelectorAll("#wrap .list li a");
+            let aImg   = document.getElementsByClassName("img");
+            let len    = aTitle.length;
+            let index = 0;
+
+            for(let i=0;i<len;i++){
+                aTitle[i].onmouseenter = function(){
+                    aTitle[index].classList.remove("on");
+                    aImg[index].classList.remove("show");
+                    index = i;
+                    aTitle[index].classList.add("on");
+                    aImg[index].classList.add("show");
+                }
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

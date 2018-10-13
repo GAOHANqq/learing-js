@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                width: 320px;
+                margin: 100px auto 0;
+                padding: 25px 0;
+                border: 1px solid #999;
+                border-radius: 15px;
+                user-select: none;
+            }
+            #wrap .list{
+                width: 100%;
+            }
+            #wrap .list li{
+                width: 100%;
+                height: 50px;
+                font-size: 16px;
+                line-height: 50px;
+                text-indent: 5px;
+                border-top:1px solid #ddd;
+            }
+            #wrap .list li span{
+                float:left;
+                display: inline-block;
+                width: 50px;
+                height: 100%;
+                line-height: 50px;
+                background: url("img/ckbg1.jpg") no-repeat;
+                background-position: 25px center;
+            }
+            #wrap .list li.bg1{
+                background-color: #666;
+            }
+            #wrap .list li.bg2{
+                background-color: #999;
+            }
+            #wrap .list li span.img{
+                background: url("img/ckbg2.jpg") no-repeat;
+                background-position: 25px center;
+            }
+            #wrap .btn{
+                padding:20px 0;
+                width: 50%;
+            }
+            #wrap .btn li{
+                background: url("img/ckbg1.jpg") no-repeat;
+                background-position: 25px center;
+                float:left;
+                width: 50%;
+                height: 30px;
+                font-weight: bolder;
+                text-align: right;
+                line-height: 30px;
+            }
+            #wrap .btn li.img{
+                background: url("img/ckbg2.jpg") no-repeat;
+                background-position: 25px center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <ul class="list">
+                <li><span></span>项目1</li>
+                <li><span></span>项目2</li>
+                <li><span></span>项目3</li>
+                <li><span></span>项目4</li>
+                <li><span></span>项目5</li>
+                <li><span></span>项目6</li>
+                <li><span></span>项目7</li>
+                <li><span></span>项目8</li>
+            </ul>
+            <ul class="btn">
+                <li>全选</li>
+                <li>反选</li>
+            </ul>
+        </div>
+        
+        <script>
+            let aListli = document.querySelectorAll("#wrap .list li");
+            let aListSpan = document.querySelectorAll("#wrap .list li span");
+            let aBtnli = document.querySelectorAll("#wrap .btn li");
+            let len = aListli.length;
+            let num = 0;
+
+            for(let i=0;i<len;i++){
+                let x = i&1?"bg2":"bg1";
+                    aListli[i].classList.add(x);
+
+                //单选
+                aListli[i].onclick = function(){
+                    if(aListSpan[i].className == ""){
+                        aListSpan[i].classList.add("img");
+                        num ++;
+                    }else{
+                        aListSpan[i].classList.remove("img");
+                        num --;
+                    }
+                    // aListSpan[i].classList.toggle("img");
+                    let res = num;
+                    if(res === len){
+                        aBtnli[0].classList.add("img");
+                    }else{
+                        aBtnli[0].classList.remove("img");
+                    }
+                }
+
+
+
+
+            }
+
+            // 全选
+            aBtnli[0].onclick = function(){
+                if(this.className == ""){
+                    this.classList.add("img");
+                }else{
+                    this.classList.remove("img");
+                }
+
+                for(let i=0;i<len;i++){
+                    if(aBtnli[0].className == ""){
+                        aListSpan[i].classList.remove("img");
+                    }else{
+                        aListSpan[i].classList.add("img");
+                    }
+
+                }
+            }
+
+            // 反选
+            // aBtnli[1].onclick = function(){
+            //     if(this.className == ""){
+            //         this.classList.add("img");
+            //         aBtnli[0].classList.remove("img");
+            //     }else{
+            //         this.classList.remove("img");
+            //     }
+            //
+            //     for(let i=0;i<len;i++){
+            //         if(aBtnli[1].className == ""){
+            //             aListSpan[i].classList.add("img");
+            //         }else{
+            //             aListSpan[i].classList.remove("img");
+            //         }
+            //
+            //     }
+            // }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,290 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        body{
+            width: 100%;
+            height: 2400px;
+            user-select: none;
+        }
+        #side{
+            display: none;
+            position: fixed;
+            top:0;
+            right:0;
+            bottom:0;
+            width: 40px;
+            height:100%;
+            background-color: #000;
+        }
+        #side.show{
+            display: block;
+        }
+        #side .main{
+            width: 100%;
+            height: 100%;
+            margin-top:250px;
+        }
+        #side .main li{
+            width: 100%;
+            height: 20%;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        #side .main li.on{
+            background-color: #ff0036;
+        }
+        #side .main .top li i{
+            display: block;
+            width: 40px;
+            height: 35px;
+        }
+        #side .main .top li:nth-child(1) i{
+            background: url("img/tmall.png") no-repeat center/cover;
+        }
+        #side .main .top li:nth-child(1){
+            position:relative;
+            top:-100px;
+        }
+        #side .main .top li:nth-child(6){
+            position:relative;
+            bottom:-170px;
+        }
+        #side .main .top li:nth-child(7){
+            position:relative;
+            bottom:-165px;
+        }
+
+        #side .main .top li:nth-child(2) i{
+            background: url("img/yuan.png") no-repeat center/cover;
+        }
+        #side .main .top li:nth-child(3) i{
+            background: url("img/star.png") no-repeat center/cover;
+        }
+        #side .main .top li:nth-child(4) i{
+            background: url("img/clock.png") no-repeat center/cover;
+        }
+        #side .main .top li:nth-child(5) i{
+            background: url("img/chong.png") no-repeat center/cover;
+        }
+        #side .main .top li:nth-child(6) i{
+            background: url("img/write.png") no-repeat center/cover;
+        }
+        #side .main .top li:nth-child(7) i{
+            background: url("img/code.png") no-repeat center/cover;
+        }
+        #side .main .top li:nth-child(1) .title{
+            position:relative;
+            top:0;
+        }
+        #side .main .top li:nth-child(7) .title{
+            position:relative;
+            bottom:0;
+            right:0;
+            margin-left: -195px;
+            margin-top:-300px;
+            width: 175px;
+            height: 280px;
+            padding:10px;
+            border-radius:10px;
+            text-align: center;
+            background-color:#ff0036;
+        }
+        #side .main .top li:nth-child(7) .title img{
+            width: 175px;
+            height: 175px;
+        }
+        #side .main .top li:nth-child(7) .title p{
+            font-size: 20px;
+            color:#fff;
+        }
+        #side .main .top li:nth-child(7) .title p span{
+            color:#f5f900;
+        }
+        #side .main .top li .title{
+            display:none;
+            position:relative;
+            margin-left: -90px;
+            margin-top:-35px;
+            width: 90px;
+            height: 35px;
+            text-align: center;
+            line-height: 35px;
+            font-size: 12px;
+            color:#fff;
+            background-color: #494949;
+        }
+        #side .main .top li .title.show{
+            display:block;
+        }
+        #side .main .top li .title:after{
+            position:absolute;
+            top:14px;
+            right:-10px;
+            content:"";
+            display: block;
+            width: 0;
+            height: 0;
+            border: 5px solid transparent;
+            border-left-color:#494949;
+        }
+        /*购物车*/
+        .car{
+            position:fixed;
+            top:185px;
+            z-index: 100;
+            right:0;
+            width: 40px;
+            height: 100px;
+            border-top: 1px solid #999;
+            border-bottom: 1px solid #999;
+            background-color: #000;
+            cursor: pointer;
+        }
+        .car.on{
+            background-color: #ff0036;
+        }
+        .car i{
+            display: block;
+            width: 40px;
+            height: 35px;
+            margin-top: 5px;
+            background: url("img/car.png") no-repeat center/cover;
+        }
+        .car p{
+            text-align: center;
+            font-size: 12px;
+            color:#fff;
+        }
+        /*回到顶部*/
+        .back{
+            position: fixed;
+            right:0;
+            z-index: 100;
+            bottom:0;
+            width: 40px;
+            height: 35px;
+            background-color: #000;
+            /*cursor: pointer;*/
+        }
+        .back i{
+            display: block;
+            width: 40px;
+            height: 35px;
+            background: url("img/top.png") no-repeat center/cover;
+        }
+        .back i a{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="top">回来了!!!</div>
+    <div id="side">
+        <div class="main">
+            <ul class="top">
+                <li>
+                    <i></i>
+                    <div class="title">会员权益</div>
+                </li>
+                <li>
+                    <i></i>
+                    <div class="title">我的资产</div>
+                </li>
+                <li>
+                    <i></i>
+                    <div class="title">我的收藏</div>
+                </li>
+                <li>
+                    <i></i>
+                    <div class="title">我看过的</div>
+                </li>
+                <li>
+                    <i></i>
+                    <div class="title">我要充值</div>
+                </li>
+                <li>
+                    <i></i>
+                    <p class="title">用户反馈</p>
+                </li>
+                <li>
+                    <i></i>
+                    <div class="title">
+                        <img src="img/code.jpg" alt="">
+                        <p>首次登陆手机天猫抢<span>10-15元</span>红包</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <div class="car">
+        <i></i>
+        <p>购<br/>物<br/>车</p>
+    </div>
+    <div class="back"><i><a href="#top" target="_self"></a></i></div>
+    <script>
+        let oSide   = document.getElementById("side");
+        let aMainLi = document.querySelectorAll("#side .main .top li");
+        let aMainTitle = document.querySelectorAll("#side .main .top li .title");
+        let oCar    = document.getElementsByClassName("car");
+        let len     = aMainLi.length;
+        let index   = 0;
+
+
+        oCar[0].onmouseenter = function(){
+            this.classList.add("on");
+            oSide.classList.add("show");
+            for(let i=0;i<len;i++){
+                aMainLi[i].onmouseenter = function(){
+                    aMainLi[index].classList.remove("on");
+                    aMainTitle[index].classList.remove("show");
+                    index = i;
+                    this.classList.add("on");
+                    aMainTitle[index].classList.add("show");
+                }
+                aMainLi[i].onmouseleave = function(){
+                    aMainLi[index].classList.add("on");
+                    aMainTitle[index].classList.add("show");
+                    index = i;
+                    this.classList.remove("on");
+                    aMainTitle[index].classList.remove("show");
+                }
+                oSide.onmouseleave = function(){
+                    this.classList.remove("show");
+                }
+            }
+        }
+        oCar[0].onmouseleave = function(){
+            this.classList.remove("on");
+            // oSide.classList.remove("show");
+        }
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

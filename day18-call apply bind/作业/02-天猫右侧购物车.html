@@ -17,17 +17,17 @@
             user-select: none;
         }
         #side{
-            display: none;
             position: fixed;
             top:0;
-            right:0;
+            right:-40px;
             bottom:0;
             width: 40px;
             height:100%;
             background-color: #000;
+            transition: right .5s;
         }
         #side.show{
-            display: block;
+            right:0;
         }
         #side .main{
             width: 100%;
@@ -57,11 +57,11 @@
         }
         #side .main .top li:nth-child(6){
             position:relative;
-            bottom:-170px;
+            bottom:-110px;
         }
         #side .main .top li:nth-child(7){
             position:relative;
-            bottom:-165px;
+            bottom:-105px;
         }
 
         #side .main .top li:nth-child(2) i{
@@ -111,9 +111,9 @@
             color:#f5f900;
         }
         #side .main .top li .title{
-            display:none;
+            visibility: hidden;
             position:relative;
-            margin-left: -90px;
+            margin-left: -130px;
             margin-top:-35px;
             width: 90px;
             height: 35px;
@@ -122,9 +122,18 @@
             font-size: 12px;
             color:#fff;
             background-color: #494949;
+            opacity: 0;
+            transition: .5s,opacity .5s;
+
         }
-        #side .main .top li .title.show{
-            display:block;
+        #side .main .top li:not(:nth-child(7)) .title.show{
+            visibility: visible;
+            margin-left: -90px;
+            opacity:1;
+        }
+        #side .main .top li:nth-child(7) .title.show{
+            visibility: visible;
+            opacity:1;
         }
         #side .main .top li .title:after{
             position:absolute;
@@ -150,18 +159,21 @@
             background-color: #000;
             cursor: pointer;
         }
-        .car.on{
+        .car:hover{
             background-color: #ff0036;
+        }
+        .car:hover i{
+            background: url("img/car.png") no-repeat center/cover;
         }
         .car i{
             display: block;
             width: 40px;
             height: 35px;
             margin-top: 5px;
-            background: url("img/car.png") no-repeat center/cover;
+            background: url("img/redCar.png") no-repeat center/cover;
         }
         .car p{
-            text-align: center;
+            margin-left:12px;
             font-size: 12px;
             color:#fff;
         }
@@ -174,7 +186,6 @@
             width: 40px;
             height: 35px;
             background-color: #000;
-            /*cursor: pointer;*/
         }
         .back i{
             display: block;
@@ -244,10 +255,10 @@
 
 
         oCar[0].onmouseenter = function(){
-            this.classList.add("on");
             oSide.classList.add("show");
             for(let i=0;i<len;i++){
                 aMainLi[i].onmouseenter = function(){
+                    oCar[0].classList.add("show");
                     aMainLi[index].classList.remove("on");
                     aMainTitle[index].classList.remove("show");
                     index = i;
@@ -265,10 +276,6 @@
                     this.classList.remove("show");
                 }
             }
-        }
-        oCar[0].onmouseleave = function(){
-            this.classList.remove("on");
-            // oSide.classList.remove("show");
         }
 
     </script>

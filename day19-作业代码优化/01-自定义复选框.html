@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                width: 320px;
+                margin: 100px auto 0;
+                padding: 25px 0;
+                border: 1px solid #999;
+                border-radius: 15px;
+                user-select: none;
+            }
+            #wrap .list{
+                width: 100%;
+            }
+            #wrap .list li{
+                width: 100%;
+                height: 50px;
+                font-size: 14px;
+                line-height: 50px;
+                text-indent:60px;
+                color:#fff;
+                border-top:1px solid #ddd;
+                background: url("img/ckbg1.jpg") no-repeat;
+                background-position: 25px center;
+            }
+            #wrap .list li.show{
+                background: url("img/ckbg2.jpg") no-repeat;
+                background-position: 25px center;
+            }
+            #wrap .btn{
+                width: 100%;
+                height: 40px;
+            }
+            #wrap .btn p{
+                display: inline-block;
+                width: 85px;
+                height: 40px;
+                font-size:16px;
+                line-height: 40px;
+                text-align: center;
+                text-indent: 50px;
+                background: url("img/ckbg1.jpg") no-repeat;
+                background-position: 25px center;
+            }
+            #wrap .btn p.show{
+                background: url("img/ckbg2.jpg") no-repeat;
+                background-position: 25px center;
+            }
+            #wrap .btn span{
+                margin-left:20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <ul class="list">
+
+            </ul>
+            <div class="btn">
+                <p class="all">全选</p>
+                <span class="reAll">反选</span>
+            </div>
+        </div>
+        
+        <script>
+            (function(data){
+
+                    let oUl      = document.querySelector("#wrap .list");
+                    let aLi      = oUl.getElementsByTagName("li");
+                    let oAll     = document.querySelector("#wrap .btn .all");
+                    let oReAll    = document.querySelector("#wrap .btn .reAll");
+                    let num      = 0;
+                    let len      = data.length;
+            //提前加载图片
+                new Image().src = "img/ckbg2.jpg";
+
+            //  通过数据生成HTML结构
+                {
+                    let html     = "";
+                    let color    = ["#333","#555","#888","#ccc"];
+                    let colorLen = color.length;
+                    for(let i=0;i<len;i++){
+                        html += `<li style="background-color: ${color[i%colorLen]}">${data[i].TXT}</li>`;
+                    }
+                    oUl.innerHTML =  html;
+                }
+
+            //  判断num的值
+                function isFullNum(){
+                    oAll.classList[num === len?"add":"remove"]("show");
+                }
+            //  li的点击事件
+                {
+                    for(let i=0;i<len;i++){
+                        aLi[i].onclick = function(){
+
+                            this.classList.toggle("show");
+                            this.classList.contains("show")?num++:num--;
+                            // if( this.classList.contains("show") ){
+                            //     num ++;
+                            // }else{
+                            //     num --;
+                            // }
+                            isFullNum();
+                        };
+                    }
+                }
+
+                {
+                    //全选
+                    oAll.onclick = function(){
+                        this.classList.toggle("show");
+                        let bool = this.classList.contains("show");
+                        let attr = bool?"add":"remove";
+                        for(let i=0;i<len;i++){
+                            aLi[i].classList[attr]("show");
+                        }
+                            num = bool?len:0;
+                    }
+
+                    //反选
+                    oReAll.onclick = function(){
+                        for(let i=0;i<len;i++){
+                            aLi[i].classList.toggle("show");
+                        }
+                        num = len-num;
+                        isFullNum();
+                    }
+                }
+
+
+
+            })(
+                //假设这里的数据是后台给的
+                [
+                    {
+                        TXT : "美食",
+                    },
+                    {
+                        TXT : "豪车",
+                    },
+                    {
+                        TXT : "电影",
+                    },
+                    {
+                        TXT : "电视剧",
+                    },
+                    {
+                        TXT : "动画",
+                    },
+                    {
+                        TXT : "小说",
+                    },
+                    {
+                        TXT : "书刊",
+                    },
+                    {
+                        TXT : "美女",
+                    }
+
+                ]
+
+
+            );
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

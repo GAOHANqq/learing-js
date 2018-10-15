@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            //ES5
+            // function fn(data){
+            //     let  a = data.a;
+            //     let  b = data.b;
+            //     let  c = data.c
+            //     // let  c = data.c || 100;
+            //
+            //     if(c === undefined){
+            //         c = 100;
+            //     }
+            //     console.log(a);
+            //     console.log(b);
+            //     console.log(c)
+            //
+            // }
+            // fn({a:10,b:20,c:0});
+
+
+            //ES6
+            function fn(data){
+                // let {a:a,b:b,c:c=100} = data;
+                let {a,b,c=100} = data;
+                console.log(a,b,c)
+            }
+            fn({a:10,b:20});//c为undefined时,c取默认值100
+
+            let [x,y,z = 99] = [10,20];
+            console.log(x, y, z);
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

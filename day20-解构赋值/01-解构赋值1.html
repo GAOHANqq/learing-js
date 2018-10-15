@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            //  ES6 定义变量的解构赋值
+
+            // let a = 10,
+            //     b = 20,
+            //     c = 30;
+
+            //解构赋值
+            // let [a,b,c,d] = [10,20,30];
+            // console.log(a);//10
+            // console.log(c);//20
+            // console.log(b);//30
+            // console.log(d);//undefined
+
+
+            // 高级应用
+
+            function fn(){
+                x = [];
+                for(let i=0;i<5;i++){
+                    x[i] = i*i;
+                }
+                return x;
+            }
+            fn();
+            let [a,b,c,d,e] = fn();
+            console.log(a);
+            console.log(b);
+            console.log(c);
+            console.log(d);
+            console.log(e);
+
+            //对象形式的解构赋值
+            let {m:p,n:q} = {m:100,n:200};
+            console.log(q);//200
+
+            //简写
+            //在ES6中,属性与值同名时,可以简写
+            // let {z:z,y:y} = {z:70,y:60};
+            // console.log(y);//200
+            //简写
+            let {z,y} = {z:70,y:60};
+            console.log(z);//70
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

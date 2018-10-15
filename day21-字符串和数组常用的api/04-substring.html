@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            // substring  截取字符串，从start开始，截止到end前，不包含end
+        // substring(start,end)
+            let a = "高翰abc";
+
+            let b = a.substring(2,4); // ab  包含start,不包含end
+            console.log(b);
+
+            let c = a.substring(1);
+            console.log(c);// 翰abc  start到最后
+
+            let d = a.substring(-5,2);
+            console.log(d);// 高翰  没有负数,认为是0
+        // slice(start,end)  满足先后顺序
+            let e = a.slice(-4,-1);
+            console.log(e);// 翰abc   用法与substring一样,不过是倒着数,
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

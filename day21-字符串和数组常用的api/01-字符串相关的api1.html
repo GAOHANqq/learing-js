@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            // let a = "高翰";
+            //     a.index = 20;
+            //     console.log(a.index);//undefined  没有加上自定义属性,但是也不会报错
+
+            let a = new String("世界");
+            a.index = 20;
+            console.log(a.index);//20  使用new string则可以加上自定义属性
+
+            console.log(a+"你好");
+            console.log(a);
+
+
+            //对象添加自定义属性
+            let b = {};
+            b.index = 10;//添加了自定义属性index
+            console.log(b);
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

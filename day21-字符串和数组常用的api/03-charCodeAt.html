@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+        // charCodeAt() 返回指定索引的ASCII编码
+        // String.fromCharCode()返回指定ASCII编码的字符串,从字符编码创建一个字符串。一个或多个ASCII编码的值
+        //以上两个刚好相反
+            let a = "高翰a";
+            console.log(a.charCodeAt(2));//97
+
+            console.log( String.fromCharCode(65) ); // A
+
+
+
+            //简单应用
+
+            let x = "我爱你,中国";
+            for(let i=0;i<x.length;i++){
+                //加密
+                let y = String.fromCharCode( x.charAt(i).charCodeAt() + 520 ) ;
+                //解密
+                let z = String.fromCharCode( y.charCodeAt()- 520);
+                console.log(y);
+                console.log(z);
+            }
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

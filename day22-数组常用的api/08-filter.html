@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            // filter( fn(x,y,z) )
+            // 作用域forEach一样  但是有过滤作用
+
+            // return为假时,清空数组成为一个空数组
+            // return为真时,返回与原数组一样的一个数组
+            // 当return为过滤条件时,返回一个满足条件的数组
+            let a = [10,20,4,5,77,66];
+
+            let b = a.filter( function(x,y,z){
+                console.log(x,y,z);
+                return x>=20;
+            });
+            console.log(b);
+            console.log(a);
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

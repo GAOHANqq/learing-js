@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            //  sort()
+            //  位数相同时,按升序排序,位数不同时,按第一位升序排序
+            //  返回值是改变后数组
+            //  可以接受函数参数,函数不需要实参,js自动处理
+            let a = [10,50,90,46,55,99,78,18];
+            let b = [100,50,90,46,55,99,78,18];
+            a.sort();// 位数相同时,按升序排序
+            b.sort()//  位数不同时,按第一位升序排序
+            console.log( a.sort() );
+            console.log( a );
+            console.log( b );
+
+            console.log("-----------------------------");
+
+            //  reverse() 颠倒数组
+            //  返回值时改变后的数组
+            let c = [10,50,90,46,55,99,78,18];
+            let d = [100,50,90,46,55,99,78,18];
+            c.reverse();//  颠倒数组
+            d.reverse();//  颠倒数组
+            console.log(c);
+            console.log(d);
+
+            console.log("-----------------------------");
+
+            let n = [10,15,23,55,99,65,44,78];
+            let m = [10,15,23,55,99,65,44,78];
+            let p = [10,15,23,55,99,65,44,78];
+            let q = [10,15,23,55,99,65,44,78];
+            console.log(n);
+
+            //  可以接受函数参数,函数不需要实参,js自动处理
+            //  return 为固定正值时,即为反序,结果和reverse一样
+            //  return 为0或固定负值时,与元素组一样
+            //  return 为不固定的值时,负数交换位置,正数不交换位置,即可以做升降序排列
+            n.sort(function(x,y){
+                return 99; //反序 与reverse一样
+            });
+            console.log(n);
+
+
+            m.sort(function(x,y){
+                return 0; //与元素一样
+            });
+            console.log(m);
+
+
+
+            p.sort(function(x,y){
+                return x-y; //升序
+            });
+            console.log(p);
+
+
+            q.sort(function(x,y){
+                return y-x;// 降序
+            });
+            console.log(q);
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

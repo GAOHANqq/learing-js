@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            //  ``可以用来执行函数
+            //  在其内部,第一个参数 是一个字符串数组 ${}相当于分隔符
+            //          第二个参数 是${}的第一个值,依次类推
+            function fn(a,b){
+                console.log(arguments);
+                alert(a+b);
+            }
+            let b = 5;
+            let a = 6;
+            // fn(1,2);
+            fn`1,2${b}高翰${a}`;// ${}相当于分隔符将参数分隔开,其前后组成字符串数组
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            // ... 扩展运算符,去掉数组两边的方括号
+            // Iterator接口的都可以使用...拓展运算符
+            // 常见的，Array String NodeList arguments 和新增的数据结构Map Set ，这些都是有Iterator接口的，
+
+            let a = [1,2,3];
+
+            console.log(a);     //array
+            console.log(...a);  //1,2,3  ...相当于去除数组两边的方括号
+
+
+            function fn(para){
+                console.log(para);
+            }
+
+            fn(a);     //  array
+            fn(...a);  //  1
+
+
+        // ----------------------------------
+        //    数组拼接
+            let n = ["a","b","c"];
+            let m = [4,5,6];
+
+            let c = n.concat(m);
+            let d = [...n,...m];
+
+            console.log(c);
+            console.log(d);
+        //----------------------------
+            // 接受数据
+
+            let [x,y] = [1,2,3,4];  //解构赋值
+                console.log(x); //  1
+                console.log(y); //  2
+            let [p,...q] = [1,2,3,4];//只能放在最后面
+                console.log(p); //  1
+                console.log(q); //  [2,3,4]
+
+
+            function myFunction(a1,a2,a3){
+                console.log(a1);
+                console.log(a2);
+                console.log(a3);
+            }
+
+            myFunction("756"); //"756" undefined undefined
+            myFunction(..."756"); // "7" "5" "6"
+
+
+            function myFunction1(b1,...b2){
+                console.log(b1);
+                console.log(b2);
+            }
+
+            myFunction1(1,2,3); // 1 [2,3]
+        </script>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

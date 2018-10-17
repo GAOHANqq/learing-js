@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <p>p1111</p>
+        <p>p2222</p>
+        <p>p3333</p>
+
+    </div>
+
+    <script>
+        let aP = document.getElementsByTagName("p");
+        //ES5   方法将类数组转换为数组,然后循环
+
+        //  slice()切割 call()改变this指向
+        //  forEach(函数参数)
+        // 函数的参数:1)数组元素(node) 2)元素序号(index) 3)元素本身
+
+        // let x = [].slice.call(aP);
+        // x.forEach(function(node,index){
+        //     node.onclick = function(){
+        //         alert(index);
+        //     }
+        // })
+
+        [].slice.call(aP).forEach(function(node,index){
+            node.onclick = function(){
+                alert(index);
+            }
+        })
+
+
+        // ES6  NodeList是iterator接口,可以使用...扩展运算符
+
+        // [...aP].forEach(function(n,i){
+        //     n.onclick = function(){
+        //         alert(i);
+        //     }
+        // });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

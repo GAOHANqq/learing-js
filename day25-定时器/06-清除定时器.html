@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            // 清除定时器:  clearTimeout()  clearInterval()
+
+            let timer1 = setTimeout("console.log('timer1');",1000);
+            let timer2 = setTimeout("console.log('timer2');",1000);
+            let timer3 = setInterval("console.log('timer3');",1000);
+
+        // 方法一 :使用计时器名字清除
+            setTimeout( "clearInterval(timer3)",5000 );
+        // 方法二 :使用计时器编号清除
+        //     setTimeout( "clearInterval(3)",5000 );
+
+        // 其实上面两个方法的原理都是方法二
+            //计时器名字就是计时器的返回值,也就是说是计时器的编号
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

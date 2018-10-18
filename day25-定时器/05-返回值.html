@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            // 定时器返回值为定时器的序号
+                //不论作用域是哪,编号都是连续的,不会因为作用域改变而改变编号
+            let timer1 = setTimeout("console.log('timer1');",1000);
+            let timer2 = setTimeout("console.log('timer2');",1000);
+            let timer3 = setInterval("console.log('timer3');",1000);
+
+            console.log(timer1);
+            console.log(timer2);
+            console.log(timer3);
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            let a = {
+                name : "高翰",
+                age  : 24,
+                sex  : "男",
+                class: "电信151"
+            };
+
+            // for in 遍历对象
+            for(let key in a){
+                console.log(key);
+            };
+        //-------------------------------------------
+            let b = {
+                name : "高翰",
+                age  : 24,
+                sex  : "男",
+                class: "电信151"
+            };
+
+            console.log(b);
+
+            // 添加属性
+            b.marry = "No";
+            //删除属性
+            delete b.class;
+            //修改属性
+            b.age = 30;
+            //查找属性
+            console.log(b.sex);
+            for(let key in b){
+                console.log(key);
+            };
+
+            // 查找是否存在
+
+            console.log("age" in a);//true
+            console.log("grade" in a);//false
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

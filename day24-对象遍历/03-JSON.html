@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            //  json是一个格式非常标准的像对象的字符串
+            //  必须为双引号,严格的双引号
+            let a = '{"name":"高翰","age":24,"class":"电信151"}';
+
+            //  JSON转化为对象
+            //    JSON.parse()
+
+            console.log(JSON.parse(a));     //序列化
+
+
+            //  对象转化成json格式
+            //     JSON.stringify()
+            let b = {
+                name : "高翰",
+                age  : 24,
+                sex  : "男",
+                class: "电信151"
+            };
+            console.log( JSON.stringify(b) )    //  反序列化
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            p{
+                text-align: center;
+                font-size: 50px;
+                border-bottom:2px dashed #999;
+            }
+            div{
+                text-align: center;
+                font-size: 20px;
+                margin-top: 60px;
+            }
+            div span{
+                color: red;
+            }
+            div a{
+                text-decoration:none;
+            }
+        </style>
+    </head>
+    <body>
+        <p>404 页面未找到</p>
+        <div><span> 5 </span>秒后跳转到<a href="https://www.baidu.com/">主页</a></div>
+        
+        <script>
+            (function(){
+                let oSpan = document.querySelector("div span");
+                console.log(oSpan);
+                let index = 5;
+
+                setInterval(function(){
+                    oSpan.innerHTML = --index;
+                    if(index === 1){
+                        window.location.href = "https://www.baidu.com/";
+                    }
+                },1000)
+
+            })();
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

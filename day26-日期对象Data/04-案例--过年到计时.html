@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                text-align: center;
+                font-size: 40px;
+                margin-top: 20px;
+            }
+            #wrap span{
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            (function(){
+                let oWrap = document.getElementById("wrap");
+
+                let date = new Date(2019,6,1);
+
+
+                function fn(){
+                    let d_Val = date - new Date();
+
+                    let d = Math.floor( d_Val/1000/60/60/24 );
+                    let h = Math.floor( d_Val/1000/60/60%24 );
+                    let m = Math.floor( d_Val/1000/60%60 );
+                    let s = Math.floor( d_Val/1000%60 );
+
+                    if(d<10){d="0"+d;}
+                    if(h<10){h="0"+h;}
+                    if(m<10){m="0"+m;}
+                    if(s<10){s="0"+s;}
+
+                    oWrap.innerHTML = `距离2019年7月1日还有<span>${d}</span>天<span>${h}</span>时<span>${m}</span>分<span>${s}</span>秒!!!`;
+                };
+
+                fn();
+                setInterval( fn,1000 )
+
+
+            })();
+
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

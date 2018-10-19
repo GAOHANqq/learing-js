@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            // Date()只有一个参数时,会解析为毫秒数,在1970年的时间戳上增加
+            let day = new Date(2018,9,8,16,45,10);
+            console.log(day);// Sat Sep 08 2018 16:45:10 GMT+0800
+
+
+            let now = new Date().getTime();
+            console.log( new Date(now-3600000) );// 获取前一个小时的时间
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

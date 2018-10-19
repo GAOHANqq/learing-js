@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            /*
+                Date 类
+
+                实例化 new
+
+            */
+
+            let today = new Date(); //本地此时此刻的时间/时间戳
+            console.log(today);
+
+        //以下的api返回数字(UTC为0时区的时间)
+
+            //  年份
+            console.log( today.getFullYear() );
+            //  月份(月份是从0开始的)
+            console.log( today.getMonth() );
+            //  日期
+            console.log( today.getDate() );
+            //  时
+            console.log( today.getHours() );
+            //  分
+            console.log( today.getMinutes() );
+            //  秒
+            console.log( today.getSeconds() );
+            //  星期(周日为0)
+            console.log( today.getDay() );
+
+            //  时间戳(1970.01.01 00:00 ---- 现在的毫秒数)
+            console.log( today.getTime() );
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

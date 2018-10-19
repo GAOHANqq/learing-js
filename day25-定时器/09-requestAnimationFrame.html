@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                position:absolute;
+                top:0;
+                left: 0px;
+                width: 100px;
+                height: 100px;
+                background-color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            // H5出的新的API
+            //  requestAnimationFrame()
+            //  取消:cancelAnimationFrame()
+            // 没有时间参数,浏览器准备好了就可以更新,间隔时间为浏览器最短刷新时间
+            // 与setTimeout一样,只能执行一次
+
+            let  oWrap = document.getElementById("wrap");
+            let start = 0;
+
+            function change(){
+                start ++;
+                oWrap.style.left = start + "px";
+                requestAnimationFrame( change );
+            }
+
+            requestAnimationFrame( change );
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            // requestAnimationFrame()
+            // cancelAnimationFrame()
+
+            window.requestAnimationFrame = requestAnimationFrame || function(x){return setTimeout(x,1000/60)};
+            window.cancelAnimationFrame = cancelAnimationFrame || clearTimeout;
+
+
+            // if( !window.requestAnimationFrame ){
+            //     window.requestAnimationFrame = function(fn){
+            //         let timer = setTimeout(fn,1000/60);
+            //         return timer;
+            //     };
+            //     window.cancelAnimationFrame = function(timer){
+            //         clearTimeout(timer)
+            //     };
+            // }
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

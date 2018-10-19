@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap{
+            user-select: none;
+            width: 500px;
+            height: 360px;
+            margin: 50px auto;
+        }
+        #img{
+            overflow: hidden;
+            position:relative;
+            width: 100%;
+            height: 310px;
+        }
+        #img ul{
+            position:absolute;
+            top: 0;
+            left: 0;
+            width: 1000%;
+            height: 100%;
+            transition: left .5s;
+        }
+        #img ul li{
+            float:left;
+            width: 10%;
+            height: 100%;
+        }
+        #img ul li img{
+            width: 500px;
+            height: 310px;
+        }
+
+        #tab{
+            overflow:hidden;
+            width: 100%;
+            height: 50px;
+        }
+        #tab ul{
+            width: 200%;
+            height: 100%;
+        }
+        #tab ul li{
+            float:left;
+            width: 10%;
+            height: 100%;
+            line-height: 50px;
+            text-align: center;
+            background-color: #333;
+            font-size: 12px;
+            color: #a5a5a5;
+            cursor: pointer;
+        }
+        #tab ul li.active{
+            background-color: #f4c300;
+            color: #7e4a1c;
+        }
+        #btn .btn{
+            position:absolute;
+            top:50%;
+            margin-top:-30px;
+            width: 35px;
+            height: 60px;
+            background:url("images/btn.png") no-repeat;
+            cursor: pointer;
+        }
+        #btn .left{
+            left:0;
+            background-position: -85px -8px;
+        }
+        #btn .right{
+            right:-2px;
+            background-position: -128px -8px;
+        }
+        #btn .left:hover{
+            background-position: -6px -8px;
+        }
+        #btn .right:hover{
+            background-position: -50px -8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="img">
+            <ul>
+                <li class="show"><a href=""><img src="images/1.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/2.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/3.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/4.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/5.png" alt=""></a></li>
+            </ul>
+            <div id="btn">
+                <div class="btn left"></div>
+                <div class="btn right"></div>
+            </div>
+        </div>
+
+        <div id="tab">
+            <ul>
+                <li class="active">欧洲传奇登场</li>
+                <li>标王赛季揭秘</li>
+                <li>中秋活动送礼</li>
+                <li>FO4M不删档</li>
+                <li>CEFL天梯赛</li>
+            </ul>
+        </div>
+
+
+    </div>
+
+    <script>
+        (function () {
+            let oWrap  = document.getElementById("wrap"),
+                oImgUl = document.querySelector("#img ul"),
+                aImgLi = document.querySelectorAll("#img ul li"),
+                aTabLi = document.querySelectorAll("#tab ul li"),
+                length = aImgLi.length,
+                aBtn   = document.querySelectorAll("#btn .btn"),
+                flag   = 0,
+                timer  = null
+
+            ;
+
+            function change(x){
+                aTabLi[flag].className = "";
+                flag = x;
+                oImgUl.style.left = "-" + flag*100 + "%";
+                aTabLi[flag].className = "active";
+            }
+
+            //  定时器
+            function imgRound(){
+                aTabLi[flag].className = "";
+                flag ++;
+                flag %= length;
+                oImgUl.style.left = "-" + flag*100 + "%";
+                aTabLi[flag].className = "active";
+            }
+
+            //左箭头
+            {
+                aBtn[0].onclick = function(){
+                    let x = flag;
+                    x--;
+                    if(x < 0){
+                        x = length-1;
+                    }
+                    change(x);
+
+                }
+            }
+
+            //右箭头
+            {
+                aBtn[1].onclick = function(){
+                    let x = flag;
+                    x ++;
+                    if(x === length){
+                        x = 0;
+                    }
+                    change(x);
+                }
+            }
+
+            //tab
+            {
+                [...aTabLi].forEach((node,index)=>{
+                    node.onclick = function(){
+                        if(flag === index)return;
+                        change(index);
+                    }
+                })
+
+
+
+            }
+
+            //自动轮播
+            {
+                timer = setInterval(imgRound,3000);
+
+                oWrap.onmouseenter = function(){
+                    clearInterval(timer);
+                }
+                oWrap.onmouseleave = function(){
+                    timer = setInterval(imgRound,3000);
+                }
+            }
+
+
+
+
+
+        })();
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

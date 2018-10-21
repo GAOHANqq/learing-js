@@ -1,0 +1,228 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                width: 560px;
+                height: 360px;
+                padding: 30px 20px;
+                margin: 50px auto 0;
+                border: 1px solid #bbb;
+                user-select: none;
+            }
+            #content{
+                width: 100%;
+                height: 90%;
+            }
+            #content ul{
+                width: 100%;
+                height: 100%;
+            }
+            #content ul li{
+                float: left;
+                width: 120px;
+                height: 150px;
+                margin: 10px;
+            }
+            #content ul li p{
+                display: inline-block;
+                font-weight: bolder;
+                color: #111;
+            }
+            #content ul li span{
+                font-style: italic;
+                font-weight: bolder;
+                color: red;
+                margin-left: 15px;
+            }
+            #btn{
+                width: 100%;
+                height: 30px;
+                margin-top: 20px;
+                text-align: right;
+            }
+            #btn span{
+                display: inline-block;
+                width: 70px;
+                height: 30px;
+                font-size: 16px;
+                font-weight: bolder;
+                text-align: center;
+                line-height: 30px;
+                color: #fff;
+                margin-right: 5px;
+                background-color: #317df1;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="content">
+                <ul>
+                    <!--<li>-->
+                        <!--<img src="images/1.jpg" width="120px" height="120px" alt="">-->
+                        <!--<p>风信子</p>-->
+                        <!--<span>￥100</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<img src="images/2.jpg" width="120px" height="120px"  alt="">-->
+                        <!--<p>紫罗兰</p>-->
+                        <!--<span>￥100</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<img src="images/3.jpg" width="120px" height="120px"  alt="">-->
+                        <!--<p>茉莉花</p>-->
+                        <!--<span>￥100</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<img src="images/4.jpg" width="120px" height="120px"  alt="">-->
+                        <!--<p>杜鹃花</p>-->
+                        <!--<span>￥100</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<img src="images/5.jpg" width="120px" height="120px"  alt="">-->
+                        <!--<p>月季</p>-->
+                        <!--<span>￥100</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<img src="images/6.jpg" width="120px" height="120px"  alt="">-->
+                        <!--<p>曼陀罗</p>-->
+                        <!--<span>￥100</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<img src="images/7.jpg" width="120px" height="120px"  alt="">-->
+                        <!--<p>迭迭香</p>-->
+                        <!--<span>￥100</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<img src="images/8.jpg" width="120px" height="120px"  alt="">-->
+                        <!--<p>栀子花</p>-->
+                        <!--<span>￥100</span>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+            <div id="btn">
+                <span>随机排序</span>
+                <span>从小到大</span>
+                <span>从大到小</span>
+            </div>
+        </div>
+        
+        <script>
+            (function(data){
+
+                //初始化
+                    function change(){
+                        let oUl  = document.querySelector("#content ul");
+                        let html = "";
+
+                        data.forEach((node,index)=>{
+                            html += `<li><img src="${data[index].src}" width="120px" height="120px" alt=""><p>${data[index].desc}</p><span>￥${data[index].price}</span></li>`;
+                        })
+                        oUl.innerHTML = html;
+                    }
+
+                change();
+
+                //  点击事件
+                (function(){
+
+                    let oBtn = [...document.querySelectorAll("#btn span")];
+                    let sortFn = [
+                                    ()    => Math.random()-0.5,
+                                    (a,b) => a.price-b.price,
+                                    (a,b) => b.price-a.price
+                                ];
+                    oBtn.forEach((ele,index)=>{
+                        ele.onclick = function(){
+                            data.sort(sortFn[index]);// 这是对下面的代码优化
+                            // switch(index){
+                            //     case 0: data.sort((a,b)=>{
+                            //                 return Math.random()-0.5;
+                            //              });
+                            //             break;
+                            //     case 1: data.sort((a,b)=>{
+                            //         return a.price-b.price;
+                            //     });
+                            //         break;
+                            //     case 2: data.sort((a,b)=>{
+                            //         return b.price-a.price;
+                            //     });
+                            //         break;
+                            // }
+
+                            change();
+                        }
+                    });
+                })();
+
+            })(
+                [
+                    {
+                        src  : "./images/1.jpg",
+                        desc : "风信子",
+                        price: "100"
+                    },
+                    {
+                        src  : "./images/2.jpg",
+                        desc : "紫罗兰",
+                        price: "688"
+                    },
+                    {
+                        src  : "./images/3.jpg",
+                        desc : "茉莉花",
+                        price: "128"
+                    },
+                    {
+                        src  : "./images/4.jpg",
+                        desc : "杜鹃花",
+                        price: "208"
+                    },
+                    {
+                        src  : "./images/5.jpg",
+                        desc : "月季",
+                        price: "66"
+                    },
+                    {
+                        src  : "./images/6.jpg",
+                        desc : "曼陀罗",
+                        price: "488"
+                    },
+                    {
+                        src  : "./images/7.jpg",
+                        desc : "迭迭香",
+                        price: "368"
+                    },
+                    {
+                        src  : "./images/8.jpg",
+                        desc : "栀子花",
+                        price: "700"
+                    },
+                ]
+            );
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

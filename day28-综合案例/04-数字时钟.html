@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                width: 400px;
+                height: 150px;
+                border: 1px solid #bbb;
+                margin: 50px auto 0;
+                font-size: 80px;
+                font-weight: bolder;
+                text-align: center;
+                line-height: 150px;
+                color: #222;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+
+        </div>
+        
+        <script>
+            let oWrap = document.getElementById("wrap");
+
+            function getTime(){
+                let now = new Date();
+                let h   = now.getHours();
+                let m   = now.getMinutes();
+                let s   = now.getSeconds();
+
+                if(h<10){h="0"+h};
+                if(m<10){m="0"+m};
+                if(s<10){s="0"+s};
+
+                return `${h}:${m}:${s}`;
+            }
+
+            setInterval(()=>{
+                oWrap.innerHTML = `${getTime()} `;
+            },500)
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

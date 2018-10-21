@@ -43,7 +43,9 @@
                 if(s<10){s="0"+s};
 
                 return `${h}:${m}:${s}`;
-            }
+            };
+
+            oWrap.innerHTML = `${getTime()} `;
 
             setInterval(()=>{
                 oWrap.innerHTML = `${getTime()} `;

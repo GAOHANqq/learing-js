@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            // 创建文本节点
+            let text = document.createTextNode("张三");
+
+            // 获取父节点
+            let oWrap = document.getElementById("wrap");
+            // 添加到末尾
+            oWrap.appendChild(text);
+
+            //-------------------
+            //  创建元素节点
+            let oDiv = document.createElement("span");
+            oWrap.appendChild(oDiv);
+
+            // 插入到某个元素之前
+            // ele.insertBefore(要插入的节点,往哪里插)
+            oWrap.insertBefore(oDiv,text);
+
+            //  删除
+            //  父级.removeChild(节点);
+            oWrap.removeChild(text);
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

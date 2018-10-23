@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap">高翰</div>
+        
+        <script>
+            let oWrap = document.getElementById("wrap");
+
+            console.dir(oWrap);
+
+            console.log(oWrap.nodeName);    //DIV
+
+            console.log(oWrap.nodeType);    // 1
+
+            //  获取子节点
+            console.log(oWrap.childNodes);
+
+            //  nodeValue 获取文本节点的内容
+            console.log(oWrap.firstChild.nodeValue);
+
+            //一共有12中dom节点
+
+                // 元素节点   1
+                // 属性节点   2
+                // 文本节点   3
+                // 注释节点   8
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

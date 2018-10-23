@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                width: 500px;
+                height: 110px;
+                margin: 50px auto 0;
+            }
+            #wrap div{
+                float: left;
+            }
+            #wrap div.HH,#wrap div.MM,#wrap div.SS{
+                overflow: hidden;
+                width: 100px;
+                height: 60px;
+            }
+            #wrap div p{
+                position: relative;
+                top:0;
+                float: left;
+                width: 40px;
+                height: 60px;
+                margin: 0 5px;
+            }
+            #wrap div p.tran{
+                top:-60px;
+                transition: top .3s;
+            }
+            #wrap div p span{
+                display: block;
+                width: 40px;
+                height: 60px;
+                font-size: 30px;
+                font-family: Dialog;
+                line-height: 60px;
+                text-align: center;
+                color: #fff;
+                border-radius: 10px;
+                background-image: linear-gradient(to bottom,#444 0%,#444 50%,#3a3a3a 50%,#3a3a3a 100%);
+            }
+            #wrap div.a{
+                width: 40px;
+                height: 60px;
+                font-size: 30px;
+                line-height: 60px;
+                text-align: center;
+                font-family: Dialog;
+                font-weight: bolder;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="HH">
+                <p><span class="first"></span><span class="second"></span></p>
+                <p><span class="first"></span><span class="second"></span></p>
+            </div>
+            <div class="a">:</div>
+            <div class="MM">
+                <p><span class="first"></span><span class="second"></span></p>
+                <p><span class="first"></span><span class="second"></span></p>
+            </div>
+            <div class="a">:</div>
+            <div class="SS">
+                <p><span class="first"></span><span class="second"></span></p>
+                <p><span class="first"></span><span class="second"></span></p>
+            </div>
+        </div>
+        
+        <script>
+            (function(){
+                let aP = [...document.querySelectorAll("#wrap p")];
+                let aFirstSpan = [...document.querySelectorAll("#wrap p span.first")];
+                let aSecondSpan = [...document.querySelectorAll("#wrap p span.second")];
+                let lastTimeArr = [];
+                //返回时分秒字符串
+                function getTimeArr() {
+                    let nowD = new Date();
+                    let [HH,MM,SS] = [nowD.getHours(),nowD.getMinutes(),nowD.getSeconds()];
+
+                    HH = HH < 10?"0"+HH:HH+"";
+                    MM = MM < 10?"0"+MM:MM+"";
+                    SS = SS < 10?"0"+SS:SS+"";
+                    return [...HH,...MM,...SS];
+                }
+
+                // 显示到页面中
+                function showTime(){
+                    let d = getTimeArr();
+                    lastTimeArr = d;
+                    aFirstSpan.forEach((ele,index)=>{
+                        ele.innerHTML = d[index];
+                    });
+
+                    return function(){
+                        let d = getTimeArr();
+                        d.forEach((value,index)=>{
+                            //6位时间值和前一秒不相同时才需要动画
+                            if( value === lastTimeArr[index] ){return}
+                            //改变下面span的显示
+                            aSecondSpan[index].innerHTML = d[index];
+                            //p的动画
+                            aP[index].classList.add("tran");
+
+                            setTimeout(()=>{
+                                aFirstSpan[index].innerHTML = d[index];
+                                aP[index].classList.remove("tran");
+                            },300)
+                        })
+
+                        lastTimeArr = d;
+                    };
+                };
+                //初始加载一次,每个一秒加载一次
+                setInterval(showTime(),1000)
+
+
+            })();
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

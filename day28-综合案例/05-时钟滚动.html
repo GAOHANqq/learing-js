@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap{
+            width: 400px;
+            height: 200px;
+            border: 1px solid #bbb;
+            margin: 50px auto 0;
+        }
+        #content{
+            /*overflow: hidden;*/
+            width: 100%;
+            height: 60px;
+            margin-top: 65px;
+            text-align: center;
+        }
+        #content span{
+            display: inline-block;
+            width: 40px;
+            height: 60px;
+            text-align: center;
+            font-size: 50px;
+            line-height: 60px;
+            font-weight: bolder;
+            color: #ccc;
+            background-image:linear-gradient(to bottom,#111 10%,#333 45%,#666 70%,#888 100%);
+            border-radius: 15px;
+            margin-top: 0px;
+            transition: .5s;
+        }
+        #content .hide{
+            margin-top: 60px;
+        }
+        #content span.clear{
+            background-image: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="content">
+            <span class="hide"></span>
+            <span></span>
+            <span class="clear">:</span>
+            <span></span>
+            <span></span>
+            <span class="clear">:</span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+
+    <script>
+        let oContent = document.getElementById("content");
+
+
+
+
+
+        // if(h<10){
+        //     h="0"+h
+        // }else{
+        //
+        // };
+
+        // if(m<10){m="0"+m};
+        // if(s<10){s="0"+s};
+
+        function getNowTime(){
+            let now = new Date();
+
+            console.log(now.getTime());
+            let h   = now.getHours();
+            let m   = now.getMinutes();
+            let s   = now.getSeconds();
+
+            let h1 = Math.floor(h/10);
+            let h2 = h%10;
+
+            let m1 = Math.floor(m/10);
+            let m2 = m%10;
+
+            let s1 = Math.floor(s/10);
+            let s2 = s%10;
+
+            return `<span class="hide">${h1}</span>
+            <span>${h2}</span>
+            <span class="clear">:</span>
+            <span>${m1}</span>
+            <span>${m2}</span>
+            <span class="clear">:</span>
+            <span>${s1}</span>
+            <span>${s2}</span>`;
+        }
+
+        //判断时间是否相等
+            oContent.innerHTML = `${getNowTime()}`;
+            let index = new Date().getTime();
+            console.log(index);
+
+
+        setInterval(()=>{
+            oContent.innerHTML = `${getNowTime()}`;
+            let aSpanLast = [...oContent.querySelectorAll("span")];
+
+
+
+            aSpanLast.forEach((node)=>{
+                let flag = new Date().getTime();
+
+                if(index!==flag) {
+                    node.classList.add("hide");
+                    setTimeout(()=>{
+                        oContent.innerHTML = `${getNowTime()}`;
+                    },320)
+                }
+                node.classList.remove("hide");
+                oContent.innerHTML = `${getNowTime()}`;
+            })
+
+        },500)
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

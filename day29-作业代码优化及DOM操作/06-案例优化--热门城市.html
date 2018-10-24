@@ -34,6 +34,9 @@
             cursor: pointer;
             font-weight: bolder;
         }
+        #left .info span:hover{
+            color:red;
+        }
         #right{
             float:left;
             width: 50%;
@@ -99,7 +102,6 @@
                     // span的添加
                     oTip.appendChild(newSpan.cloneNode(true));
                     oRight.appendChild(newSpan.cloneNode(true));
-
                     //要删除的span的获取
                     let aTipSpan = [...document.querySelectorAll("#tip span")];
                     let aRightSpan = [...document.querySelectorAll("#right span")];

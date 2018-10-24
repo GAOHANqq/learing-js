@@ -33,6 +33,9 @@
 		cursor: pointer;
 		font-weight: bolder;
 	}
+	#left .info span:hover{
+		color:red;
+	}
 	#right{
 		float:left;
 		width: 50%;
@@ -95,16 +98,18 @@
 			;
 
 			aSpan.forEach((ele,index)=>{
+
 			    ele.onclick = function(){
+                    let newSpan = document.createElement("span");
 			        //创建span
-			        let newSpan = document.createElement("span");
+
                     newSpan.classList.add("create");
                     newSpan.innerHTML = aSpan[index].innerHTML;
 
                     //添加span
+
                     oTip.appendChild(newSpan.cloneNode(true));
                     oRight.appendChild(newSpan);
-
                     // 获取要点击删除的span
                     let aTipSpan = [...document.querySelectorAll("#tip span")];
                     let aRightSpan = [...document.querySelectorAll("#right span")];

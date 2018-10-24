@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>Document</title>
+    <style>
+        #wrap{
+            width: 800px;
+            height: 600px;
+            border: 1px solid #bbb;
+            margin: 50px auto 0;
+            user-select: none;
+        }
+        #left{
+            float:left;
+            width: 50%;
+            height: 100%;
+        }
+        #left .info{
+            margin-top: 30px;
+        }
+        #left .info p{
+            display: inline-block;
+            color: red;
+            margin-left: 20px;
+            font-size: 20px;
+        }
+        #left .info span{
+            margin-left: 10px;
+            cursor: pointer;
+            font-weight: bolder;
+        }
+        #right{
+            float:left;
+            width: 50%;
+            height: 100%;
+            background-color: rgba(0,0,0,.7);
+        }
+        span.create{
+            display: inline-block;
+            width: 80px;
+            height: 40px;
+            margin: 5px;
+            color: #abcdef;
+            font-size: 16px;
+            font-weight: bolder;
+            font-family: Dialog;
+            text-align: center;
+            line-height: 40px;
+            border: 1px solid #bbb;
+        }
+        span.tip:after{
+            position: relative;
+            top:-50px;
+            right:-70px;
+            display: block;
+            content: 'X';
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 1px solid #666;
+        }
+        span.tip:hover:after{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="left">
+            <div class="info">
+                <p>热门目的地:</p>
+            </div>
+            <div id="tip"></div>
+        </div>
+        <div id="right"></div>
+    </div>
+</body>
+<script>
+    (function(data){
+        let oInfo  = document.querySelector("#left .info"),
+            oTip   = document.getElementById("tip"),
+            oRight = document.getElementById("right")
+        ;
+            data.forEach((ele)=>{
+                let newSpan = document.createElement("span");
+                    newSpan.innerHTML = ele;
+                    //  热门城市的添加
+                    oInfo.appendChild(newSpan);
+
+                newSpan.onclick = function(){
+                    // span的添加
+                    oTip.appendChild(newSpan.cloneNode(true));
+                    oRight.appendChild(newSpan.cloneNode(true));
+
+                    //要删除的span的获取
+                    let aTipSpan = [...document.querySelectorAll("#tip span")];
+                    let aRightSpan = [...document.querySelectorAll("#right span")];
+
+                    aTipSpan.forEach((ele,index)=>{
+                        //  要删除的span的css样式
+                        aTipSpan[index].classList.add("create");
+                        aTipSpan[index].classList.add("tip");
+                        aRightSpan[index].classList.add("create");
+
+                        //点击删除span
+                        ele.onclick = function(){
+                            this.remove();
+                            aRightSpan[index].remove();
+                        }
+                    });
+                };
+
+            });
+
+
+    })(
+        ["马来西亚","韩国","三亚","新西兰","云南"]
+    );
+
+</script>
+</html>

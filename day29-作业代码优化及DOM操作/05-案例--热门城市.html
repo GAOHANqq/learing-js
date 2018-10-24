@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+	#wrap{
+		width: 800px;
+		height: 600px;
+		border: 1px solid #bbb;
+		margin: 50px auto 0;
+		user-select: none;
+	}
+	#left{
+		float:left;
+		width: 50%;
+		height: 100%;
+	}
+	#left .info{
+		margin-top: 30px;
+	}
+	#left .info p{
+		display: inline-block;
+		color: red;
+		margin-left: 20px;
+		font-size: 20px;
+	}
+	#left .info span{
+		cursor: pointer;
+		font-weight: bolder;
+	}
+	#right{
+		float:left;
+		width: 50%;
+		height: 100%;
+		background-color: rgba(0,0,0,.7);
+	}
+	span.create{
+		display: inline-block;
+		width: 80px;
+		height: 40px;
+		margin: 5px;
+		color: #abcdef;
+		font-size: 16px;
+		font-weight: bolder;
+		font-family: Dialog;
+		text-align: center;
+		line-height: 40px;
+		border: 1px solid #bbb;
+	}
+	span.tip:after{
+		position: relative;
+		top:-50px;
+		right:-70px;
+		display: block;
+		content: 'X';
+		width: 20px;
+		height: 20px;
+		text-align: center;
+		line-height: 20px;
+		border-radius: 50%;
+		background-color: #fff;
+		border: 1px solid #666;
+	}
+	span.tip:hover:after{
+		color:red;
+	}
+  </style>
+ </head>
+ <body>
+	<div id="wrap">
+		<div id="left">
+			<div class="info">
+				<p>热门目的地:</p>
+				<span>马来西亚</span>
+				<span>韩国</span>
+				<span>三亚</span>
+				<span>新西兰</span>
+				<span>云南</span>
+			</div>
+			<div id="tip"></div>
+		</div>
+		<div id="right"></div>
+	</div>
+ </body>
+	<script>
+		(function(){
+		    let aSpan  = [...document.querySelectorAll("#left .info span")],
+				oTip   = document.getElementById("tip"),
+		   	 	oRight = document.getElementById("right")
+			;
+
+			aSpan.forEach((ele,index)=>{
+			    ele.onclick = function(){
+			        //创建span
+			        let newSpan = document.createElement("span");
+                    newSpan.classList.add("create");
+                    newSpan.innerHTML = aSpan[index].innerHTML;
+
+                    //添加span
+                    oTip.appendChild(newSpan.cloneNode(true));
+                    oRight.appendChild(newSpan);
+
+                    // 获取要点击删除的span
+                    let aTipSpan = [...document.querySelectorAll("#tip span")];
+                    let aRightSpan = [...document.querySelectorAll("#right span")];
+
+                    //点击删除span
+                    aTipSpan.forEach((ele,index)=>{
+                        aTipSpan[index].classList.add("tip");
+                        ele.onclick = function(){
+                            this.remove();
+                            aRightSpan[index].remove();
+						}
+					});
+				}
+
+
+
+            });
+
+		})();
+		
+	</script>
+</html>

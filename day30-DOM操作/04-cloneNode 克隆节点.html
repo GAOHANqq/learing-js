@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <p id="gg">123456789</p>
+        </div>
+        <div id="btn"></div>
+        <script>
+            // cloneNode(true)   不加参数的话只能克隆节点,不会克隆节点内容
+            let oP = document.getElementById("gg");
+            let oBtn = document.getElementById("btn");
+
+
+
+            oBtn.appendChild(oP.cloneNode(true));
+
+            // 替换  replaceChild(new,old)
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

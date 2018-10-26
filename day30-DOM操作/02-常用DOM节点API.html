@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <p>11</p>
+            <p>22</p>
+            <p>33</p>
+        </div>
+        
+        <script>
+            /*
+               firstChild               第一个子节点
+               firstElementChild        第一个元素子节点
+               nextElementSibling       下一个兄弟元素节点
+               previousElementSibling   上一个兄弟元素节点
+
+             */
+
+            var oW = document.getElementById("wrap");
+
+            console.log(oW.firstChild);  //#text  在IE8以下就是元素节点
+            console.log(oW.firstElementChild);  //<p>11</p>  在IE8以下不存在
+
+
+            var p1 = oW.children[0]
+            var p2 = oW.children[1]
+            var p3 = oW.children[2]
+
+            console.log( p2.nextElementSibling ); // <p>33</p>
+            console.log( p2.previousElementSibling );// <p>11</p>
+            //  兼容性同上 IE中 nextSibling就是下一个兄弟元素节点
+
+
+
+            // 兼容方法
+            function getnextSibling(ele){
+                if( ele.nextElementSibling !== undefined ){
+                    return ele.nextElementSibling;
+                }else{
+                    return ele.nextSibling;
+                }
+            }
+
+            console.log( getnextSibling(p3) ); // null
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

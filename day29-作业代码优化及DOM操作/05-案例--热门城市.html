@@ -42,8 +42,10 @@
 		height: 100%;
 		background-color: rgba(0,0,0,.7);
 	}
-	span.create{
-		display: inline-block;
+
+
+	#tip span,#right span{
+		float:left;
 		width: 80px;
 		height: 40px;
 		margin: 5px;
@@ -55,7 +57,7 @@
 		line-height: 40px;
 		border: 1px solid #bbb;
 	}
-	span.tip:after{
+    #tip span:after{
 		position: relative;
 		top:-50px;
 		right:-70px;
@@ -69,7 +71,7 @@
 		background-color: #fff;
 		border: 1px solid #666;
 	}
-	span.tip:hover:after{
+    #tip span:hover:after{
 		color:red;
 	}
   </style>
@@ -92,43 +94,108 @@
  </body>
 	<script>
 		(function(){
-		    let aSpan  = [...document.querySelectorAll("#left .info span")],
-				oTip   = document.getElementById("tip"),
-		   	 	oRight = document.getElementById("right")
-			;
+            let aSpan  = [...document.querySelectorAll("#left .info span")],
+                oTip   = document.getElementById("tip"),
+                oRight = document.getElementById("right")
+            ;
+            let ifAdd = [];
 
-			aSpan.forEach((ele,index)=>{
-
-			    ele.onclick = function(){
-                    let newSpan = document.createElement("span");
-			        //创建span
-
-                    newSpan.classList.add("create");
-                    newSpan.innerHTML = aSpan[index].innerHTML;
+            aSpan.forEach((ele,index)=>{
+                ele.onclick = function(){
+                    //判断
+                    if(!ifAdd[index])ifAdd[index] = {};
+                    if(ifAdd[index].bool)return;
 
                     //添加span
+                    createSpan(this.innerHTML,index);
 
-                    oTip.appendChild(newSpan.cloneNode(true));
-                    oRight.appendChild(newSpan);
-                    // 获取要点击删除的span
-                    let aTipSpan = [...document.querySelectorAll("#tip span")];
-                    let aRightSpan = [...document.querySelectorAll("#right span")];
-
-                    //点击删除span
-                    aTipSpan.forEach((ele,index)=>{
-                        aTipSpan[index].classList.add("tip");
-                        ele.onclick = function(){
-                            this.remove();
-                            aRightSpan[index].remove();
-						}
-					});
-				}
-
-
-
+                    //改变状态
+                    ifAdd[index].bool = true;
+                }
             });
 
-		})();
+            function createSpan(html,index){
+                let data = ifAdd[index];
+                if(!data.aTipSpan){
+                    data.aTipSpan = document.createElement("span");
+                    data.aTipSpan.innerHTML = html;
+                    data.aRightSpan = data.aTipSpan.cloneNode(true);
+
+                    //点击删除
+                    data.aTipSpan.onclick = function(){
+                        oTip.removeChild(data.aTipSpan);
+                        oRight.removeChild(data.aRightSpan);
+                        ifAdd[index].bool = false;
+                    }
+                }
+
+                oTip.appendChild(data.aTipSpan);
+                oRight.appendChild(data.aRightSpan);
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // aSpan.forEach((ele,index)=>{
+            //
+            //     ele.onclick = function(){
+            //         let newSpan = document.createElement("span");
+            //         //创建span
+            //
+            //         newSpan.classList.add("create");
+            //         newSpan.innerHTML = aSpan[index].innerHTML;
+            //
+            //         //添加span
+            //
+            //         oTip.appendChild(newSpan.cloneNode(true));
+            //         oRight.appendChild(newSpan);
+            //         // 获取要点击删除的span
+            //         let aTipSpan = [...document.querySelectorAll("#tip span")];
+            //         let aRightSpan = [...document.querySelectorAll("#right span")];
+            //
+            //         //点击删除span
+            //         aTipSpan.forEach((ele,index)=>{
+            //             aTipSpan[index].classList.add("tip");
+            //             ele.onclick = function(){
+            //                 this.remove();
+            //                 aRightSpan[index].remove();
+            //             }
+            //         });
+            //     }
+            //
+            //
+            //
+            // });
+
+        })();
 		
 	</script>
 </html>

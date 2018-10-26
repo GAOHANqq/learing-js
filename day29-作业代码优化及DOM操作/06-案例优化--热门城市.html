@@ -30,9 +30,9 @@
             font-size: 20px;
         }
         #left .info span{
-            margin-left: 10px;
             cursor: pointer;
             font-weight: bolder;
+            margin-right: 10px;
         }
         #left .info span:hover{
             color:red;
@@ -43,8 +43,8 @@
             height: 100%;
             background-color: rgba(0,0,0,.7);
         }
-        span.create{
-            display: inline-block;
+        #tip span,#right span{
+            float:left;
             width: 80px;
             height: 40px;
             margin: 5px;
@@ -56,7 +56,10 @@
             line-height: 40px;
             border: 1px solid #bbb;
         }
-        span.tip:after{
+        #tip span{
+            cursor: pointer;
+        }
+        #tip span:after{
             position: relative;
             top:-50px;
             right:-70px;
@@ -70,7 +73,7 @@
             background-color: #fff;
             border: 1px solid #666;
         }
-        span.tip:hover:after{
+        #tip span:hover:after{
             color:red;
         }
     </style>
@@ -92,39 +95,55 @@
             oTip   = document.getElementById("tip"),
             oRight = document.getElementById("right")
         ;
-            data.forEach((ele)=>{
+            data.forEach((ele,index)=>{
                 let newSpan = document.createElement("span");
-                    newSpan.innerHTML = ele;
+                    newSpan.innerHTML = ele.desc;
                     //  热门城市的添加
                     oInfo.appendChild(newSpan);
 
                 newSpan.onclick = function(){
                     // span的添加
-                    oTip.appendChild(newSpan.cloneNode(true));
-                    oRight.appendChild(newSpan.cloneNode(true));
-                    //要删除的span的获取
-                    let aTipSpan = [...document.querySelectorAll("#tip span")];
-                    let aRightSpan = [...document.querySelectorAll("#right span")];
+                    let allData = data[index];
 
-                    aTipSpan.forEach((ele,index)=>{
-                        //  要删除的span的css样式
-                        aTipSpan[index].classList.add("create");
-                        aTipSpan[index].classList.add("tip");
-                        aRightSpan[index].classList.add("create");
+                    if(allData.bool){return};
+                    if(!allData.aLeftSpan){
+                        allData.aLeftSpan = newSpan.cloneNode(true);
+                        allData.aRSpan = newSpan.cloneNode(true);
+                    }
 
-                        //点击删除span
-                        ele.onclick = function(){
-                            this.remove();
-                            aRightSpan[index].remove();
-                        }
-                    });
+                    oTip.appendChild(allData.aLeftSpan);
+                    oRight.appendChild(allData.aRSpan);
+                    allData.bool = true;
+
+                    //点击删除
+                    allData.aLeftSpan.onclick = function(){
+                        oTip.removeChild(allData.aLeftSpan);
+                        oRight.removeChild(allData.aRSpan);
+                        allData.bool = false;
+                    };
                 };
-
             });
 
 
     })(
-        ["马来西亚","韩国","三亚","新西兰","云南"]
+        [
+            {
+                desc : "马来西亚"
+            },
+            {
+                desc : "韩国"
+            },
+            {
+                desc : "三亚"
+            },
+            {
+                desc : "新西兰"
+            },{
+                desc : "云南"
+            }
+
+
+        ]
     );
 
 </script>

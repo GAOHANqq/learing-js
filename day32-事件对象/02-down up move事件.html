@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            // onmousedown
+            // onmouseup
+            // onmousemove
+
+        // 方法一: 使用布尔值判断是否触发move事件
+        //     let ifDown = false;
+        //     document.onmousedown = function(){
+        //         console.log("down");
+        //         ifDown = true;
+        //     }
+        //     document.onmousemove = function(){
+        //         if(!ifDown) return;
+        //         console.log("我在动");
+        //     }
+        //     document.onmouseup = function(){
+        //         console.log("up");
+        //         ifDown = false;
+        //     }
+
+        // 方法二 :
+            document.onmousedown = function(){
+                console.log("down");
+                document.onmousemove = function(){
+                    console.log("我在动");
+                }
+            }
+            document.onmouseup = function(){
+                document.onmousemove = null;
+                console.log("up");
+            }
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            let oW = document.getElementById("wrap");
+
+
+            oW.onmousedown = function(ev){
+                // 获取鼠标初始位置
+                let sX = ev.clientX;
+                let sY = ev.clientY;
+
+                // 获取鼠标按下时,盒子的初始位置
+                let sLeft = this.offsetLeft;
+                let sTop = this.offsetTop;
+
+                document.onmousemove = function(ev){
+                    // 获取鼠标变化量
+                    let mX = ev.clientX - sX;
+                    let mY = ev.clientY - sY;
+
+                    //盒子的当前位置 = 盒子原来的位置+变化量
+                    oW.style.left = sLeft + mX + "px";
+                    oW.style.top = sTop + mY + "px";
+
+                }
+            }
+
+            document.onmouseup = function(){
+                this.onmousemove = null;
+            }
+
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

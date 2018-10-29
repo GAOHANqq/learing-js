@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            /*
+                event事件对象
+                    事件函数执行时,第一个参数就是事件对象
+                    存储着和该次事件相关的数据信息
+                    IE8及以下浏览器,使用envent全局变量表示事件对象
+
+                 该对象里面重要的一些属性:
+                    clientX/clentY  事件触发时,鼠标距离可视区的距离
+                    pageX/pageY     事件触发时,鼠标距离文档的距离
+                    screenX/screenY 事件触发时,鼠标距屏幕显示器的距离
+
+            */
+
+
+            // document.onclick = function(e){
+            //     console.log(e);
+            // }
+
+
+            // document.onclick = function(){
+            //     console.log(window.event);
+            // }
+
+            // 兼容写法
+
+            document.onclick = function(e){
+                e = e || window.event;
+                console.log(e);
+            }
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

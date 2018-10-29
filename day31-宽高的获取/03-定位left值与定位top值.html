@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                position: relative;
+                width: 200px;
+                height: 200px;
+                margin: 50px;
+                border: 1px solid red;
+            }
+            #content{
+                width: 100px;
+                height: 100px;
+                background-color: green;
+            }
+            #content p{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="content">
+                <p>你好</p>
+            </div>
+        </div>
+        
+        <script>
+            let oP = document.querySelector("#content p")
+
+            // 定位父级 offsetParent
+            console.log(oP.offsetParent);
+
+            // offsetLeft 与 offsetTop
+            // 获取元素到定位父级的距离
+            console.log(oP.offsetLeft);
+            console.log(oP.offsetTop);
+
+
+
+            // 获取元素到文档的距离
+            function getOffset(ele){
+                let top=0,left=0;
+
+                while(ele !== document.body){
+                    top += ele.offsetLeft;
+                    left += ele.offsetTop;
+                    ele = ele.offsetParent;
+                }
+                return {top,left};
+            }
+            console.log(getOffset(oP));
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

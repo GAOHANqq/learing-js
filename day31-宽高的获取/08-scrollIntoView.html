@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                position: relative;
+                top:1500px;
+                left:1500px;
+                width: 100px;
+                height: 100px;
+                background-color: pink;
+
+            }
+        </style>
+    </head>
+    <body style="height: 3000px;">
+        <div id="wrap"></div>
+        
+        <script>
+            // ele.scrollIntoView()
+            // 让元素滚动到可视区域（HTML5标准)
+            // 默认顶部对齐
+            // 参数 true 与浏览器对齐(顶部)，false元素在窗口居中显示(底不对齐)
+
+            let oW = document.getElementById('wrap');
+
+            document.onclick = function () {
+                oW.scrollIntoView();
+            }
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

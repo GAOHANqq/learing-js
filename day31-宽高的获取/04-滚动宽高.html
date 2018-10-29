@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+
+        </style>
+    </head>
+    <body style="height:2000px">
+        <div id="wrap"></div>
+        
+        <script>
+            document.onclick = function(){
+                //滚动高 scrollTop
+                //滚动宽 scrollLeft
+                //这两个都可以赋值
+
+                // 以前的谷歌浏览器(手机浏览器)  document.body.scrollTop
+
+                console.log(document.documentElement.scrollTop);
+            }
+
+            // 兼容写法(最好这样写)
+            console.log(document.documentElement.offsetTop || document.body.scrollTop);
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

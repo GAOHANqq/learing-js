@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        .wrap{
+            position: relative;
+            /*z-index: 1;*/
+            /*top: 200px;*/
+            /*left: 200px;*/
+            width: 50px;
+            height: 50px;
+            background-image:radial-gradient(#fff 0%,red 100%);
+            border-radius: 50%;
+        }
+        /*#shadow{*/
+            /*position: absolute;*/
+            /*top: 0;*/
+            /*left: 0;*/
+            /*width: 100%;*/
+            /*height: 100%;*/
+        /*}*/
+        /*#shadow p{*/
+            /*position: absolute;*/
+            /*width: 40px;*/
+            /*height: 40px;*/
+            /*background-color: greenyellow;*/
+            /*border-radius: 50%;*/
+            /*transform-origin: center center;*/
+            /*transform: scale(1);*/
+        /*}*/
+    </style>
+</head>
+<body>
+    <div class="wrap"></div>
+    <div class="wrap"></div>
+    <div class="wrap"></div>
+    <div class="wrap"></div>
+    <div class="wrap"></div>
+    <div class="wrap"></div>
+    <div class="wrap"></div>
+    <div class="wrap"></div>
+    <div class="wrap"></div>
+    <div class="wrap"></div>
+    <!--<div id="shadow"></div>-->
+    <script>
+        (function(){
+
+            let aW = [...document.querySelectorAll(".wrap")];
+            let oShadwow = document.getElementById("shadow");
+
+
+            aW.forEach((ele,index)=>{
+                //初始left top
+                let sLeft = aW[index].offsetLeft;
+                let sTop = aW[index].offsetTop;
+
+
+                let maxLeft,maxTop;
+
+                // 获取浏览器的可视区域的宽高
+                window.onresize = (function m(){
+                    maxLeft = window.innerWidth - aW[index].offsetWidth;
+                    maxTop = window.innerHeight - aW[index].offsetHeight;
+                    return m;
+                })();
+
+                let stepX = 5;
+                let stepY = 8;
+
+                !function run(){
+                    sLeft += stepX;
+                    sTop += stepY;
+                    //水平撞墙,方向取反
+                    if(sLeft >= maxLeft){
+                        sLeft = maxLeft;
+                        stepX = -stepX;
+                    }
+                    if(sLeft <= 0){
+                        sLeft = 0;
+                        stepX = -stepX;
+                    }
+                    //垂直撞墙,方向取反
+                    if(sTop >= maxTop){
+                        sTop = maxTop;
+                        stepY = -stepY;
+                    }
+                    if(sTop <= 0){
+                        sTop = 0;
+                        stepY = -stepY;
+                    }
+
+                    aW[index].style.left = sLeft + "px";
+                    aW[index].style.top = sTop + "px";
+                    // createShadow(sLeft,sTop);
+                    requestAnimationFrame(run)
+                }();
+            });
+
+
+
+
+            // //速度step
+
+
+            // 生成拖尾
+            // function createShadow(left,top){
+            //     let oP =document.createElement("p");
+            //     oP.style.left = left+5 + "px";
+            //     oP.style.top = top+5 + "px";
+            //     oP.style.transition = "transform .3s,opacity .3s";
+            //     setTimeout(()=>{
+            //         oP.style.transform = "scale(.4)"
+            //         oP.style.opacity = "0"
+            //     });
+            //     setTimeout(()=>{oShadwow.removeChild(oP)},300);
+            //     oShadwow.appendChild(oP);
+            // }
+
+        })();
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

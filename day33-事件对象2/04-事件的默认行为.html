@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                width: 200px;
+                height: 200px;
+                border: 1px solid red;
+                overflow-y: scroll;
+            }
+            #wrap box{
+                width: 100%;
+                height: 800px;
+
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="box">
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+                <p>默认事件</p>
+            </div>
+        </div>
+        
+        <script>
+            // 鼠标右键就是一个默认行为
+
+            // 1.`onselectstart="return false"` 处理文字选中
+            // 2.`ondragstart="return false"`   处理图片拖动
+            // 3.`oncontextmenu="return false"` 右键点击会失去效果
+
+
+    // DOM0级事件里直接return false
+            // document.oncontextmenu = function(){
+            //    return false;// 右键点击会失去效果
+            // }
+            // document.onselectstart = function(){
+            //     return false;// 文字无法选中
+            // }
+
+    // DOM2级事件:
+    //      主流浏览器:
+    //          event.preventDefault();//该方法阻止元素发生默认的行为
+
+                function callback(event){
+                    event.preventDefault();//该方法阻止元素发生默认的行为
+                }
+                document.addEventListener("contextmenu",callback)//右键失去效果
+
+                // mousewheel 滚轮事件
+                document.querySelector("#wrap").addEventListener("mousewheel",function(ev){
+                    ev.preventDefault();
+                })
+    //
+
+
+    //       IE浏览器:
+    //             event.returnValue = false;//该属性阻止元素发生默认的行为
+    //
+    //             function callback2(event){
+    //                 event = event || window.event;
+    //                 event.returnValue = false;//该属性阻止元素发生默认的行为
+    //             }
+    //             document.attachEvent("onselectstart",callback2);
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

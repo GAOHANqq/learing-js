@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            // 浏览器对象模型 (BOM)
+            (function(){
+            //(1)Window 对象属性
+                    //1) location
+                        // location.hash    #和后面的内容
+                        // location.search  ?和后面的内容
+                console.log( window.location );
+
+                    //2) history  访问历史
+                    //     history.lenght   返回浏览器历史列表中的 URL 数量。
+                        // history.back     返回上一次的地址
+                        // history.forward  向前一次
+                        // history.go(num)  运行到num的地址
+
+
+                    // 3)Navigator  记录当前浏览器的信息
+                        // window.`navigator.userAgent` 浏览器信息
+
+                console.log(window.navigator);
+
+            //(1) Window 对象方法
+
+                // 1)open()
+
+                // window.open("https://www.baidu.com","_self")
+
+                // 2)close() 关闭浏览器窗口
+                    window.close()
+
+            })();
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

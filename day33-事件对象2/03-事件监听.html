@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                width: 200px;
+                height: 200px;
+                background-color: pink;
+            }
+            #box{
+                width: 150px;
+                height: 150px;
+                margin-top: 5px;
+                background-color: red;
+            }
+            #content{
+                width: 100px;
+                height: 100px;
+                margin-top: 5px;
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="box">
+                <div id="content">3</div>
+            </div>
+        </div>
+
+
+
+        <script>
+           (function(){
+               /*
+               * 1 html 9
+               *   2 body 8
+               *     3  wrap 7
+               *        4  box 6
+               *           5 content
+               * 事件冒泡:content->box->wrap->body->html 后事件->前事件(5-9)
+               * 事件捕获:html->body->wrap->box->content 前事件->后事件(1-5)
+               *
+               *
+               * */
+
+
+               /* 推荐使用DOM2级添加监听事件
+                    主流浏览器:   addEventListener(事件类型,回调方法,捕获true|冒泡false)
+                                this指向事件节点
+                                默认冒泡:子节点事件--->父节点事件
+                                (捕获(参数为true)):父节点事件--->子节点事件
+                                事件注销:obj.removeEventListener(事件名称,callback)
+
+                    IE浏览器 :   attachEvent(事件类型,回调方法,冒泡)
+                                this指向windown
+                                IE11已不再支持
+                                IE没有事件捕获,只有事件冒泡
+                                事件注销:obj.detachEvent(事件名称,callback);
+              */
+               var oW  =document.getElementById("wrap");
+               var oBox  =document.getElementById("box");
+               var oContent  =document.getElementById("content");
+
+               // DOM 0级事件(不可以实现多个事件的实现,会产生事件覆盖)
+                   oW.onclick = function(){
+                       console.log("事件1");
+                   };
+                   oW.onclick = function(){
+                       console.log("事件覆盖,只打印事件2");
+                   };
+
+               //事件监听: DOM 2级事件(不会产生事件覆盖)
+
+                    oBox.addEventListener("click",function(event){
+                        console.log(this);// this指向监听事件节点本身
+                        //console.log(event);
+                    });
+
+                    var callback  = function(){
+                        console.log("第二次的点击事件");
+                    }
+                    oBox.addEventListener("click",callback);
+
+                    //双击注销第二次的点击事件
+                   document.ondblclick = function(){
+                       oBox.removeEventListener("click",callback);
+                   }
+                   //移除 obj.removeEventListener(事件名称，事件函数)
+
+
+
+               // IE
+               // oContent.attachEvent("onclick",function(event){
+               //     event = event || window.event;
+               //     console.log(this);//this指向window
+               // });
+
+
+               //事件注销:
+               // object.detachEvent(事件名称,callback);
+
+           })();
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

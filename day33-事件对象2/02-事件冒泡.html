@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #box1{
+                float: left;
+                padding:10px;
+                border: 1px solid #000;
+            }
+            #box2{
+                width: 200px;
+                height: 200px;
+                border: 1px solid #000;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box1">
+            box1
+            <div id="box2">box2</div>
+        </div>
+        
+        <script>
+            // 在JS中 直接可以使用id名绑定事件,不需要获取元素节点,但是不推荐这么做
+
+
+            //事件冒泡: 子元素事件触发时,父元素相同的事件也会同时触发
+                // 与布局位置无关,只要存在父子级关系,就存在冒泡
+
+            // stopPropagation() 终止事件冒泡(主流浏览器,IE8及以下不支持)
+            // IE的终止冒泡: event.cancelBubble = true
+          (function(){
+              box1.onclick = function(){
+                  console.log(1);
+              };
+
+              // box2.onclick = function(){
+              //     console.log(2);
+              // }
+
+              box2.onclick = function(event){
+                  event || window.event;
+                 // event.stopPropagation();// 终止事件冒泡
+
+                  // 兼容写法:
+                  event.stopPropagation ? event.stopPropagation()
+                      :(event.cancelBubble = true);
+                  console.log(2);
+              }
+
+            // 当点击box2时,会打印2 1   ,同时触发两个点击事件,这就是一个事件冒泡
+            // 冒泡的触发顺序:box2->box1->body->html
+          })();
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

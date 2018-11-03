@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                width: 600px;
+                height: 800px;
+                background-color: green;
+                overflow-y: scroll;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <p>滚动测试</p>
+            <p>滚动测试</p>
+            <p>滚动测试</p>
+            <p>滚动测试</p>
+            <p>滚动测试</p>
+            <p>滚动测试</p>
+            <p>滚动测试</p>
+            <p>滚动测试</p>
+            <p>滚动测试</p>
+            <p>滚动测试</p>
+            <p>滚动测试</p>
+            <p>滚动测试</p>
+            <p>滚动测试</p>
+            <p>滚动测试</p>
+            <p>滚动测试</p>
+            <p>滚动测试</p>
+            <p>滚动测试</p>
+            <p>滚动测试</p>
+        </div>
+        
+        <script>
+           var func = addEvent(wrap,"mousewheel",function(){
+               console.log(1);
+           },true)
+           // addEvent(document,"dblclick",function(){
+           //     removeEvent(wrap,"mousewheel",func)
+           // },true)
+        //添加事件
+        function addEvent(obj,type,fn,boolean){
+            boolean = boolean || false;//处理捕获冒泡
+            obj[type+fn.name]=handle;//添加方法
+            obj.addEventListener?obj.addEventListener(type,obj[type+fn.name],boolean):obj.attachEvent('on'+type,obj[type+fn.name]);
+
+            //滚轮事件
+            if(type=='mousewheel'){
+                //obj['on'+type]= handle;//chrome 及ie
+               obj.addEventListener?obj.addEventListener('DOMMouseScroll',obj[type+fn.name],boolean):'';//兼容火狐
+
+            }
+
+            //处里e
+           function handle(e){
+                e = e|| window.event;
+                e.wheel = e.wheelDelta?e.wheelDelta:e.detail*(-40);//处理滚轮方向
+
+                fn.call(obj,e);
+                e.preventDefault?e.preventDefault():e.returnValue = false;
+            }
+
+
+       }
+
+
+        //移除事件
+        function removeEvent(obj,type,fn,boolean){
+           boolean = boolean || false;//处理捕获冒泡
+            obj.removeEventListener?obj.removeEventListener(type,obj[type+fn.name],boolean):obj.detachEvent('on'+type,obj[type+fn.name]);
+            //滚轮事件
+            if(type=='mousewheel'){
+                obj.removeEventListener?obj.removeEventListener('DOMMouseScroll',obj[type+fn.name],boolean):'';//兼容火狐
+
+            }
+
+        }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

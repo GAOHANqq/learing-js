@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                width: 200px;
+                height: 200px;
+                border: 1px solid red;
+                overflow-y: scroll;
+                margin: 20px;
+            }
+            #wrap .box{
+                width: 100%;
+                height: 800px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="box"></div>
+        </div>
+        
+        <script>
+            (function(){
+                let oWrap = document.getElementById("wrap");
+                let oBox = document.getElementsByClassName("box");
+
+            /* 滚动事件
+
+               谷歌和IE:  mousewheel/onmousewheel
+                            滚动方向:ev.wheelDelta
+                                    下滚:-120  上滚:120
+
+               火狐浏览器:  DOMMouseScroll
+                                  滚动方向:ev.detail
+                                    下滚:3 上滚:-3
+
+
+            */
+                // 判断
+                if(document.createElement("div").onmousewheel === null){
+                    console.log("谷歌");
+                }else{
+                    console.log("火狐");
+                }
+
+
+
+                // oWrap.addEventListener("mousewheel",function(ev){
+                //     console.log(ev.wheelDelta);
+                //     console.log(1);
+                // });
+                oWrap.DOMMouseScroll("mousewheel",function(ev){
+                    console.log(ev.wheelDelta);
+                    console.log(1);
+                });
+
+
+
+            })();
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

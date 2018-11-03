@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #box{
+                width: 100px;
+                height: 100px;
+                background-color: pink;
+            }
+            #wrap{
+                width: 500px;
+                height: 500px;
+                background-color: green;
+                margin: 20px;
+                overflow-y: scroll;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box"></div>
+        <div id="wrap">
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+            <p>滚动事件</p>
+        </div>
+        
+        <script>
+        /* 主流浏览器:   addEventListener(事件类型,回调方法,捕获true|冒泡false)
+                    this指向事件节点
+                    默认冒泡:子节点事件--->父节点事件
+                    (捕获(参数为true)):父节点事件--->子节点事件
+                    事件注销:obj.removeEventListener(事件名称,callback)
+
+            IE浏览器 :   attachEvent(事件类型,回调方法,冒泡)
+                this指向windown
+                IE11已不再支持
+                IE没有事件捕获,只有事件冒泡
+                事件注销:obj.detachEvent(事件名称,callback);
+        */
+
+        /* 滚动事件
+              谷歌和IE:  mousewheel/onmousewheel
+                           滚动方向:ev.wheelDelta
+                                   下滚:-120  上滚:120
+              火狐浏览器:  DOMMouseScroll
+                                 滚动方向:ev.detail
+                                   下滚:3 上滚:-3
+           */
+
+
+       oneEvent(box,"click",function(){
+           this.style.backgroundColor = "red";
+           console.log("一次性事件");
+       });
+
+        //一次性事件
+        function oneEvent(ele,evType,callback,capture){
+            var fn = addEvent(ele,evType,function(e){
+                callback.call(ele,e);
+                removeEvent(ele,evType,fn);
+            });
+        }
+
+
+
+
+        //事件监听
+            function addEvent(ele,evType,callback,capture){
+
+                if(ele.addEventListener){
+                    ele.addEventListener(evType,callback,capture);
+                    console.log("主流浏览器");
+
+                    // 判断是否是火狐浏览器
+                    if( evType === "mousewheel" && document.createElement("div").onmousewheel === undefined){
+                        evType = "DOMMouseScroll";
+                        console.log("滚轮事件,火狐浏览器");
+                    }
+
+                    return callback;
+                }else{
+
+                    var codeback = function(){
+                        callback.call(ele);//低版本IE不支持bind,所以用call apply
+                    }
+                    ele.attachEvent("on"+evType,codeback);
+                    console.log("IE浏览器");
+                    return codeback;
+                }
+
+            }
+
+            //事件移除
+            function removeEvent(ele,evType,callback,capture){
+                ele.removeEventListener ? ele.removeEventListener(evType,callback,capture)
+                                        : ele.detachEvent("on"+evType,callback);
+                if( evType === "mousewheel" && document.createElement("div").onmousewheel === undefined){
+                    evType = "DOMMouseScroll";
+                }
+            }
+
+        /*
+        *--------------------------------------------------------------------
+            var fn1 = addEvent(box,"click",function(){
+                console.log("box添加了点击事件");
+                this.style.backgroundColor = "red";
+            });
+
+            addEvent(document,"dblclick",function(){
+                removeEvent(box,"click",fn1);
+                console.log("双击取消box的点击事件");
+            })
+        *-------------------------------------------------------------------
+        */
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

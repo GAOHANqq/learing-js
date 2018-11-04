@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                position: relative;
+                width: 400px;
+                height: 600px;
+                border:1px solid red;
+                margin: 50px auto;
+            }
+            #content{
+                position: absolute;
+                right: -10px;
+                width: 20px;
+                height: 100%;
+                background-color: #ccc;
+                border-radius: 20px;
+            }
+            #scroll{
+                position: absolute;
+                top: 0;
+                right: -10px;
+                width: 20px;
+                height: 100px;
+                background-color: rgba(0,0,0,.5);
+                border-radius: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="content"></div>
+            <div id="scroll"></div>
+        </div>
+
+        <script>
+            (function(){
+                var oContent = document.getElementById("content");
+                var oScroll = document.getElementById("scroll");
+
+                addEvent(oScroll,"mousewheel",function(){
+                    console.log(1);
+                });
+
+                //事件监听
+                function addEvent(obj,evType,callback,boolern){
+                //处理捕获冒泡
+                    boolern = boolern || false;
+                //兼容IE
+                    if(obj.addEventListener){
+                        obj.addEventListener(obj,evType,callback,boolern);
+
+                        //兼容火狐
+                        if(evType === "mousewheel" && document.createElement("div").onmousewheel === undefined){
+                            evType = "DOMMouseScroll";
+                        }
+
+                        return callback;
+                    }else{
+                       // 改变this指向
+                        var codeback = function(ev){
+                            callback.call(obj);
+                        }
+                        obj.attachEvent(obj,"on"+evType,codeback);
+                        return codeback;
+                    };
+                };
+
+            //取消事件监听
+                function removeEvent(ele,evType,callback,boolern){
+                    //处理捕获冒泡
+                    boolern = boolern || false;
+
+                    ele.removeEventListener ? ele.removeEventListener(ele,evType,callback,boolern)
+                                            : ele.detachEvent(ele,"on"+evType,codeback);
+
+                    if( evType === "mousewheel" && document.createElement("div").onmousewheel === undefined){
+                        evType = "DOMMouseScroll";
+                    }
+
+                }
+
+
+
+
+            })();
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

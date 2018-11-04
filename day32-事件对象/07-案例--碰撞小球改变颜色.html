@@ -11,104 +11,93 @@
         body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
         ol,ul,li{margin:0;padding:0;list-style:none;}
         img{border:none;}
-        .wrap{
-            position: relative;
-            /*z-index: 1;*/
-            /*top: 200px;*/
-            /*left: 200px;*/
-            width: 50px;
-            height: 50px;
-            background-image:radial-gradient(#fff 0%,red 100%);
+        #wrap{
+            width: 100%;
+            height: 100%;
+        }
+        #wrap p{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 80px;
+            background-image:radial-gradient(#fff 20%,red 100%);
             border-radius: 50%;
         }
-        /*#shadow{*/
-            /*position: absolute;*/
-            /*top: 0;*/
-            /*left: 0;*/
-            /*width: 100%;*/
-            /*height: 100%;*/
-        /*}*/
-        /*#shadow p{*/
-            /*position: absolute;*/
-            /*width: 40px;*/
-            /*height: 40px;*/
-            /*background-color: greenyellow;*/
-            /*border-radius: 50%;*/
-            /*transform-origin: center center;*/
-            /*transform: scale(1);*/
-        /*}*/
+
     </style>
 </head>
 <body>
-    <div class="wrap"></div>
-    <div class="wrap"></div>
-    <div class="wrap"></div>
-    <div class="wrap"></div>
-    <div class="wrap"></div>
-    <div class="wrap"></div>
-    <div class="wrap"></div>
-    <div class="wrap"></div>
-    <div class="wrap"></div>
-    <div class="wrap"></div>
-    <!--<div id="shadow"></div>-->
+    <div id="wrap"></div>
+
     <script>
         (function(){
 
-            let aW = [...document.querySelectorAll(".wrap")];
-            let oShadwow = document.getElementById("shadow");
+            let oWrap = document.getElementById("wrap");
 
+            //生成随机小球(5-10个)
+            (function(){
+                let num = Math.floor(Math.random()*5+5);
+                let oF = document.createDocumentFragment();
+                for(let i=0;i<num;i++){
+                    let oP = document.createElement("p");
+                    oF.appendChild(oP);
+                }
+                oWrap.appendChild(oF);
+            })();
 
-            aW.forEach((ele,index)=>{
-                //初始left top
-                let sLeft = aW[index].offsetLeft;
-                let sTop = aW[index].offsetTop;
-
-
-                let maxLeft,maxTop;
-
-                // 获取浏览器的可视区域的宽高
-                window.onresize = (function m(){
-                    maxLeft = window.innerWidth - aW[index].offsetWidth;
-                    maxTop = window.innerHeight - aW[index].offsetHeight;
-                    return m;
-                })();
-
-                let stepX = 5;
-                let stepY = 8;
-
+            //运动
+            (function(){
                 !function run(){
-                    sLeft += stepX;
-                    sTop += stepY;
-                    //水平撞墙,方向取反
-                    if(sLeft >= maxLeft){
-                        sLeft = maxLeft;
-                        stepX = -stepX;
-                    }
-                    if(sLeft <= 0){
-                        sLeft = 0;
-                        stepX = -stepX;
-                    }
-                    //垂直撞墙,方向取反
-                    if(sTop >= maxTop){
-                        sTop = maxTop;
-                        stepY = -stepY;
-                    }
-                    if(sTop <= 0){
-                        sTop = 0;
-                        stepY = -stepY;
-                    }
+                    let oP = [...oWrap.children];
+                    let speed = [];
+                    //运动速度
+                    oP.forEach((ele,index)=>{
+                        let speedX = 15 - index,
+                            speedY = speedX;
+                        speed[index] = {speedX,speedY}
+                    });
 
-                    aW[index].style.left = sLeft + "px";
-                    aW[index].style.top = sTop + "px";
-                    // createShadow(sLeft,sTop);
-                    requestAnimationFrame(run)
+
+
+                    //left和top的最大最小值
+                    let maxLeft,maxTop;
+                    window.onresize = function r(){
+                        maxLeft = window.innerWidth - 80;
+                        maxTop = window.innerHeight - 80;
+                        return r;
+                    }();
+
+                    oP.forEach((ele,index)=>{
+
+
+                        let left = ele.offsetLeft + speed[index].speedX;
+                        let top = ele.offsetTop + speed[index].speedY;
+
+                        if( left >= maxLeft ){
+                            left = maxLeft;
+                            speed[index].speedX = -speed[index].speedX;
+                        }
+                        if( left <= 0 ){
+                            left = 0;
+                            speed[index].speedX = -speed[index].speedX;
+                        }
+                        if( top >= maxTop ){
+                            top = maxTop;
+                            speed[index].speedY = -speed[index].speedY;
+                        }
+                        if( top <= 0 ){
+                            top = 0;
+                            speed[index].speedY = -speed[index].speedY;
+                        }
+                        ele.style.left = left + "px";
+                        ele.style.top = top + "px";
+                    });
+                    requestAnimationFrame(run);
                 }();
-            });
 
+            })();
 
-
-
-            // //速度step
 
 
             // 生成拖尾

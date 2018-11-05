@@ -48,47 +48,48 @@
 
             //运动
             (function(){
+                let aP = [...oWrap.children];
+                let speed = [];
+                //运动速度
+                aP.forEach((ele,index)=>{
+                    let speedX = 15-index,
+                        speedY = speedX;
+                    speed[index] = {speedX,speedY};
+                });
+
+                //left和top的最大最小值
+                let maxLeft,maxTop;
+                window.onresize = function r(){
+                    maxLeft = window.innerWidth - 80;
+                    maxTop = window.innerHeight - 80;
+                    return r;
+                }();
+                //运动
                 !function run(){
-                    let oP = [...oWrap.children];
-                    let speed = [];
-                    //运动速度
-                    oP.forEach((ele,index)=>{
-                        let speedX = 15 - index,
-                            speedY = speedX;
-                        speed[index] = {speedX,speedY}
-                    });
-
-
-
-                    //left和top的最大最小值
-                    let maxLeft,maxTop;
-                    window.onresize = function r(){
-                        maxLeft = window.innerWidth - 80;
-                        maxTop = window.innerHeight - 80;
-                        return r;
-                    }();
-
-                    oP.forEach((ele,index)=>{
-
-
+                    aP.forEach((ele,index)=>{
                         let left = ele.offsetLeft + speed[index].speedX;
                         let top = ele.offsetTop + speed[index].speedY;
 
+                        //边界反向判断
                         if( left >= maxLeft ){
                             left = maxLeft;
                             speed[index].speedX = -speed[index].speedX;
+                            changeColor(ele);
                         }
                         if( left <= 0 ){
                             left = 0;
                             speed[index].speedX = -speed[index].speedX;
+                            changeColor(ele);
                         }
                         if( top >= maxTop ){
                             top = maxTop;
                             speed[index].speedY = -speed[index].speedY;
+                            changeColor(ele);
                         }
                         if( top <= 0 ){
                             top = 0;
                             speed[index].speedY = -speed[index].speedY;
+                            changeColor(ele);
                         }
                         ele.style.left = left + "px";
                         ele.style.top = top + "px";
@@ -98,21 +99,15 @@
 
             })();
 
-
-
-            // 生成拖尾
-            // function createShadow(left,top){
-            //     let oP =document.createElement("p");
-            //     oP.style.left = left+5 + "px";
-            //     oP.style.top = top+5 + "px";
-            //     oP.style.transition = "transform .3s,opacity .3s";
-            //     setTimeout(()=>{
-            //         oP.style.transform = "scale(.4)"
-            //         oP.style.opacity = "0"
-            //     });
-            //     setTimeout(()=>{oShadwow.removeChild(oP)},300);
-            //     oShadwow.appendChild(oP);
-            // }
+            //颜色改变
+            function changeColor(ele){
+                let [r,g,b] = [
+                    Math.floor(Math.random()*256),
+                    Math.floor(Math.random()*256),
+                    Math.floor(Math.random()*256)
+                ];
+                return  ele.style.backgroundImage = `radial-gradient(#ccc,rgb(${r},${g},${b}))`;
+            }
 
         })();
     </script>

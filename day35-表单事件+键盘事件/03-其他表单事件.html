@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+    <div id="wrap" name="wrap">
+        情不知所以,一往而情深......
+    </div>
+
+    <a href="" id="a1">信息表</a>
+    <form action="" method="" id="form">
+        <input type="text" name="user">
+        男<input type="radio" name="sex">
+        女<input type="radio" name="sex">
+
+        <select name="age" id="age">
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+        </select>
+        <input type="submit" name="submit">
+
+    </form>
+    <script>
+
+        (function(){
+            //  onchange  oninput  onreset onselect onsubmit
+            let oForm = document.getElementById("form");
+
+
+
+            // onchange  失去焦点是会触发change事件
+            oForm.user.onchange = function(){
+                console.log(1);
+            }
+
+            // oninput  输入时就会触发oninput事件
+            oForm.oninput = function(){
+                console.log("oninput事件");
+            }
+
+            oForm.age.onchange = function(){
+                console.log(this.value);
+            }
+
+            oForm.onsubmit = function(){
+                console.log("提交");
+
+                // return false;  //阻值提交
+            }
+
+        })();
+
+        // onselectstart 阻值被选中
+        (function(){
+            let oWrap = document.getElementById("wrap");
+
+            oWrap.onselectstart = function(){
+                this.style.color = "red";
+                return false;
+            }
+
+        // 阻值整个页面被选中
+            // document.onselectstart = function(){
+            //     return false;
+            // }
+
+        })();
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

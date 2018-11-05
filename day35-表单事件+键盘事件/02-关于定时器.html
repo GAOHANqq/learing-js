@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            let num = 0;
+
+        // settimeout
+        // 离开页面,计时器仍旧会触发,num增加速度会变慢
+        // 回到页面,num增加速度加快
+
+            // function m(){
+            //     document.title = ++num;
+            //     setTimeout(m,50);
+            // }
+            // setTimeout(m,50);
+
+        // requestAnimationFrame
+        // 离开页面,计时器不会触发,num停止增加
+        // 回到页面,计时器触发,num继续增加
+            function m(){
+                document.title = ++num;
+                requestAnimationFrame(m);
+            }
+            requestAnimationFrame(m);
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

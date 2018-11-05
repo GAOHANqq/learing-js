@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+
+            // onready()是本身不存在的,它是对onload事件的一种改造封装,当DOM结构加载完成时,就可以触发
+
+            window.onready = function (callback) {
+              //兼容FF,Google
+                if (document.addEventListener) {
+                        document.addEventListener('DOMContentLoaded', function () {
+                            document.removeEventListener('DOMContentLoaded', arguments.callee, false);
+                                callback();
+                        }, false)
+                }
+                 //兼容IE
+                else if (document.attachEvent) {
+                    document.attachEvent('onreadystatechange', function () {
+                          if (document.readyState == "interactive") {
+                                document.detachEvent("onreadystatechange", arguments.callee);
+                                       callback();
+                          }
+                    })
+                }
+
+            }
+
+        //window.onload= function(){ alert('onload');}
+           window.onready(
+                    function(){ alert('ok'); }
+            );
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

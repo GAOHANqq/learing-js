@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            /*
+                按下:keydown(持续性事件)
+                抬起:keyup(一次性事件)
+
+                keypress(持续性的)
+
+                特点: 1)down会在press之前触发
+                     2)down响应所有按键,press只响应键入值相关的键+enter键
+           */
+
+            document.onkeydown = function(){
+                console.log("down");
+            }
+            document.onkeyup = function(){
+                console.log("up");
+            }
+
+
+            document.onkeypress = function(){
+                console.log("press");
+            }
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

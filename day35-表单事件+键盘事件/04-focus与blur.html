@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <br/><br/>
+        <form action="" id="form">
+            <input type="text" name="text1">
+            <input type="text" name="text2">
+            <input type="text" name="text3">
+            <br/><br/>
+            <input type="button" value="按钮">
+        </form>
+
+        <script>
+        //      focus()     blur()  submit()
+
+        // 需求:     1)默认初始焦点在第一个input框
+        //          2)当输入为5个值时,焦点自动跳到下一个input框,且不可修改
+        //          3)强制输入,输入的值小于5个时,焦点不可失去
+
+            (function(){
+                let oForm = document.getElementById("form")
+
+                let aInp = [...oForm.children];
+                oForm.text1.focus();
+                aInp.forEach((ele,index)=>{
+                    ele.oninput = function(){
+                        if( this.value.length >= 5 ){
+                            aInp[index+1] && aInp[index+1].focus();
+                            this.disabled = true;
+                        }
+                    }
+                    ele.onblur = function(){
+                        if(this.value.length < 5){
+                            this.focus();
+                        }
+                    }
+                    //直接提交
+                    // oForm.submit();
+                });
+
+
+
+            })();
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap{
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap"></div>
+
+    <script>
+        (function(){
+            let oWrap = document.getElementById("wrap");
+
+            //最大最小值
+            let maxLeft,maxTop;
+            window.onresize = function r(){
+                maxLeft = window.innerWidth - oWrap.offsetWidth;
+                maxTop = window.innerHeight - oWrap.offsetHeight;
+                return r;
+            }
+
+            document.onkeydown = function(ev){
+                let keyCode = ev.keyCode;
+
+
+                let left = oWrap.offsetLeft;
+                let top = oWrap.offsetTop;
+
+                if( left >= maxLeft ){
+                    left = maxLeft;
+                }
+                if( left <= 0 ){
+                    left = 0;
+                }
+                if( top >= maxTop ){
+                    top = maxTop;
+                    return;
+                }
+                if( top <= 0 ){
+                    top = 0;
+                }
+
+                switch(keyCode){
+                    case 37:
+                    case 65:
+                        moveLeft(left);
+                        break;
+                    case 38:
+                    case 87:
+                        moveTop(top);
+                        break;
+                    case 39:
+                    case 68:
+                        moveRight(left);
+                        break;
+                    case 40:
+                    case 83:
+                        moveBottom(top);
+                        break;
+                }
+            }
+
+            //运动
+            function moveLeft(left){
+                !function m(){
+                    oWrap.style.left = left - 5 + "px";
+                    requestAnimationFrame(m);
+                }();
+            }
+            function moveTop(top){
+                !function m(){
+                    oWrap.style.top = top - 5 + "px";
+                    requestAnimationFrame(m);
+                }();
+            }
+            function moveRight(left){
+                !function m(){
+                    oWrap.style.left = left + 5 + "px";
+                    requestAnimationFrame(m);
+                }();
+            }
+            function moveBottom(top){
+                !function m(){
+                    oWrap.style.top = top + 5 + "px";
+                    requestAnimationFrame(m);
+                }();
+            }
+        })();
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

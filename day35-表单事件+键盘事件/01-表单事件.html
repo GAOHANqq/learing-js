@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap" name="wrap"></div>
+        <a href="" id="a1">信息表</a>
+        <form action="" method="" id="form">
+            <input type="text" name="user">
+            男<input type="radio" name="sex">
+            女<input type="radio" name="sex">
+            <input type="submit" name="submit">
+        </form>
+        <script>
+
+            /*
+
+                焦点事件: (并不是所有的元素都能添加焦点事件,
+                          页面中按tap键会尝试焦点框的就可以获取焦点)
+                          document,window,a,textarea,select以及表单元素可以获取焦点
+                    获取焦点:onfocus
+                    失去焦点:onblur
+
+                    onfocus 获取焦点事件 <input>、<textarea> <select> <a/> 元素
+                    onblur  失去焦点事件 <input>、<textarea>  <select> <a/> 元素
+                */
+
+
+            (function(){
+                //在JS中,表单可以直接通过点操作name获取节点对象
+                //     多个name相同时,获取到类数组radioNodeList{}
+
+                let oForm = document.getElementById("form");
+                console.log(oForm.sex);
+            })();
+
+        // a标签的焦点事件
+            (function(){
+                let a1 = document.getElementById("a1");
+
+                a1.onfocus = function(){
+                    console.log("获得了焦点");
+                };
+                a1.onblur = function(){
+                    console.log("失去了焦点");
+                };
+            })();
+
+        // window的焦点事件
+            (function(){
+
+                window.onfocus = function(){
+                    document.title = "小书书";
+                };
+                window.onblur = function(){
+                    document.title = "卧草,出bug了,肿么办??";
+                };
+            })();
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

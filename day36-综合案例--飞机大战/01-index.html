@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                overflow: hidden;
+                position: relative;
+                width: 512px;
+                height: 768px;
+                margin: 0 auto;
+                border: 1px solid #000;
+                background-image: url("img/bg_1.jpg");
+            }
+            /*标题区域*/
+            #diff,#game,#over{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+            #game,#over{
+                display: none;
+            }
+            #diff .title{
+                text-align: center;
+                padding-top: 150px;
+                padding-bottom: 100px;
+                font-size: 30px;
+                color: #fff;
+            }
+            #diff ul li{
+                width: 150px;
+                height: 35px;
+                line-height: 35px;
+                text-align: center;
+                margin: 20px auto;
+                background-color: #fff;
+                font-size: 14px;
+                font-weight: bolder;
+                cursor: pointer;
+                transition: background-color .2s;
+            }
+            #diff ul li.last{
+                background-color: #f60;
+                color: #fff;
+            }
+            #diff ul li:hover{
+                background-color: #abcdef;
+            }
+            /*游戏区域*/
+            #game .plane{
+                 position: absolute;
+             }
+            #game .bullet{
+                position: absolute;
+            }
+            #wrap .enemy{
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <!--标题区域-->
+            <div id="diff">
+                <p class="title">打飞机1.0</p>
+                <ul>
+                    <li>简单</li>
+                    <li>中等</li>
+                    <li>困难</li>
+                    <li class="last">充钱了</li>
+                </ul>
+            </div>
+            <!--游戏区域-->
+            <div id="game"></div>
+            <!--结算区域-->
+            <div id="over"></div>
+        </div>
+        
+        <script>
+            (function(){
+                //重要变量
+                let oWrap = document.getElementById("wrap"),
+                    oDiff = document.getElementById("diff"),
+                    oGame = document.getElementById("game"),
+                    oOver = document.getElementById("over")
+                ;
+
+                //初始化,给li添加点击事件
+                (function(){
+                    let aLi = [...document.querySelectorAll("#diff ul li")];
+                    aLi.forEach((ele,index)=>{
+                        ele.addEventListener("click",function(ev){
+                            startGame(index,{startX:ev.pageX,startY:ev.pageY});
+                        },false);
+                    });
+                })();
+
+                // 游戏开始
+                function startGame(index,{startX,startY}){
+                    show();// 处理页面的显示与隐藏
+                    createMyPlane(index,{startX,startY});// 生成我军战机
+                    createEnemy(index,{startX,startY});// 生成敌军战机
+                }
+
+                //页面的显示
+                function show(){
+                    oDiff.style.display = "none";
+                    oOver.style.display = "none";
+                    oGame.style.display = "block";
+                }
+
+                //生成我军战机
+                function createMyPlane(index,{startX,startY}){
+                    //变量
+                    let oPlane = new Image(),
+                        width = 50,
+                        height = 50,
+                        left,
+                        top
+                    ;
+                    //创建图片
+                    oPlane.src = "img/plane_0.png";
+                    oPlane.width = width;
+                    oPlane.height = height;
+                    oPlane.className = "plane";
+
+                    //计算飞机的位置
+                    left = startX - oWrap.offsetLeft - width/2;
+                    top = startY - oWrap.offsetTop - height/2;
+                    // 赋值位置,添加到页面中
+                    oPlane.style.left = left + "px";
+                    oPlane.style.top = top + "px";
+                    oGame.appendChild(oPlane);
+                    // 我军的移动
+                    planeMove(startX,startY,left,top,oPlane,width,height);
+                    //我军发射子弹
+                    planeBullet(oPlane,index);
+
+                }
+
+                // 我军的移动
+                function planeMove(startX,startY,left,top,oPlane,width,height){
+                    // 最大最小值限制
+                    let topMin = 0,
+                        topMax = oWrap.offsetHeight- height/2,
+                        leftMin = -width/2,
+                        leftMax = oWrap.offsetWidth - width/2;
+
+                    document.addEventListener("mousemove",move,false);
+                    //mousemove事件
+                    function move(ev){
+                        //鼠标位置的变化量
+                        let x_ = ev.pageX - startX,
+                            y_ = ev.pageY - startY
+                        //我军的新位置
+                        let newLeft = left + x_,
+                            newTop = top + y_;
+                        // 限制极值
+                        newLeft = Math.min(newLeft,leftMax);
+                        newLeft = Math.max(newLeft,leftMin);
+                        newTop = Math.min(newTop,topMax);
+                        newTop = Math.max(newTop,topMin);
+                        // 赋值新位置
+                        oPlane.style.left = newLeft + "px";
+                        oPlane.style.top = newTop + "px";
+                    }
+                }
+
+                //发射子弹
+                function planeBullet(oPlane,index){
+                    // 决定子弹的间隔
+                    let time = [100,200,250,50][index],
+                        // 子弹大小
+                        width = 30,
+                        height = 30,
+                        speed = 15;//子弹速度
+                    ;
+                    // 子弹父本,以供克隆
+                    let Bullet = new Image();
+                        Bullet.src = "img/fire.png";
+                        Bullet.width = width;
+                        Bullet.height = height;
+                        Bullet.className = "bullet";
+                    //定时器生成子弹
+                    !function createBullet(){
+                       //克隆新的子弹
+                       let oBullet = Bullet.cloneNode();
+                       //子弹的位置
+                        let left = oPlane.offsetLeft+oPlane.width/2-width/2,
+                            top = oPlane.offsetTop;
+                        oBullet.style.left = left + "px";
+                        oBullet.style.top = top + "px";
+                        oGame.appendChild(oBullet);
+
+                        // 子弹运动
+                        function m(){
+                            top -= speed;
+                            oBullet.style.top = top + "px";
+                            if( top <= -height ){
+                                oGame.removeChild(oBullet);
+                            }else{
+                                requestAnimationFrame(m)
+                            }
+                        };
+                        requestAnimationFrame(m)
+
+                        //计时器生成子弹
+                        setTimeout(createBullet,time);
+                    }();
+
+
+                }
+
+                // 生成敌军
+                function createEnemy(index){
+                    //变量
+                    let time = [500,450,400,200][index],
+                        sWidth = 72,
+                        sHeight = 60,
+                        bWidth = 130,
+                        bHeight = 100,
+                        num = 0,//敌军计数
+                        topMax = oWrap.offsetHeight;
+                    ;
+
+                    // 小敌军父本
+                    let smallEnemy = new Image();
+                        smallEnemy.src = "img/enemy_small.png";
+                        smallEnemy.width = sWidth;
+                        smallEnemy.height = sHeight;
+                        smallEnemy.className = "enemy";
+                    // 大敌军父本
+                    let bigEnemy = new Image();
+                        bigEnemy.src = "img/enemy_big.png";
+                        bigEnemy.width = bWidth;
+                        bigEnemy.height = bHeight;
+                        bigEnemy.className = "enemy";
+
+                    //定时器生成敌军
+                    !function createEnemy(){
+                        // 克隆新敌军
+                        let oEnemy = ((++num)%5?smallEnemy:bigEnemy).cloneNode();
+                        //敌军的位置
+                        let top = -oEnemy.height,
+                            left = Math.floor(Math.random()*oWrap.offsetWidth - oEnemy.offsetWidth/2);
+                        //赋值及添加到页面
+                        oEnemy.style.left = left + "px";
+                        oEnemy.style.top = top + "px";
+                        oGame.appendChild(oEnemy);
+
+                        // 每个飞机给随机速度
+                        oEnemy.speed = Math.floor(Math.random()*7+2);
+                        function m(){
+                            top += oEnemy.speed;
+                            oEnemy.style.top = top + "px";
+                            if( top > topMax ){
+                                oGame.removeChild(oEnemy);
+                            }else{
+                                requestAnimationFrame(m);
+                            }
+                        }
+                        requestAnimationFrame(m);
+
+                        setTimeout(createEnemy,time);
+                    }();
+                }
+
+
+
+            })();
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

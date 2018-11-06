@@ -28,80 +28,69 @@
         (function(){
             let oWrap = document.getElementById("wrap");
 
-            //最大最小值
-            let maxLeft,maxTop;
-            window.onresize = function r(){
-                maxLeft = window.innerWidth - oWrap.offsetWidth;
-                maxTop = window.innerHeight - oWrap.offsetHeight;
-                return r;
-            }
-
+            // 上下左右四个键
+            let ifDown = {
+              37 : {
+                  bool : false,
+                  timer: null,
+                  setTimer:function(){
+                      oWrap.style.left = oWrap.offsetLeft - 5 + "px";
+                      this.timer = requestAnimationFrame(this.setTimer.bind(this));
+                  },
+                  clearTimer:function(){
+                      cancelAnimationFrame(this.timer);
+                  }
+              },
+              38 : {
+                  bool : false,
+                  timer: null,
+                  setTimer:function(){
+                      oWrap.style.top = oWrap.offsetTop - 5 + "px";
+                      this.timer = requestAnimationFrame(this.setTimer.bind(this));
+                  },
+                  clearTimer(){
+                      cancelAnimationFrame(this.timer);
+                  }
+              } ,
+              39 : {
+                  bool : false,
+                  timer: null,
+                  setTimer:function(){
+                      oWrap.style.left = oWrap.offsetLeft + 5 + "px";
+                      this.timer = requestAnimationFrame(this.setTimer.bind(this));
+                  },
+                  clearTimer(){
+                      cancelAnimationFrame(this.timer);
+                  }
+              },
+              40 : {
+                  bool : false,
+                  timer: null,
+                  setTimer:function(){
+                      oWrap.style.top = oWrap.offsetTop + 5 + "px";
+                      this.timer = requestAnimationFrame(this.setTimer.bind(this));
+                  },
+                  clearTimer(){
+                      cancelAnimationFrame(this.timer);
+                  }
+              }
+            };
+            // 按下事件
             document.onkeydown = function(ev){
                 let keyCode = ev.keyCode;
+                if( !ifDown[keyCode] ) return;
+                ifDown[keyCode].bool || ifDown[keyCode].setTimer();
+                ifDown[keyCode].bool = true;
 
-
-                let left = oWrap.offsetLeft;
-                let top = oWrap.offsetTop;
-
-                if( left >= maxLeft ){
-                    left = maxLeft;
-                }
-                if( left <= 0 ){
-                    left = 0;
-                }
-                if( top >= maxTop ){
-                    top = maxTop;
-                    return;
-                }
-                if( top <= 0 ){
-                    top = 0;
-                }
-
-                switch(keyCode){
-                    case 37:
-                    case 65:
-                        moveLeft(left);
-                        break;
-                    case 38:
-                    case 87:
-                        moveTop(top);
-                        break;
-                    case 39:
-                    case 68:
-                        moveRight(left);
-                        break;
-                    case 40:
-                    case 83:
-                        moveBottom(top);
-                        break;
-                }
+            }
+            //抬起事件
+            document.onkeyup= function(ev){
+                let keyCode = ev.keyCode;
+                if( !ifDown[keyCode] ) return;
+                ifDown[keyCode].clearTimer();
+                ifDown[keyCode].bool = false;
             }
 
-            //运动
-            function moveLeft(left){
-                !function m(){
-                    oWrap.style.left = left - 5 + "px";
-                    requestAnimationFrame(m);
-                }();
-            }
-            function moveTop(top){
-                !function m(){
-                    oWrap.style.top = top - 5 + "px";
-                    requestAnimationFrame(m);
-                }();
-            }
-            function moveRight(left){
-                !function m(){
-                    oWrap.style.left = left + 5 + "px";
-                    requestAnimationFrame(m);
-                }();
-            }
-            function moveBottom(top){
-                !function m(){
-                    oWrap.style.top = top + 5 + "px";
-                    requestAnimationFrame(m);
-                }();
-            }
         })();
     </script>
 </body>

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            /*
+                修饰符
+                       i 不区分大小写
+                       g 全局匹配
+                       m 换行匹配
+
+             */
+
+            /*
+                match() : 寻找匹配的内容,拿到并返回一个数组,否则为null
+                字符串.match(正则);
+             */
+            let a = /s/;
+            let b = /s/i;
+            let s = "S";
+            console.log(a.test(s)); //false
+            console.log(b.test(s)); //true
+
+
+            let str = "ab高翰Abc";
+            let reg = /ab/;
+            let reg1 = /ab/ig;
+            console.log( str.match(reg) ); null
+            console.log( str.match(reg1) ); // index 位置 input 原内容
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

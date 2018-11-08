@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            /*
+             *  换行 \r \n  制表符 \t
+             */
+
+            let str = " \"高翰\" " //转义 ""
+            console.log(str);
+
+            // 转义特殊字符
+            let str1 = "/";
+            let reg = /\//;
+
+            console.log(reg.test(str1)); //true
+
+        //转义符号配合字母有独特意义
+            /*
+            匹配空格:
+                     \s 匹配各种空格
+                     \S 匹配非空格
+
+                     \d 匹配数字
+                     \D 匹配非数字
+
+                     \w 匹配字符(数字 字母 下划线)
+                     \W 匹配非字符
+
+                     \b 匹配连词符(独立部分)
+                     \B
+                        起始 结束 空格 以及除了\w以外的所有部分都是独立部分
+                        汉字是非独立的,不可以用\b匹配
+             */
+
+            let a = /\b高翰\b/; //仅匹配,独立的
+            let s = "I am 高翰,I am a student";
+
+            console.log(a.test(s)); // false
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

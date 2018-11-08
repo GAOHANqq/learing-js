@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            /*
+                量词: {多少位}
+                    {n}     n个
+                    {n,m}   n-m个
+                    {n,}    n到无穷大
+
+                特殊量词:专属的符号代替
+                    匹配1个到无穷大: {1,}    +
+                    匹配0个到无穷大: {0,}    *
+                    匹配0个或一个: {0,1}   ?
+
+
+                默认贪婪模式:即从多的开始匹配,
+                        例如: {2,4} 先匹配4个,没有则匹配3个,没有则匹配2个
+
+                量词后面加 ? 就成了惰性模式  从少的开始匹配
+
+            */
+
+            let reg = /\d{10}/;
+            let str = "高翰18855031615";
+
+            console.log(str.match(reg));;
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

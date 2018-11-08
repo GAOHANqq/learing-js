@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+
+             /*
+                正则表达式
+                    对象
+                    配合一些api来验证字符串
+
+
+              */
+
+            (function(){
+                //需求:将字符串中的连续数字变成数组形式   ["123","456","789"]
+                let str1 = "123高翰456电信789";
+                let str2 = "z789y456y123";
+
+            //    正则
+                function fn(str){
+                    return str.match(/\d+/g);
+                }
+
+            //字符串方法
+                // function fn(str){
+                //     let s = "";
+                //     let arr = [];
+                //     for(let i=0,len=str.length;i<len;i++){
+                //         let n = str.charAt(i);
+                //         if(!isNaN(n)){
+                //             s += n;
+                //         }
+                //         else{
+                //             s && arr.push(s);
+                //             s = "";
+                //         }
+                //     }
+                //     s && arr.push(s);
+                //     return arr ;
+                // }
+
+                console.log(fn(str1));
+                console.log(fn(str2));
+
+            })();
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

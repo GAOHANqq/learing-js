@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            (function(){
+            // 第一种创建正则表达式的方法: 双斜杠 /要匹配的/
+                let a = /abc/;
+                console.log(a);
+                console.log( typeof a ); // object
+
+            // 第二种创建正则表达式的方法: new RegExp("要匹配的")
+                    //动态匹配时使用
+                let b = new RegExp("abc");
+                console.log(b);
+
+
+            /*
+                相关的API
+                    1) test()
+                        正则.test(字符串)
+                        匹配成功返回true,否则返回false
+
+            */
+            let reg = /abc/;
+                console.log(reg.test("高翰abc电信"));// true
+                console.log(reg.test("高翰deg电信"));// false
+
+            let str = "高翰";
+            let reg1 = /str/;//这种定义方式,无法根据变量来制定正则
+            let reg2 = new RegExp(str);
+
+                console.log(reg1.test("高翰abc电信"));// false
+                console.log(reg2.test("高翰abc电信"));// true
+
+
+
+            })();
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

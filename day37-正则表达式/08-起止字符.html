@@ -18,7 +18,16 @@
         <div id="wrap"></div>
         
         <script>
-            
+            /*
+                起始位置  ^
+                结尾位置  $
+
+            */
+            let reg = /^abc/g;
+            let str = "abcddef";
+            let str1 = "defabc";
+            console.log(str.match(reg));// ["abc"]
+            console.log(str1.match(reg));// null
         </script>
     </body>
 </html>

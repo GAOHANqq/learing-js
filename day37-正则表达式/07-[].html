@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            /*
+
+                字符集
+                []
+
+                ^ 如果出现字符集的第一位,那么整个字符集就是除了的意思
+
+                 常用:   [0-9]
+                        [a,z]
+                        [A,Z]
+
+                匹配汉字文字：
+                    [\u4e00-\u9fa5]
+                匹配非汉字字符：
+                    [^\u4e00-\u9fa5]
+                匹配双字节字符（汉字、中文标点符号等）：
+                    [^\x00-\xff]
+
+
+             */
+
+            let a = /abc|edf/g;// 全局匹配abc或edf
+
+            let s = "abcxxxedf";
+            console.log( s.match(a) );
+
+        // 1)字符集的区间功能
+            let b1 = /1|2|3|4|5|6|7/;
+            let b = /[1-7]/;// 相当于匹配1-7的其中的一个
+
+            // 闲的蛋疼的操作:求高-翰之间有神马字符
+
+            // let str1 = "高".charCodeAt(0);
+            // let str2 = "翰".charCodeAt(0);
+            // for(let i=str2;i<=str1;i++){
+            //     document.write(String.fromCharCode(i));
+            // }
+
+        // 2)字符集的或功能
+            let reg = /[abc0-9]/g;// 匹配a或b或c或0-9的任意一个字符
+            let str = "abc123";
+            console.log(str.match(reg));
+
+            // 匹配字母和数字  /[a-z0-9]/i  或者[a-zA-Z0-9]
+
+
+        // 3)字符集的取反功能
+            let reg1 = /[^abc]/g;  //匹配除了abc以外的字符
+            let string = "abc5670";
+            console.log(string.match(reg1));
+        // 4)某些特殊符号在字符集中会失去特殊意义,如下
+            let reg2 = /[{}?*+()/.]/
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

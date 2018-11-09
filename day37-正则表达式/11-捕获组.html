@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            /*
+                RegExp.$1-9
+                匹配最近的一次检测正则的子项
+                    $1 第一个子项
+                    $2 第二个子项
+                    一次类推
+
+            */
+
+
+            let a = /a(b)c/;
+            let s = "abc";
+            console.log(a.test(s));
+
+            console.log(RegExp.$1); // b
+
+
+            /*
+                反向引用
+
+            */
+
+            let a1 = /(\d){2}/;
+            let s1 = "789666";
+            console.log(s1.match(a1)); // 78
+
+            // 捕获组(数字表示第几个子项)
+                // \1 表示把匹配的子项重复一次
+                //  重复两次 \1\1
+                //  重复10次 \1{9}
+
+            let a2 = /(\d(\d))\1\2/;
+            let s2 = "789454555";
+
+            console.log(s2.match(a2)); // 45455
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

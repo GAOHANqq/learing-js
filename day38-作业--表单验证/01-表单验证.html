@@ -69,33 +69,44 @@
         <div id="wrap">
             <div class="title">注册</div>
             <form action="" method="" id="form">
-                <input type="text" name="user" placeholder="请输入用户名" autocomplete="off"><label for="user"><span>√</span></label>
-                <input type="text" name="password" placeholder="请输入密码" autocomplete="off"><label for="user"><span>√</span></label>
-                <input type="text" name="repassword" placeholder="请再次输入密码" autocomplete="off"><label for="user"><span>√</span></label>
-                <input type="text" name="tel" placeholder="请输入手机号" autocomplete="off"><label for="user"><span>√</span></label>
-                <input type="text" name="qq" placeholder="请输入QQ号" autocomplete="off"><label for="user"><span>√</span></label>
+                <div id="info">
+					<input type="text" name="user" placeholder="请输入用户名" autocomplete="off"><label for="user"><span>√</span></label>
+					<input type="text" name="password" placeholder="请输入密码" autocomplete="off"><label for="user"><span>√</span></label>
+					<input type="text" name="repassword" placeholder="请再次输入密码" autocomplete="off"><label for="user"><span>√</span></label>
+					<input type="text" name="tel" placeholder="请输入手机号" autocomplete="off"><label for="user"><span>√</span></label>
+					<input type="text" name="qq" placeholder="请输入QQ号" autocomplete="off"><label for="user"><span>√</span></label>
                 <input type="text" name="email" placeholder="请输入邮箱" autocomplete="off"><label for="user"><span>√</span></label>
+				</div>
                 <div id="btn">
                     <input type="submit" value="提交">
                 </div>
             </form>
         </div>
-        
+
         <script>
             (function(){
                 //重要变量
                 let oForm = document.getElementById("form"),
-                    aInput = document.querySelectorAll("#form input"),
+                    aInput = document.querySelectorAll("#info input"),
                     oBtn = document.querySelector("#btn input")
                 ;
                 //初始化
 
-                oForm.user.focus();
+                oForm.user.focus();//焦点在第一个输入框
                 //用户名验证
                     // 用户名以首字母开头,长度为6-16位
                 aInput.forEach((ele,index)=>{
+					ele.oninput = function(){
+						checkUsername(ele.value);
 
+					}
                 });
+
+				function checkUsername(value){
+					let reg = /^\w{5,15}$/;
+					let str = value;
+					console.log(str.test(reg));
+				}
 
 
 

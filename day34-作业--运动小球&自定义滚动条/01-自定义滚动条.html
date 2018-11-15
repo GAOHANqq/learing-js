@@ -12,6 +12,7 @@
             ol,ul,li{margin:0;padding:0;list-style:none;}
             img{border:none;}
             #wrap{
+                overflow: hidden;
                 position: relative;
                 width: 400px;
                 height: 600px;
@@ -20,13 +21,28 @@
             }
             #content{
                 position: absolute;
+                top: 0;
+                width: 100%;
+            }
+            #content li{
+                line-height: 30px;
+                margin-bottom: 2px;
+                padding: 0 12px;
+                background-color: #eee;
+            }
+            #content li p{
+                line-height: 30px;
+            }
+            #scroll{
+                position: absolute;
+                top: 0;
                 right: -10px;
                 width: 20px;
                 height: 100%;
-                background-color: #ccc;
+                background-color: #999;
                 border-radius: 20px;
             }
-            #scroll{
+            #bar{
                 position: absolute;
                 top: 0;
                 right: -10px;
@@ -39,26 +55,142 @@
     </head>
     <body>
         <div id="wrap">
-            <div id="content"></div>
+            <ul id="content">
+                <li>
+                    <p>1、在强者的眼中，没有最好，只有更好。</p>
+                </li>
+                <li>
+                    <p>2、盆景秀木正因为被人溺爱，才破灭了成为栋梁之材的梦。</p>
+                </li>
+                <li>
+                    <p>3、永远都不要放弃自己，勇往直前，直至成功！</p>
+                </li>
+                <li>
+                    <p>4、没有平日的失败，就没有最终的成功。重要的是分析失败原因并吸取教训。</p>
+                </li>
+                <li>
+                    <p>5、蝴蝶如要在百花园里得到飞舞的欢乐，那首先得忍受与蛹决裂的痛苦。</p>
+                </li>
+                <li>
+                    <p>6、萤火虫的光点虽然微弱，但亮着便是向黑暗挑战。</p>
+                </li>
+                <li>
+                    <p>7、面对人生旅途中的挫折与磨难，我们不仅要有勇气，更要有坚强的信念。</p>
+                </li>
+                <li>
+                    <p>8、对坚强的人来说，不幸就像铁犁一样开垦着他内心的大地，虽然痛，却可以播种。</p>
+                </li>
+                <li>
+                    <p>9、想而奋进的过程，其意义远大于未知的结果。</p>
+                </li>
+                <li>
+                    <p>10、上有天，下有地，中间站着你自己，做一天人，尽一天人事儿。</p>
+                </li>
+                <li>
+                    <p>11、努力向上的开拓，才使弯曲的竹鞭化作了笔直的毛竹。</p>
+                </li>
+                <li>
+                    <p>12、只要你确信自己正确就去做。做了有人说不好，不做还是有人说不好，不要逃避批判。</p>
+                </li>
+                <li>
+                    <p>13、对没志气的人，路程显得远；对没有银钱的人，城镇显得远。</p>
+                </li>
+                <li>
+                    <p>14、生命力的意义在于拼搏，因为世界本身就是一个竞技场。</p>
+                </li>
+                <li>
+                    <p>15、通过云端的道路，只亲吻攀登者的足迹。</p>
+                </li>
+                <li>
+                    <p>16、不经巨大的困难，不会有伟大的事业。</p>
+                </li>
+                <li>
+                    <p>17、泉水，奋斗之路越曲折，心灵越纯洁。</p>
+                </li>
+                <li>
+                    <p>18、人的一生，可以有所作为的时机只有一次，那就是现在。</p>
+                </li>
+                <li>
+                    <p>19、对于攀登者来说，失掉往昔的足迹并不可惜，迷失了继续前时的方向却很危险。</p>
+                </li>
+                <li>
+                    <p>20、生命的道路上永远没有捷径可言，只有脚踏实地走下去。</p>
+                </li>
+                <li>
+                    <p>21、在强者的眼中，没有最好，只有更好。</p>
+                </li>
+                <li>
+                    <p>22、盆景秀木正因为被人溺爱，才破灭了成为栋梁之材的梦。</p>
+                </li>
+                <li>
+                    <p>23、永远都不要放弃自己，勇往直前，直至成功！</p>
+                </li>
+                <li>
+                    <p>24、没有平日的失败，就没有最终的成功。重要的是分析失败原因并吸取教训。</p>
+                </li>
+                <li>
+                    <p>25、蝴蝶如要在百花园里得到飞舞的欢乐，那首先得忍受与蛹决裂的痛苦。</p>
+                </li>
+                <li>
+                    <p>26、萤火虫的光点虽然微弱，但亮着便是向黑暗挑战。</p>
+                </li>
+                <li>
+                    <p>27、面对人生旅途中的挫折与磨难，我们不仅要有勇气，更要有坚强的信念。</p>
+                </li>
+                <li>
+                    <p>28、对坚强的人来说，不幸就像铁犁一样开垦着他内心的大地，虽然痛，却可以播种。</p>
+                </li>
+                <li>
+                    <p>29、想而奋进的过程，其意义远大于未知的结果。</p>
+                </li>
+                <li>
+                    <p>30、上有天，下有地，中间站着你自己，做一天人，尽一天人事儿。</p>
+                </li>
+                <li>
+                    <p>31、努力向上的开拓，才使弯曲的竹鞭化作了笔直的毛竹。</p>
+                </li>
+                <li>
+                    <p>32、只要你确信自己正确就去做。做了有人说不好，不做还是有人说不好，不要逃避批判。</p>
+                </li>
+                <li>
+                    <p>33、对没志气的人，路程显得远；对没有银钱的人，城镇显得远。</p>
+                </li>
+                <li>
+                    <p>34、生命力的意义在于拼搏，因为世界本身就是一个竞技场。</p>
+                </li>
+                <li>
+                    <p>35、通过云端的道路，只亲吻攀登者的足迹。</p>
+                </li>
+                <li>
+                    <p>36、不经巨大的困难，不会有伟大的事业。</p>
+                </li>
+                <li>
+                    <p>37、泉水，奋斗之路越曲折，心灵越纯洁。</p>
+                </li>
+                <li>
+                    <p>38、人的一生，可以有所作为的时机只有一次，那就是现在。</p>
+                </li>
+                <li>
+                    <p>39、对于攀登者来说，失掉往昔的足迹并不可惜，迷失了继续前时的方向却很危险。</p>
+                </li>
+                <li>
+                    <p>30、生命的道路上永远没有捷径可言，只有脚踏实地走下去。</p>
+                </li>
+            </ul>
             <div id="scroll"></div>
+            <div id="bar"></div>
         </div>
 
         <script>
             (function(){
-                var oContent = document.getElementById("content");
-                var oScroll = document.getElementById("scroll");
-
-                addEvent(oScroll,"mousewheel",function(){
-                    console.log(1);
-                });
-
+            // 兼容封装
                 //事件监听
                 function addEvent(obj,evType,callback,boolern){
-                //处理捕获冒泡
+                    //处理捕获冒泡
                     boolern = boolern || false;
-                //兼容IE
+                    //兼容IE
                     if(obj.addEventListener){
-                        obj.addEventListener(obj,evType,callback,boolern);
+                        obj.addEventListener(evType,callback,boolern);
 
                         //兼容火狐
                         if(evType === "mousewheel" && document.createElement("div").onmousewheel === undefined){
@@ -67,7 +199,7 @@
 
                         return callback;
                     }else{
-                       // 改变this指向
+                        // 改变this指向
                         var codeback = function(ev){
                             callback.call(obj);
                         }
@@ -75,20 +207,44 @@
                         return codeback;
                     };
                 };
-
-            //取消事件监听
+                //取消事件监听
                 function removeEvent(ele,evType,callback,boolern){
                     //处理捕获冒泡
                     boolern = boolern || false;
 
                     ele.removeEventListener ? ele.removeEventListener(ele,evType,callback,boolern)
-                                            : ele.detachEvent(ele,"on"+evType,codeback);
+                        : ele.detachEvent(ele,"on"+evType,codeback);
 
                     if( evType === "mousewheel" && document.createElement("div").onmousewheel === undefined){
                         evType = "DOMMouseScroll";
                     }
 
                 }
+
+                var oWarp = document.getElementById("wrap");
+                var oContent = document.getElementById("content");
+                var oScroll = document.getElementById("scroll");
+                var oBar = document.getElementById("bar");
+                var step = oContent.offsetHeight/oScroll.offsetHeight;
+
+
+
+
+                (function(){
+
+
+                    // 滚轮事件
+                    addEvent(oWarp,"mousewheel",function(ev){
+
+
+                    });
+
+                })();
+
+
+
+
+
 
 
 

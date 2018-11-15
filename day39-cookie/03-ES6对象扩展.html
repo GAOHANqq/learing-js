@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+
+        // 1) ES6对象的属性为函数方法时,可以省略function
+            let obj = {
+                name : "高翰",
+                getName : function(){}
+            }
+
+            let obj2 = {
+                name : "高翰",
+                getName(){}
+            }
+
+        // 2) 值引入某个变量，并且该变量名和属性名相同时可以简写
+            let name = "高翰";
+            let obj3 = {name : name}
+
+            let obj4 = {name}
+
+        // 3) ES6可以用变量来代替键
+
+            let a = "name";
+            let  obj5 = {
+                [a] : "高翰"
+            }
+
+        // 4) Object.keys()    遍历属性名,返回一个数组
+        //    Object.values()  遍历值,返回一个数组
+        //    Object.entries() 遍历每个键值对,返回二维数组
+            let  obj6 = {
+                name : "高翰",
+                age : 23,
+                sex : "男",
+                school : "安科院"
+            }
+
+            console.log( Object.keys(obj6) );// 遍历属性名
+            console.log( Object.values(obj6) );// 遍历值
+            console.log( Object.entries(obj6) );// 遍历每个键值对,返回二维数组
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

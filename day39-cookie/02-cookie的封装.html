@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            /*
+            *
+            * Cookie对象
+            *
+            *  set()
+            *    @param  {json对象} num(表示天数)
+            *    @return string
+            *  get()
+            *    @param  string
+            *    @return string
+            *  remove()
+            *    @param  string
+            *
+            */
+
+            let Cookie = {
+                // 设置
+                set(mJson,day){
+                    let date = new Date( new Date().getTime() + day*24*60*60*1000 ).toUTCString();
+
+                    // for(let key in mJson){
+                    //     document.cookie = `${key}=${mJson[key]};expires=${date}`;
+                    // }
+
+                    // 上面的for in 遍历对象用ES6的方法改写如下
+                    Object.entries(mJson).forEach(([key,value])=>{
+                        document.cookie = `${key}=${value};expires=${date}`;
+                    });
+
+                },
+                // 获取
+                get(key){
+                    new RegExp("(^|\\s)"+key+"=([^;]+)(;|$)").test(document.cookie);
+                    return RegExp.$2;
+                },
+                // 删除
+                remove(key){
+                    Cookie.set({[key]:""},-1);
+                }
+            };
+
+
+            // 测试设置cookie
+            Cookie.set({
+                user : "高翰",
+                nickname : "小书",
+                pwd : 123456
+            },7);
+            console.log(document.cookie);
+
+            // 测试获取cookie
+            console.log( Cookie.get("nickname") );
+
+            // 测试删除cookie
+            Cookie.remove("pwd");
+            console.log(document.cookie);
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

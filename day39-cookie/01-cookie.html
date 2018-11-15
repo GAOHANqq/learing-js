@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            /*
+                cookie  存储轻量数据，当用户访问网页时，通过cookie向访问者电脑上存储数据
+                        以字符串的形式存储
+                    1)不同的浏览器存放cookie的位置不同,也是不能同用的
+                    2)cookie的存储以域名的形式进行区分
+                    3)cookie的数据可以设置名字(键:值)
+                    4)一个域名下存放cookie的数量是有限制的,不同的浏览器数量不同
+                    5)每个cookie存放的内容大小也是有限的,不同的浏览器存放的大小不一样
+
+            */
+            /*
+                存储cookie    document.cookie = ‘数据名=值';
+                    如果不给cookie设置过期时间,那么浏览器关闭后,cookie就不存在了
+                    过期时间必须是一个日期对象转换成的字符串（时间戳.toGMTString()）
+                设置过期时间
+                     expires=过期时间.toUTCString();
+            */
+
+            // let date = new Date(2018,10,15,18,0,0);
+
+            // 设置过期时间为7天之后
+            let date = new Date(new Date().getTime()+7*24*60*60*1000);
+            // 删除cookie:直接把过期时间设置为存储cookie之前的时间
+
+            document.cookie = "user1=gaohan;expires="+date.toUTCString();// 存储cookie
+            console.log(document.cookie);// 获取cookie
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

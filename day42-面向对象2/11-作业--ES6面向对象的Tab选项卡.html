@@ -132,6 +132,31 @@
             background-color: #f4c300;
             color: #7e4a1c;
         }
+
+        #box .btn .button{
+            position:absolute;
+            top:50%;
+            z-index: 99;
+            margin-top:-30px;
+            width: 35px;
+            height: 60px;
+            background:url("images/btn.png") no-repeat;
+            cursor: pointer;
+        }
+        #box .btn .left{
+            left:0;
+            background-position: -85px -8px;
+        }
+        #box .btn .right{
+            right:-2px;
+            background-position: -128px -8px;
+        }
+        #box .btn .left:hover{
+            background-position: -6px -8px;
+        }
+        #box .btn .right:hover{
+            background-position: -50px -8px;
+        }
     </style>
 </head>
 <body>
@@ -144,6 +169,10 @@
                 <li><a href=""><img src="images/4.jpg" alt=""></a></li>
                 <li><a href=""><img src="images/5.png" alt=""></a></li>
             </ul>
+            <div class="btn">
+                <div class="button left"></div>
+                <div class="button right"></div>
+            </div>
         </div>
 
         <div class="tab">
@@ -157,38 +186,6 @@
         </div>
 
 
-    </div>
-    <div id="wrap">
-        <div class="content">
-            <ul>
-                <li class="active" style="background-color: #00ae00">选项卡A</li>
-                <li style="background-color: chartreuse">选项卡B</li>
-                <li style="background-color: palegreen">选项卡C</li>
-            </ul>
-        </div>
-        <div class="tab">
-            <ul>
-                <li class="active">A</li>
-                <li>B</li>
-                <li>C</li>
-            </ul>
-        </div>
-    </div>
-    <div id="wrap1">
-        <div class="content">
-            <ul>
-                <li class="active" style="background-color: #00ae00">选项卡A</li>
-                <li style="background-color: chartreuse">选项卡B</li>
-                <li style="background-color: palegreen">选项卡C</li>
-            </ul>
-        </div>
-        <div class="tab">
-            <ul>
-                <li class="active">A</li>
-                <li>B</li>
-                <li>C</li>
-            </ul>
-        </div>
     </div>
 
     <script>
@@ -250,22 +247,43 @@
                 }
             }
 
+            // 继承TabAuto,新增左右按钮
+            class ChangeDir extends TabAuto{
+                constructor({conEle,tabEle,conClass="active",tabClass="active",box,btn}){
+                    super({conEle,tabEle,conClass,tabClass,box});
+                    this.btn = btn;
+                    this.changedir();
+                }
+                changedir(){
+                    [...this.btn].forEach((ele,index)=>{
+                        ele.onclick = ()=>{
+                            let i = this.index;
+                            if( index === 1 ){
+                                i ++;
+                                i %= this.length;
+                            }else{
+                                i --;
+                                if( i < 0 ){
+                                    i = this.length;
+                                }
+                            }
+                            console.log(i);
+                            this.change(i);
+                        }
+                    });
+                }
+            }
+
             // 测试
-            new Tab({
-                conEle : document.querySelectorAll("#wrap .content ul li"),
-                tabEle : document.querySelectorAll("#wrap .tab ul li")
-            })
 
-            new Tab({
-                conEle : document.querySelectorAll("#wrap1 .content ul li"),
-                tabEle : document.querySelectorAll("#wrap1 .tab ul li")
-            })
-
-            new TabAuto({
+            let  a = new ChangeDir({
                 conEle : document.querySelectorAll("#box .img ul li"),
                 tabEle : document.querySelectorAll("#box .tab ul li"),
+                btn : document.querySelectorAll("#box .btn .button"),
                 box : document.getElementById("box")
             })
+
+            console.log(a);
         })();
     </script>
 </body>

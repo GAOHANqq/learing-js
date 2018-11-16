@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            function deepClone(obj){
+                var o = {};
+
+                for(var key in obj){
+                    if(typeof obj[key] === "object"){
+                        o[key] = deepClone(obj[key]);
+                    }else{
+                        o[key] = obj[key];
+                    }
+                }
+                return o;
+            }
+
+            var a = {
+                x : 10,
+                y : 20,
+                k : {
+                    aa :1,
+                    name : {
+                        h : 11111
+                    }
+                }
+            };
+
+            var b = deepClone(a);
+            b.k.bb = 2;
+            b.k.name.j = 3;
+            console.log(a);
+            console.log(b);
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

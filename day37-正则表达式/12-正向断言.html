@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            /*
+                断言: 匹配值(?断言条件)
+                    ?= 匹配符合断言条件格式的值
+                    ?! 匹配不符合断言条件格式的值
+            */
+
+            let r = /高翰(?=中国人)/;
+            let r1 = /高翰(?!美国)/;
+            let s = "高翰中国人";
+            console.log(s.match(r));
+            console.log(s.match(r1));
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

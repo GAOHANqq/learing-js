@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            /*
+                replace():替换匹配到的内容为第二个参数的值
+                    str.replace(正则, 字符串|函数)
+                        如果第二个参数是字符串,则直接替换
+                        如果第二个参数是回调函数,则由函数返回值替换
+
+                        在回调函数中,第一个形参表示 reg匹配的值
+                                   第二个形参表示 第一个子项
+                                   依次类推
+
+            */
+
+            let reg = /高(翰)/g;
+            let str = "学生高翰,安徽科技学院高翰,电信151高翰";
+            console.log(str);
+            console.log(reg.test(str));
+            // newstr = str.replace(reg,"高建平");
+            newstr = str.replace(reg,($0,$1)=>{
+                return "Mr.Gao"+$1;
+            });
+            console.log(newstr);
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<!--suppress ALL -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            <p>4</p>
+            <p>5</p>
+            <p>6</p>
+            <p>7</p>
+            <p>8</p>
+            <p>9</p>
+
+        </div>
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+
+            // let  ap = [...document.querySelectorAll("#wrap p")];
+            // ap.forEach((ele,index,obj)=>{
+            //     console.log(ele);
+            //
+            //     console.log(index);
+            //     console.log(obj);
+            // })
+
+            // each 与 forEach的区别
+                // 1)   forEach的参数 ele,index,obj
+                //      each的参数 index,ele
+                // 2) each每次的this指向当前的dom
+
+          let  $p = $("#wrap p")
+            // $p.each((index,ele)=>{
+            //     console.log(index);
+            //     console.log(ele);
+            // });
+
+            $p.each(function(index,ele){
+                console.log(index);
+                console.log(ele);
+                console.log(this);// each的this指向当前的dom
+            });
+
+          let colorArr = ["green","red","blue"];
+            $p.each(function(index,ele){
+                $(this).css("color",colorArr[index%3]);
+            });
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

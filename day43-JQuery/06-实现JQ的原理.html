@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+        </div>
+        
+        <script>
+            (function(){
+                function $(param){
+                    return new Init(param);
+                }
+
+                class Init{
+                    constructor(param){
+                        let domArr = [...document.querySelectorAll(param)];
+                        domArr.forEach((ele,index)=>{
+                            this[index] = ele;
+                        });
+                        this.length = domArr.length;
+                    }
+                    each(fn){
+                        for(let i=0;i<this.length;i++){
+                            fn.call(this[i] , i);
+                        }
+                    }
+                    html(arr){
+                        this.each(function(){
+                            this.innerHTML = arr;
+                        })
+                        return this;
+                    }
+                    css(attr,value){
+                        this.each(function(){
+                            this.style[attr] = value;
+                        })
+                        return this;
+                    }
+                };
+
+                window.$ = window.jQuery = $;
+            })();
+
+            console.log($("#wrap p"));
+
+            $("#wrap p")
+                .html("大家好")
+                .css("color","red")
+            ;
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

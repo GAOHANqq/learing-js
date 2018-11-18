@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<!--suppress ALL -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+        <script>
+
+            // $的数据类型为对象(函数),后面加()执行
+            // 执行后返回一个对象
+            console.log($());
+
+            /*
+
+            JQ对象只能使用JQ的API
+            JS/DOM对象只能使用JS的API
+
+            // 转换方式
+                JQ-->JS  通过下标[] 或者get()方法
+                JS-->JQ  $(JS对象)
+            $()的常用参数
+                函数时---表示DOM节点加载完成后,再执行这个函数
+                选择器字符串---返回对应的JQ对象
+                节点对象/节点集合---返回对应的JQ对象
+            */
+            $(function(){
+                console.log($("#wrap p"));
+
+
+
+                $("#wrap p:nth-child(2)").html("<b>大家好</b>");
+
+            });
+
+
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

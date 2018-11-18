@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<!--suppress ALL -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select: none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <p></p>
+        <p></p>
+        <p></p>
+        <span></span>
+        <span class="goudan"></span>
+        <span></span>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+
+        $(function(){
+            // eq()获取当前链式操作中第N个jQuery对象，返回jQuery对象
+
+            let $p = $("#wrap p");
+            // $p[1].style.color = "red";
+            $p
+                .html("我是span标签")
+                .eq(1)
+                .css("color","red");
+
+            // index 返回序列号
+
+            let $span = $("#wrap .goudan");
+
+            // 不传参数,默认返回在父级中的位置
+            console.log( $span.index() );// 4
+
+            // 传参数,返回在参数条件里的位置
+            console.log( $span.index("span") );// 1
+
+            console.log( $("#wrap span").index($span) );// 1
+
+
+        });
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<!--suppress ALL -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <p></p>
+            <p></p>
+            <p></p>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+
+            $(function(){
+
+            // 操作一:比较垃圾的操作,不推荐
+                // $("#wrap p").html("大家好");
+                // $("#wrap p").css("color","red");
+                // console.log($("#wrap p") === $("#wrap p"));
+
+            // 操作一:相对操作一比较好
+                let $span = $("#wrap span");
+                $span.html("我是span标签");
+                $span.css("color","green");
+            // 操作三:链式操作,注意换行,有利于代码阅读
+                $("#wrap p")
+                    .html("大家好")
+                    .css("color","red");
+
+
+
+            });
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

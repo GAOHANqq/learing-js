@@ -26,21 +26,20 @@
                     2.x.x
                     3.x.x
             */
-            var jQuery;
-            console.log(JQuery === $);
-
-            function $() {
-
-            }
+            console.log(jQuery === $);
 
             console.log($);
+            console.log(jQuery);
 
 
             // $ 冲突时,使用局部变量解决
-            var JQuery;
             (function($){
                 console.log($);
-            })(JQuery);
+            })(jQuery);
+
+            // $的数据类型为对象(函数),后面加()执行
+            // 执行后返回一个对象
+            console.log($());
         </script>
     </body>
 </html>

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<!--suppress ALL -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                width: 200px;
+                height: 200px;
+                padding: 3px;
+                border: 7px solid red;
+                margin: 2px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            // 都可以获取和赋值
+
+            console.log( $("#wrap").width() ); // 200
+            console.log( $("#wrap").css("width")); // 200px
+
+            console.log( $("#wrap").innerWidth() ); // 206
+            console.log( $("#wrap").outerWidth() ); // 220
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

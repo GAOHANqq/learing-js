@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                width: 200px;
+                height: 200px;
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+          // show() hide() 宽高,透明度,padding,margin都会改变
+          // toggle() 显示即隐藏,隐藏即显示
+          //   $("#wrap").hide(3000).show(5000); // 传时间参数
+          //   $("#wrap").hide("slow");          // 传速度参数
+          // $("#wrap").hide(3000,"linear");     // 传时间与速度参数
+          $("#wrap").hide(3000,function(){    // 传回到函数
+              alert(1);
+          });
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

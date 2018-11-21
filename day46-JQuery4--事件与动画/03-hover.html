@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                width: 100px;
+                height: 100px;
+                background-color: red;
+            }
+            #wrap div{
+                width: 50px;
+                height: 50px;
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div></div>
+        </div>
+
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            // hover(fn1,fn2)  fn1为enter() fn2位leave()
+                // 组合了 enter() leave()
+                // 只传一个参数时,enter与leave共用一个事件函数
+            $("#wrap").hover(function(){
+                console.log("enter");
+            },function(){
+                console.log("leave");
+            });
+            $("#wrap").hover(function(){
+                console.log(1); // 进入出去时都会触发
+            })
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

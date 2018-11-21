@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                width: 100px;
+                height: 100px;
+                background-color: red;
+            }
+            #box{
+                width: 100px;
+                height: 200px;
+                margin-top: 5px;
+                background-color: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">点击</div>
+        <div id="box">
+            <p>0001</p>
+            <p>0002</p>
+            <p>0003</p>
+            <p>0004</p>
+            <p>0005</p>
+        </div>
+
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            // 添加事件 on()  添加事件时,可以给事件加命字,用于解绑事件
+            // 解绑事件 off()
+            // 一次性事件 one()
+            // 注意:on()事件的事件委托
+
+            // $("#wrap").click(function(){
+            //     alert(2);
+            // });
+
+            // 有click()事件,为什么还要有on()事件呢????
+                // 用于添加多个事件
+            $("#wrap").on({
+                click : function(){
+                    console.log(this); // 事件函数的this指向JS对象
+                    console.log(1);
+                },
+                mouseenter : function(ev){
+                    console.log(ev); // ev对象是JQ封装过的
+                    console.log("enter");
+                },
+                mouseleave : function(){
+                    console.log("leave");
+                }
+            });
+            $("#wrap").on("click.shijian1",function(){
+                console.log("事件1");
+            })
+            $("#wrap").on("click.shijian2",function(){
+                console.log("事件2");
+            })
+
+            // 写命字按命字解绑事件,不写命字则全部解绑
+            $("#wrap").off("click.shijian1");
+
+
+            // jQ推荐使用find()找元素比直接写选择器要更快
+            //  $("#box p)-----$("#wrap).find("p")
+            let  $box = $("#box");
+            // $("#box").find("p").on("click",function(ev){
+            //     console.log($(this).index());
+            //     ev.stopPropagation();
+            // })
+
+            // 事件委托
+            $box.on("click" , "p" , function(ev){
+                console.log($(this).index());
+                ev.stopPropagation();
+            })
+            $(document).click(function(){
+                $box.append("<p>ppppppppp</p>");
+            });
+
+            // one() 一次性事件
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

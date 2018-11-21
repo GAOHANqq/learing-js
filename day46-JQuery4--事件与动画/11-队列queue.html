@@ -39,9 +39,14 @@
         $("#wrap").animate({
             width : 400
         },500);
+
+        $("#wrap").css("background-color","red");
+
         $("#wrap").animate({
             height : 400
         },500);
+
+        // 先变红再执行动画  原因:代码同步,动画进队列有延迟
     </script>
 </body>
 </html>

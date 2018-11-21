@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<!--suppress ALL -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select: none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap"></div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        // 先宽度变化,再高度变化,再外边距变化
+
+        // 原因:代码执行,发现动画,宽度动画加入队列,高度动画加入队列,
+        //      宽度动画执行完毕,执行回调函数,发现边距动画,将边距动画加入队列
+
+        //      队列顺序为:宽度动画-->高度动画-->边距动画
+        $("#wrap").animate({
+            width : 400
+        },500,function(){
+            $(this).animate({
+                marginLeft : 300
+            },500);
+        });
+
+
+        $("#wrap").animate({
+            height : 400
+        },500);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

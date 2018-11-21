@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<!--suppress ALL -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select: none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap ul li{
+            float: left;
+            width: 100px;
+            height: 30px;
+            background-color: pink;
+            margin-right: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        // 动画以队列的方式存储
+        // stop() 停止动画队列
+        $("#wrap")
+            .find("ul li")
+            .hover(function(){
+                $(this).animate({
+                    height : 300
+                },1000)
+            },function(){
+                $(this).animate({
+                    height : 30
+                },1000)
+            })
+
+        // stop() 不传参数时,默认情况队列(常用)
+        //        传一个参数true时,情况队列,停止在当前动画
+        //        传两个参数true时,立刻完成动画,停止在动画结束状态
+        $(document).click(function(){
+            $("#wrap")
+                .find("ul li").stop(true,true);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

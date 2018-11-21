@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <p class="a"></p>
+            <p></p>
+            <p class="b"></p>
+        </div>
+
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            // 返回上次的JQ对象,保留本次的操作
+
+            $("#wrap")
+                .children(".a")// 找到#wrap下面的JQ节点
+                .html(456)// 添加内容
+                .end()// 返回JQ节点#wrap
+                .addClass(".active");// 添加类名
+
+            // 以上代码相当于
+            // $("#wrap").children(".a").html(456);
+            // $("#wrap").addClass(".active");
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

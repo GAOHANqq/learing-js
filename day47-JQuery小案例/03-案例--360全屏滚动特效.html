@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<!--suppress ALL -->
+<html>
+	<head>
+		<title>360全屏滚动特效</title>
+		<meta charset="utf-8">
+		<meta name="Author" content="潭州学院-阿飞老师">
+		<style type='text/css'>
+			*{ margin:0; padding:0;}
+			html,body{
+				height:100%;
+			}
+            a{text-decoration: none;}
+			a img{
+				border:none;
+			}
+			li{
+				list-style:none;
+			}
+			body{
+				overflow:hidden;
+			}
+			#bg{
+				height:100%;
+			}
+			#bg div{
+				height:100%;
+				background:fixed;
+			}
+			#header{
+				position:fixed;
+				top:27px;
+				width:100%;
+				height:47px;
+			}
+			#header .logo{
+				float:left;
+				width:226px;
+				height:47px;
+				margin-left:50px;
+			}
+			#header .nav{
+				float:right;
+				position:relative;
+				width:400px;
+				height:47px;
+				margin-right:50px;
+			}
+			#header .nav ul{
+				position:relative;
+				z-index:1;
+				height:47px;
+			}
+			#header .nav ul li{
+				float:left;
+				font-size:14px;
+				line-height:47px;
+				margin-left:53px;
+			}
+			#header .nav ul li a{
+				color:#fff;
+				color:rgba(255,255,255,.8);
+				text-shadow:4px 3px 10px #000;
+				font-family:'aaaaa','Microsoft yahei','楷体';
+			}
+			#header .nav ul li.on a{
+                display: block;
+				color:#fff;
+			}
+			#border{
+				position:absolute;
+				top:8px;
+				left:38px;
+				width:56px;
+				height:30px;
+				border:1px solid #fff;
+				border:1px solid rgba(255,255,255,.7);
+				border-radius:16px;
+			}
+
+			#slide{
+				position:fixed;
+				top:35%;
+				left:50px;
+				width:100px;
+				height:330px;
+				background:url(img/nav.png) no-repeat;
+			}
+
+			#slide ul li{
+				padding-left:50px;
+				margin-top:6px;
+				margin-bottom:56px;
+				font-family:'Microsoft yahei','楷体';
+				font-size:12px;
+				line-height:21px;
+				color:#fff;
+				color:rgba(255,255,255,.8);
+				cursor:pointer;
+			}
+			#slide ul li.on{
+				background:url(img/nav_cho.png) no-repeat;
+			}
+            #ercode{
+                position: absolute;
+                top: 200px;
+                right: 60px;
+                width: 200px;
+                height: 340px;
+                padding: 20px 0 15px;
+                border-top: 2px solid #ddd;
+                border-bottom: 2px solid #ddd;
+                text-align: center;
+                background: rgb(255,255,255,.1);
+            }
+            #ercode a{
+                display: block;
+                font-size: 20px;
+                color: #fff;
+                line-height: 30px;
+            }
+            #ercode a:first-child{
+                background: url("img/phone.png") no-repeat 12%/15% ;
+            }
+            #ercode a:first-child:hover{
+                color: #23dd91;
+            }
+            #ercode a:nth-child(2){
+                width: 140px;
+                height: 50px;
+                margin: 30px;
+                text-align: center;
+                line-height: 50px;
+                text-shadow: 1px 2px 4px rgba(0,0,0,.5);
+                background: linear-gradient(#01a8a0 45% ,#1bf483 100%);
+            }
+            #ercode a:nth-child(2):hover{
+                 background: linear-gradient(#1bf483 45% ,#01a8a0 100%);
+            }
+            #ercode img{
+                width: 100%;
+                height: 200px;
+            }
+
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<div class="logo">
+				<a href=""><img src="img/logo.png" /></a>
+			</div>
+			<div class="nav">
+				<ul>
+					<li class="on"><a href="">首页</a></li>
+					<li><a href="">常见问题</a></li>
+					<li><a href="">论坛</a></li>
+					<li><a href="">360首页>></a></li>
+				</ul>
+				<div id="border"></div>
+			</div>
+		</div>
+
+		<div id="bg">
+			<div class='bg1' style="background-image:url(img/1.jpg);"></div>
+			<div class='bg2' style="background-image:url(img/2.jpg);"></div>
+			<div class='bg3' style="background-image:url(img/3.jpg);"></div>
+			<div class='bg4' style="background-image:url(img/4.jpg);"></div>
+		</div>
+
+		<div id="slide">
+			<ul>
+				<li class="on">安全换机</li>
+				<li>无网对传</li>
+				<li>隐私粉碎</li>
+				<li>一键转移</li>
+			</ul>
+		</div>
+        <div id="ercode">
+            <a href="">下载到手机</a>
+            <a href="">下载到电脑</a>
+            <img src="img/ercode.png" alt="">
+        </div>
+
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+        <script>
+            $("#header")
+                .find(".nav ul li")
+                .hover(function(){
+                    $("#border")
+                        .animate({
+                            width : 2*$(this).width(),
+                            left : $(this).index()*100
+                        })
+                })
+
+        </script>
+	</body>
+</html>

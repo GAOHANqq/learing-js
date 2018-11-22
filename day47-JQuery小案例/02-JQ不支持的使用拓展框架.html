@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<!--suppress ALL -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                width: 100px;
+                height: 100px;
+                border: 1px solid #000;
+            }
+        </style>
+    </head>
+    <body style="height: 2000px">
+        <div id="wrap"></div>
+
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery-color/2.1.2/jquery.color.min.js"></script>
+        <script>
+           // mousewheel事件JQ不支持,可使用JQuery-mousewheel框架
+           // 颜色的改变JQ动画也不支持,可使用JQuery-color框架
+
+            $("#wrap")
+                .mousewheel(function(){
+                    console.log(this);
+                }).animate({
+                    backgroundColor : "red"
+                },2000);
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

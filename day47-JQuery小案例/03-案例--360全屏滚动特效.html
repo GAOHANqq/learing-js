@@ -5,6 +5,7 @@
 		<title>360全屏滚动特效</title>
 		<meta charset="utf-8">
 		<meta name="Author" content="潭州学院-阿飞老师">
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css">
 		<style type='text/css'>
 			*{ margin:0; padding:0;}
 			html,body{
@@ -26,6 +27,19 @@
 			#bg div{
 				height:100%;
 				background:fixed;
+			}
+			#bg p{
+				position: relative;
+				top: 100px;
+				left: 300px;
+				color: #fff;
+				font-size: 40px;
+			}
+			#bg p em{
+				font-size: 16px;
+			}
+			#bg .pic{
+				background: no-repeat center/35%;
 			}
 			#header{
 				position:fixed;
@@ -78,7 +92,7 @@
 				border-radius:16px;
 			}
 
-			#slide{
+			#side{
 				position:fixed;
 				top:35%;
 				left:50px;
@@ -87,7 +101,7 @@
 				background:url(img/nav.png) no-repeat;
 			}
 
-			#slide ul li{
+			#side ul li{
 				padding-left:50px;
 				margin-top:6px;
 				margin-bottom:56px;
@@ -98,7 +112,7 @@
 				color:rgba(255,255,255,.8);
 				cursor:pointer;
 			}
-			#slide ul li.on{
+			#side ul li.on{
 				background:url(img/nav_cho.png) no-repeat;
 			}
             #ercode{
@@ -119,9 +133,6 @@
                 color: #fff;
                 line-height: 30px;
             }
-            #ercode a:first-child{
-                background: url("img/phone.png") no-repeat 12%/15% ;
-            }
             #ercode a:first-child:hover{
                 color: #23dd91;
             }
@@ -137,11 +148,15 @@
             #ercode a:nth-child(2):hover{
                  background: linear-gradient(#1bf483 45% ,#01a8a0 100%);
             }
+			#ercode a i{
+				font-size: 30px;
+				color: #01a8a0;
+				vertical-align: text-top;
+			}
             #ercode img{
                 width: 100%;
                 height: 200px;
             }
-
 		</style>
 	</head>
 	<body>
@@ -161,13 +176,25 @@
 		</div>
 
 		<div id="bg">
-			<div class='bg1' style="background-image:url(img/1.jpg);"></div>
-			<div class='bg2' style="background-image:url(img/2.jpg);"></div>
-			<div class='bg3' style="background-image:url(img/3.jpg);"></div>
-			<div class='bg4' style="background-image:url(img/4.jpg);"></div>
+			<div class='bg1' style="background-image:url(img/1.jpg);">
+                <p>资料转移 隐私粉碎 手机回收<br>换手机必备</p>
+                <div class="pic" style="background-image:url(img/1.png)"></div>
+            </div>
+			<div class='bg2' style="background-image:url(img/2.jpg);">
+                <p>无需联网<br>手机资料直接对传，安全快捷<br><em>点对点私密网络，无需上传，保护隐私安全，使用WiFi-Direct技术，换机场景快速传输</em></p>
+                <div class="pic" style="background-image:url(img/2.png)"></div>
+            </div>
+			<div class='bg3' style="background-image:url(img/3.jpg);">
+                <p>隐私粉碎器<br>彻底销毁隐私数据，避免人财两失<br><em>推出防恢复的数据粉碎功能，全盘擦除隐私资料，保障安全</em></p>
+                <div class="pic" style="background-image:url(img/3.png)"></div>
+            </div>
+			<div class='bg4' style="background-image:url(img/4.jpg);">
+                <p>九大类资料一键转移<br>还支持连接过的WiFi热点</p>
+                <div class="pic" style="background-image:url(img/4.png)"></div>
+            </div>
 		</div>
 
-		<div id="slide">
+		<div id="side">
 			<ul>
 				<li class="on">安全换机</li>
 				<li>无网对传</li>
@@ -175,8 +202,9 @@
 				<li>一键转移</li>
 			</ul>
 		</div>
+
         <div id="ercode">
-            <a href="">下载到手机</a>
+			<a href=""><i class="iconfont icon-weibiaoti2fuzhi07"></i>下载到手机</a>
             <a href="">下载到电脑</a>
             <img src="img/ercode.png" alt="">
         </div>
@@ -184,16 +212,87 @@
         <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdn.bootcss.com/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
         <script>
-            $("#header")
-                .find(".nav ul li")
-                .hover(function(){
-                    $("#border")
-                        .animate({
-                            width : 2*$(this).width(),
-                            left : $(this).index()*100
-                        })
-                })
+            (function(){
 
+                // 移入移出事件
+                (function(){
+
+                    let $navUl = $("#header").find(".nav ul"),
+                        $navLi = $navUl.find("li"),
+                        $border = $("#border")
+                    ;
+                    let bWidth = $border.width(),
+                        bLeft = $border.position().left,
+                        w_ = bWidth - $navLi.eq(0).width(),
+                        l_ = bLeft - $navLi.eq(0).position().left
+                    ;
+					// 移入事件
+                    $navLi
+                        .mouseenter(function(){
+                            $border.stop().animate({
+                                    width : $(this).width() + w_,
+                                    left : $(this).position().left + l_
+                            },200);
+                        });
+
+					// 离开事件
+                    $navUl
+                        .mouseleave(function(){
+                            $border.stop().animate({
+                                width : bWidth,
+                                left : bLeft
+                            },200)
+                        });
+                })();
+
+                // 全屏滚动事件
+				(function(){
+                    let $bg = $("#bg"),
+                        $sideLi = $("#side").find("li"),
+                        windowH = 0,
+                        index = 0,
+                        wheelTime = 0,
+                        length = $sideLi.length
+                    ;
+				    // 当前窗口的高度
+					function getWH(){
+                        windowH  = $(window).height();
+                        $bg.css("marginTop",-index * windowH + "px");
+					};
+                    getWH();
+                    $(window).resize(getWH);
+
+                    // 点击事件
+                    $sideLi.click(function(){
+                        index  = $(this).index();
+                        change();
+					});
+
+                    // 滚轮事件
+                    $(document).mousewheel(function(e,d){
+                        if( new Date() - wheelTime < 500) return;
+                        wheelTime = new Date();
+                        if( d < 0 ){
+                            index ++;
+                            index %= length;
+                        }else{
+                            index --;
+                            if(index<0){
+                                index=length-1
+                            }
+                        }
+                        change();
+                    });
+                    // 变化函数
+                    function change(){
+                        $sideLi.eq(index).addClass("on").siblings().removeClass("on");
+                        $bg.stop().animate({
+                            marginTop : -index * windowH
+                        },400);
+                    }
+				})();
+
+            })();
         </script>
 	</body>
 </html>

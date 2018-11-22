@@ -1,0 +1,174 @@
+*{  margin:0;padding:0;}
+html,body{
+    height:100%;
+}
+a{text-decoration: none;}
+a img{
+    border:none;
+}
+li{
+    list-style:none;
+}
+body{
+    overflow:hidden;
+}
+#bg{
+    height:100%;
+}
+#bg div{
+    height:100%;
+    background:fixed;
+}
+#bg p{
+    position: relative;
+    top: 100px;
+    left: 300px;
+    color: #fff;
+    font-size: 40px;
+}
+#bg p em{
+    font-size: 16px;
+}
+#bg .pic{
+    background: no-repeat center/35%;
+}
+#header{
+    position:fixed;
+    top:27px;
+    width:100%;
+    height:47px;
+}
+#header .logo{
+    float:left;
+    width:226px;
+    height:47px;
+    margin-left:50px;
+}
+#header .nav{
+    float:right;
+    position:relative;
+    width:400px;
+    height:47px;
+    margin-right:50px;
+}
+#header .nav ul{
+    position:relative;
+    z-index:1;
+    height:47px;
+}
+#header .nav ul li{
+    float:left;
+    font-size:14px;
+    line-height:47px;
+    margin-left:53px;
+}
+#header .nav ul li a{
+    font-family:'aaaaa','Microsoft yahei','楷体';
+    color:#fff;
+    color:rgba(255,255,255,.8);
+    text-shadow:4px 3px 10px #000;
+}
+#header .nav ul li.on a{
+    display: block;
+    color:#fff;
+}
+#border{
+    position:absolute;
+    top:8px;
+    left:38px;
+    width:56px;
+    height:30px;
+    border:1px solid #fff;
+    border:1px solid rgba(255,255,255,.7);
+    border-radius:16px;
+}
+
+#side{
+    position:fixed;
+    top:35%;
+    left:50px;
+    width:100px;
+    height:330px;
+    background:url(../img/nav.png) no-repeat;
+}
+
+#side ul li{
+    padding-left:50px;
+    margin-top:6px;
+    margin-bottom:56px;
+    font-family:'Microsoft yahei','楷体';
+    font-size:12px;
+    line-height:21px;
+    color:#fff;
+    color:rgba(255,255,255,.8);
+    cursor:pointer;
+}
+#side ul li.on{
+    background:url(../img/nav_cho.png) no-repeat;
+}
+#ercode{
+    position: absolute;
+    top: 200px;
+    right: 60px;
+    width: 200px;
+    height: 340px;
+    padding: 20px 0 15px;
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    text-align: center;
+    background: rgb(255,255,255,.1);
+}
+#ercode a{
+    display: block;
+    font-size: 20px;
+    color: #fff;
+    line-height: 30px;
+}
+#ercode a:first-child:hover{
+    color: #23dd91;
+}
+#ercode a:nth-child(2){
+    width: 140px;
+    height: 50px;
+    margin: 30px;
+    text-align: center;
+    line-height: 50px;
+    text-shadow: 1px 2px 4px rgba(0,0,0,.5);
+    background: linear-gradient(#01a8a0 45% ,#1bf483 100%);
+}
+#ercode a:nth-child(2):hover{
+    background: linear-gradient(#1bf483 45% ,#01a8a0 100%);
+}
+#ercode a i{
+    font-size: 30px;
+    color: #01a8a0;
+    vertical-align: text-top;
+}
+#ercode img{
+    width: 100%;
+    height: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

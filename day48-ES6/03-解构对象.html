@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            // ...将后面的属性整合成一个对象,赋给z
+            let {a,b,...z} = {a:10,b:20,x:666,y:999};
+            console.log(a);
+            console.log(b);
+            console.log(z);
+
+            // 反过来解构
+            // ...将对象m,n的属性作为p的属性添加到p中
+            // 类似于Object.assign()方法
+            let m = {
+                aa : "aa",
+                bb : "bb"
+            }
+            let n = {
+                cc : "cc",
+                dd : "dd"
+            }
+            let p = {...m,...n};
+            console.log(p);
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

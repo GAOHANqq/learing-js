@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            // for of 遍历iterate接口的值
+
+
+            // 遍历数组
+            let arr = ["孙艺珍","全智贤","宋慧乔"]
+
+            console.log( Object.keys(arr) );
+            console.log( Object.values(arr) );
+            console.log( Object.entries(arr) );
+
+            for(let item of arr){
+                console.log(item);
+            }
+
+            // 遍历对象
+            let person = {
+                name : "高翰",
+                age : 22,
+                sex : "男",
+                marry : false
+            }
+
+            for([key,value] of Object.entries(person)){
+                console.log(key);
+                console.log(value);
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

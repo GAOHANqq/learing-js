@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            // symbol 独一无二的值
+
+            console.log( Symbol() === Symbol() ); // false
+
+
+            let obj = {
+                name : "高翰",
+                age : 22,
+                sex : "男"
+            }
+
+            let n = Symbol();
+            obj[n] = "张三";
+
+            let m = Symbol();
+            obj[m] = "李四";
+
+            console.log(obj);
+            console.log(obj[n]);
+
+            // symbol取别名
+            console.log(Symbol("a"));
+            console.log(Symbol("a") === Symbol("a")); // false
+
+            // Symbol.for()
+            // 这种形式 名字一样,则Symbol一样,并且可以通过名字取值
+
+            console.log(Symbol.for("a") === Symbol.for("a")); // true
+
+            obj[Symbol.for("marry")] = false;
+            console.log(obj[Symbol.for("marry")]); // false
+
+            // Object.getOwnPropertySymbols()方法取Symbol的值,返回一个数组
+            console.log(Object.getOwnPropertySymbols(obj));
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

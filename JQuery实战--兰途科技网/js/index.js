@@ -1,10 +1,12 @@
 
 (function(){
     var $more = $("#header .more");
-    var $tab = $("#banner").find(".b-tab li");
-    var $bg = $("#banner").find(".b-part .part");
+    var $banner = $("#banner")
+    var $tab = $banner.find(".b-tab li");
+    var $bg = $banner.find(".b-part .part");
     var index = 0;
     var length = $tab.length;
+    var timer;
 
     // 更多的点击事件
     $more.click(function(){
@@ -18,13 +20,20 @@
     });
 
     // 轮播
-    setInterval(function(){
+    timer = setInterval(changeIndex,3000);
+    $banner.hover(function(){
+        clearInterval(timer);
+    },function(){
+        timer = setInterval(changeIndex,3000);
+    })
+
+    function changeIndex(){
         index ++;
-        if( index === length-1  ){
+        if( index === length  ){
             index = 0;
         }
         change(index);
-    },3000)
+    }
 
     // 变化函数
     function change(index){

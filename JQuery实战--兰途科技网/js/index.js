@@ -29,16 +29,14 @@
 
     function changeIndex(){
         index ++;
-        if( index === length  ){
-            index = 0;
-        }
+        index %= length;
         change(index);
     }
 
     // 变化函数
     function change(index){
         $tab.eq(index).addClass("active").siblings().removeClass("active");
-        $bg.eq(index).show().siblings().hide();
+        $bg.eq(index).fadeIn(500).siblings().fadeOut(500);
     }
 })();
 

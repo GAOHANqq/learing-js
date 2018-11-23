@@ -1,7 +1,11 @@
 /*header start*/
+body{
+    min-width: 330px;
+}
 #header{
     position: fixed;
     top: 0;
+    z-index: 9999;
     left: 0;
     width: 100%;
     height: 65px;
@@ -89,10 +93,10 @@
 
 /*banner start*/
 #banner{
+    position: relative;
     width: 100%;
     height: 850px;
     margin-top: 72px;
-    background-color: green;
 }
 #banner .b-part{
     position: relative;
@@ -100,12 +104,119 @@
     height: 100%;
 }
 #banner .b-part .part{
+    /*display: none;*/
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
 }
+#banner .b-part .part1{
+    display: block;
+    background: url("../img/index/bg1-1.png") no-repeat center;
+}
+#banner .b-part .part1 .img1{
+    position: absolute;
+    top: 500px;
+    left: 100px;
+    width: 300px;
+    height: 125px;
+    background: url("../img/index/bg1-2.png") 0 0/100% 100%;
+}
+#banner .b-part .part1 .img2{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 970px;
+    height: 730px;
+    background: url("../img/index/bg1-3.png") 0 0/100% 100%;
+}
+
+#banner .b-part .part2{
+    /*display: block;*/
+    background: radial-gradient(rgb(0,173,239) ,rgb(0,82,124));
+}
+#banner .b-part .part2 .img1{
+    position: absolute;
+    top: 500px;
+    left: 100px;
+    width: 300px;
+    height: 120px;
+}
+#banner .b-part .part2 .img1 p{
+    width: 100%;
+    margin: 10px 0;
+}
+#banner .b-part .part2 .img1 p img{
+    /*display: block;*/
+    width: 100%;
+}
+#banner .b-part .part2 .img2{
+    position: absolute;
+    right: 50px;
+    bottom: 100px;
+    width: 930px;
+    height: 635px;
+    background: url("../img/index/bg2-4.png") 0 0/100% 100%;
+}
+
+#banner .b-part .part3{
+    /*display: block;*/
+    background: url("../img/index/bg3-1.jpg") no-repeat center;
+}
+#banner .b-part .part3 .img1{
+    position: absolute;
+    top: 115px;
+    left: 70px;
+    width: 780px;
+    height: 560px;
+    background: url("../img/index/bg3-2.png") 0 0/100% 100%;
+}
+#banner .b-part .part3 .img2{
+    position: absolute;
+    right: 210px;
+    top: 195px;
+    width: 300px;
+    height: 120px;
+}
+#banner .b-part .part3 .img2 p{
+    width: 100%;
+    margin: 10px 0;
+}
+#banner .b-part .part3 .img2 p img{
+    display: block;
+    width: 100%;
+}
+/* tab start */
+#banner .b-tab{
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    width: 100%;
+    height: 12px;
+}
+#banner .b-tab ul{
+    width: 60px;
+    height: 100%;
+    margin: 0 auto;
+}
+#banner .b-tab ul li{
+    float: left;
+    width: 8px;
+    height: 8px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    margin-left: 5px;
+    background-color: #006597;
+    cursor: pointer;
+}
+#banner .b-tab ul li.active{
+    border: 2px solid #a7c31e;
+    background-color: transparent;
+}
+
+
+
 
 
 

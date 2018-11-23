@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+            /*
+                Map 数据结构:类似于对象,也是键值对的集合
+
+                Object : 键:值    键只能是字符串
+                Map    : 值:值    键可以是各种类型的值(包括对象)
+
+                取值: map.get(key);
+
+                操作方法和遍历方法与Set一样
+
+            */
+
+            let map = new  Map();
+
+            // let  key = "name";
+            // let  value = "高翰";
+            // map.set(key,value);
+            // console.log(map);  key:name value:高翰
+
+            let a = {name:"高翰",age:22};
+            let b = "大家好";
+            map.set(a,b);
+            console.log(map.get(a)); // 大家好
+            console.log(map); // key:{name:"高翰",age:22} value:大家好
+
+
+            // 通过对象对应键值
+
+            class Person{
+                constructor(n){
+                    this.name = n;
+                }
+            }
+
+            let m = new Person("张三");
+            let n = new Person("李四");
+
+            let arr = [123,456];
+
+            let map1 = new Map()
+                .set(m,arr[0])
+                .set(n,arr[1]);
+
+            console.log(map1);
+            // Person{name="张三"}:123
+            // Person{name="李四"}:456
+            console.log(map1.get(m)); // 123
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

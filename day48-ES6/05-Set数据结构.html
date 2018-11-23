@@ -19,17 +19,18 @@
         
         <script>
             // Set 类似于数组,但是其成员的值都是唯一的,没有重复的值
-            // set本身是一个构造函数,
+            // Set本身是一个构造函数,用来生成Set数据结构
 
-            // new Set()的参数必须是可以迭代(iterate接口)的参数,比如对象,数组,字符串
+            // new Set()的参数只有一个,
+            // 必须是可以迭代(iterate接口)的参数,比如对象,数组,字符串
 
-            // 常见有iterate接口的:节点集合,NodeList,arguments,array,string
+            // 常见有iterate接口的:节点集合,nodeList,arguments,array,string
 
 
             let set1 = new Set([1,2,3]);
             let set2 = new Set("高翰");
-            console.log(set1);
-            console.log(set2);
+            console.log(set1); // 1 2 3
+            console.log(set2); // 高 翰
 
             // 没有重复的值
             let set3 = new Set("张三李四张三李四王五");
@@ -37,13 +38,26 @@
 
             // 可以通过add()方法添加数据
             set3.add("赵六");
+            console.log(set3);// 张 三 李 四 王 五 赵六
 
             // 重要用法:
             // Set本身具有iterate接口,可以用来做数组去重
             let arr = [1,2,3,4,5,4,1,2,3,6];
             let set = new Set(arr);
                 arr = [...set];
-                console.log(arr);
+            console.log(set.size); // 6 返回Set实例的成员总数
+            console.log(arr);
+
+            // Set的四个操作方法
+                // add(value)       添加值,返回Set数据
+                // delete(value)    删除值,返回布尔值
+                // has(value)       返回布尔值,检测是否拥有该成员
+                // clear()          清除所有成员,没有返回值
+            // Set的遍历操作
+                // keys()
+                // values()
+                // entries()
+                // forEach()
         </script>
     </body>
 </html>

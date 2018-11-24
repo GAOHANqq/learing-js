@@ -214,14 +214,16 @@ body{
 }
 /* classic start */
 #classic{
-    overflow: hidden;
     width: 100%;
-    height: 920px;
+    height: 900px;
+    background:url("../img/index/bg.png") no-repeat center/cover;
+
 }
 #classic .c-title{
     width: 540px;
     height: 120px;
-    margin: 30px auto 50px;
+    padding-top: 30px;
+    margin: 0 auto;
     text-align: center;
     background:url("../img/index/line.png") no-repeat center bottom;
 }
@@ -237,23 +239,35 @@ body{
 }
 #classic .c-content{
     width: 100%;
-    height: 800px;
+    height: 100%;
 }
 #classic .c-content .c-pic{
     position: relative;
-    width: 1500px;
+    overflow: hidden;
+    width: 90%;
     height: 650px;
+    margin: 0 auto;
 }
 #classic .c-content .c-pic ul{
+    position: absolute;
+    top: 0;
+    left: 50%;
     width: 1000%;
     height: 100%;
+    opacity: 0;
 }
 #classic .c-content .c-pic li{
-    position: absolute;
-    left: 0;
-    top: 0;
+    float: left;
+    position: relative;
+    top: 50%;
     width: 240px;
     height: 393px;
+    transform: translate(0,-50%);
+    transition: .3s;
+}
+#classic .c-content .c-pic li img{
+    width: 100%;
+    height: 100%;
 }
 #classic .c-content .c-pic li.side{
     width: 300px;
@@ -299,14 +313,72 @@ body{
     margin-top: 40px;
     border: 2px solid transparent;
     border-radius: 50%;
+    background-color: #488fb2;
+}
+#classic .c-content .c-tab li.mid{
     background-color: #006597;
-    cursor: pointer;
 }
 #classic .c-content .c-tab li.active{
     border: 2px solid #a7c31e;
-    background-color: transparent;
+    background-color: #f0f0f0;
 }
 
+/*partner start*/
+#partner{
+    width: 100%;
+    height: 500px;
+}
+#partner .p-title{
+    width: 540px;
+    height: 120px;
+    padding-top: 30px;
+    margin: 0 auto;
+    text-align: center;
+    background:url("../img/index/line.png") no-repeat center bottom;
+}
+#partner .p-title p{
+    line-height: 60px;
+}
+#partner .p-title p img{
+    width: 260px;
+    height: 16px;
+}
+#partner .p-title h2{
+    font-size: 24px;
+}
+#partner .p-pic{
+    width: 100%;
+    height: 50px;
+    margin-top: 100px;
+
+}
+#partner .p-pic ul{
+    width: 800px;
+    height: 100%;
+    margin: 0 auto;
+}
+#partner .p-pic ul li{
+    float: left;
+    width: 220px;
+    height: 100%;
+    margin-left: 34px;
+}
+#partner .p-pic ul li img{
+    display: block;
+    margin: 0 auto;
+}
+#footer{
+    width: 90%;
+    height: 100px;
+    border-top: 1px solid #ccc;
+    margin: 0 auto;
+    text-align: center;
+}
+#footer p{
+    display: inline-block;
+    margin: 30px 20px 0;
+    color: #c2c2c2;
+}
 
 
 

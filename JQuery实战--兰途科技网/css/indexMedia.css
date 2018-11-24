@@ -1,5 +1,5 @@
 /* 1200 ~ 1500 */
-@media all and (max-width: 1500px) and (min-width: 900px){
+@media all and (max-width: 1500px) and (min-width: 1200px){
     #banner{
         height: 500px;
     }
@@ -31,43 +31,97 @@
         right: 100px;
         top: 120px;
     }
-}
-/* 900 ~ 1200 */
-@media all and (max-width: 1200px) and (min-width: 900px){
-    #header .h-main .h-m-nav ul > li a{
-        padding: 25px 20px;
+    #classic{
+        height: 730px;
     }
-    #banner{
+    #classic .c-content{
+        height: 610px;
+        margin-top: 30px;
+    }
+    #classic .c-content .c-pic{
         height: 450px;
     }
-    #banner .b-part .part1 .img1{
+    #classic .c-content .c-pic li{
+        width: 192px;
+        height: 315px;
+    }
+    #classic .c-content .c-pic li.side{
+        width: 240px;
+        height: 393px;
+    }
+    #classic .c-content .c-pic li.mid{
+        width: 288px;
+        height: 472px;
+    }
+}
+/* 0 ~ 1200*/
+@media all and (max-width: 1200px){
+    #classic .c-content .c-pic li{
+        width: 144px;
+        height: 236px;
+    }
+    #classic .c-content .c-pic li.side{
+        width: 180px;
+        height: 295px;
+    }
+    #classic .c-content .c-pic li.mid{
+        width: 216px;
+        height: 354px;
+    }
+}
+/* 900 ~ 1200 */
+@media all and (max-width: 1200px) and (min-width: 900px) {
+    #header .h-main .h-m-nav ul > li a {
+        padding: 25px 20px;
+    }
+
+    #banner {
+        height: 450px;
+    }
+
+    #banner .b-part .part1 .img1 {
         top: 260px;
     }
-    #banner .b-part .part1 .img2{
+
+    #banner .b-part .part1 .img2 {
         right: 40px;
         width: 500px;
         height: 385px;
     }
-    #banner .b-part .part2 .img1{
+
+    #banner .b-part .part2 .img1 {
         top: 200px;
     }
-    #banner .b-part .part2 .img2{
+
+    #banner .b-part .part2 .img2 {
         right: 50px;
+        bottom: 50px;
         width: 544px;
         height: 384px;
     }
-    #banner .b-part .part3 .img1{
+
+    #banner .b-part .part3 .img1 {
         left: 40px;
         top: 25px;
         width: 500px;
         height: 385px;
     }
-    #banner .b-part .part3 .img2{
+
+    #banner .b-part .part3 .img2 {
         right: 60px;
         width: 250px;
         height: 100px;
     }
+    #classic{
+        height: 680px;
+    }
+    #classic .c-content{
+        height: 560px;
+    }
 
+    #classic .c-content .c-pic {
+        height: 400px;
+    }
 }
 /* 0 ~ 900 */
 @media all and (max-width: 900px){
@@ -101,22 +155,45 @@
         margin-top: 106px;
     }
     #banner .b-part .part1 .img1{
-        left: 50%;
-        top: 250px;
         width: 200px;
         height: 80px;
-        margin-left: -100px;
     }
     #banner .b-part .part1 .img2{
-        left: 50%;
-        top: 20px;
         width: 330px;
         height: 240px;
-        margin-left: -165px;
     }
     #banner .b-part .part3 .img2{
         width: 200px;
         height: 90px;
+    }
+    #classic{
+        height: 630px;
+    }
+    #classic .c-content{
+        height: 510px;
+    }
+    #classic .c-content{
+        margin-top: 30px;
+    }
+    #classic .c-content .c-pic{
+        height: 350px;
+    }
+    #classic .c-content .c-tab{
+        display: none;
+    }
+    #partner .p-pic{
+        margin-top: 60px;
+    }
+    #partner .p-pic ul{
+        width: 100%;
+    }
+    #partner .p-pic ul li{
+        float: none;
+        margin: 20px auto;
+    }
+    #footer p{
+        display: block;
+        margin-top: 20px;
     }
 }
 /* 600~ 900 */
@@ -126,6 +203,13 @@
     }
     #banner{
         height: 350px;
+    }
+    #banner .b-part .part1 .img1{
+        left: 60px;
+        top: 180px;
+    }
+    #banner .b-part .part1 .img2{
+        right: 20px;
     }
     #banner .b-part .part2 .img1{
         top: 160px;
@@ -155,10 +239,14 @@
         height: 400px;
     }
     #banner .b-part .part1 .img1{
-        top: 270px;
+        left: 50%;
+        top: 250px;
+        margin-left: -100px;
     }
     #banner .b-part .part1 .img2{
-        top: 40px;
+        left: 50%;
+        top: 20px;
+        margin-left: -165px;
     }
     #banner .b-part .part2 .img1{
         top: 260px;
@@ -185,6 +273,16 @@
         right: 50%;
         top: 235px;
         margin-right: -100px;
+    }
+    #classic .c-content .c-pic{
+        width: 255px;
+    }
+    #classic .c-content .c-pic li.side{
+        opacity: 0;
+    }
+    #classic .c-content .c-pic li.mid{
+        width: 198px;
+        height: 324px;
     }
 }
 

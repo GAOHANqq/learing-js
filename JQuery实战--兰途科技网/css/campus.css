@@ -67,12 +67,20 @@
     background-image: url("../img/campus/bg6.jpg");
 }
 #part2{
+    height: 615px;
+}
+#part2,#part3,#part4,#part5,#part6{
     position: relative;
     width: 100%;
-    height: 615px;
+    height: 530px;
+    margin: 0 auto;
+    text-align: center;
     background-color: #f0f2f5;
 }
-#part2 .info,#part4 .info{
+#part4,#part6{
+    height: 550px;
+}
+#part2 .info,#part4 .info,#part6 .info{
     position: absolute;
     top: 50%;
     left: 20%;
@@ -82,11 +90,11 @@
     text-align: center;
     color: #0080ba;
 }
-#part2 .info h2,#part4 .info h2{
+#part2 .info h2,#part4 .info h2,#part6 .info h2{
     font-size: 40px;
     line-height: 70px;
 }
-#part2 .info p,#part4 .info p{
+#part2 .info p,#part4 .info p,#part6 .info p{
     font-size: 18px;
     line-height: 35px;
 }
@@ -115,13 +123,6 @@
     background: url("../img/campus/a_d.png") no-repeat center/cover;
     cursor: pointer;
 }
-#part3,#part5{
-    position: relative;
-    width: 100%;
-    height: 530px;
-    margin: 0 auto;
-    text-align: center;
-}
 #part3 .pic,#part5 .pic{
     overflow: hidden;
     position: absolute;
@@ -134,6 +135,7 @@
 #part5 .pic{
     overflow: visible;
 }
+
 #part3 ul{
     position: absolute;
     top: 50%;
@@ -182,12 +184,6 @@
     font-size: 18px;
     line-height: 35px;
 }
-#part4{
-    position: relative;
-    width: 100%;
-    height: 550px;
-    background-color: #f0f2f5;
-}
 #part4 .pic{
     position: absolute;
     top: 50%;
@@ -197,10 +193,38 @@
     margin-top: -215px;
     background: url("../img/campus/clock_c.png") no-repeat 58% 42%/ 157px 163px;
 }
-#part4 .pic img{
+#part4 .pic img,#part5 .pic img,#part6 .pic img{
     width: 100%;
     height: 100%;
 }
+#part6 .pic{
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    width: 668px;
+    height: 360px;
+    margin-top: -180px;
+}
+#part6 .info ul{
+    width: 100%;
+    height: 70px;
+}
+#part6 .info ul li{
+    float: left;
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    line-height: 35px;
+}
+#part6 .info span{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+}
+#footer{
+    background-color: #009ad6;
+}
+
 
 
 

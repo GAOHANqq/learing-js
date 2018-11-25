@@ -1,19 +1,12 @@
 (function(){
-    // header区域
-    (function(){
-        let $more = $("#header .more");
-
-        // 更多的点击事件
-        $more.click(function(){
-            $(this).find(".more-hide").toggle();
-        });
-    })();
 
     // banner区域
     (function(){
         let $banner = $("#banner"),
             $tab = $banner.find(".b-tab li"),
             $bg = $banner.find(".b-part .part"),
+            $videoControl = $banner.find(".b-part .part1 .img2 .video"),
+            $video = $videoControl.children(),
             index = 0,
             length = $tab.length,
             timer
@@ -26,13 +19,18 @@
         });
 
         // 轮播
-        timer = setInterval(changeIndex,3000);
         $banner.hover(function(){
             clearInterval(timer);
         },function(){
             timer = setInterval(changeIndex,3000);
         })
 
+        // 播放视频
+        $videoControl.click(function(){
+            $video.show();
+        });
+
+        // index变化
         function changeIndex(){
             index ++;
             index %= length;

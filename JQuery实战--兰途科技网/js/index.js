@@ -29,6 +29,10 @@
         $videoControl.click(function(){
             $video.show();
         });
+		$video.on("ended",function(){
+			$(this).hide();
+			$videoControl.show();
+		});
 
         // index变化
         function changeIndex(){
@@ -130,7 +134,6 @@
 
 
     })();
-
 
 })();
 

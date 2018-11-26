@@ -112,6 +112,7 @@
     top: -40px;
     right: 30px;
     width: 90%;
+    animation: round 15s linear infinite;
 }
 #part2 .next,#part3 .next,#part4 .next,#part5 .next{
     position: absolute;
@@ -132,10 +133,6 @@
     height: 324px;
     margin-top: -162px;
 }
-#part5 .pic{
-    overflow: visible;
-}
-
 #part3 ul{
     position: absolute;
     top: 50%;
@@ -148,6 +145,8 @@
 #part3 ul li{
     width: 100%;
     height: 33px;
+    font-size: 20px;
+    line-height: 33px;
 }
 #part3 ul li:before{
     position: relative;
@@ -162,9 +161,11 @@
 }
 #part3 ul li a{
     display: block;
-    line-height: 33px;
-    font-size: 20px;
     color: #0080BA;
+}
+#part3 ul li.active{
+    font-size: 28px;
+    text-indent: 20px;
 }
 #part3 .info,#part5 .info{
     position: absolute;
@@ -191,9 +192,18 @@
     width: 530px;
     height: 430px;
     margin-top: -215px;
-    background: url("../img/campus/clock_c.png") no-repeat 58% 42%/ 157px 163px;
+    background: url("../img/campus/clock.png") no-repeat 58% 42%/ 100%;
 }
-#part4 .pic img,#part5 .pic img,#part6 .pic img{
+#part4 .pic img{
+    margin: 105px  0 0 60px;
+    transform-origin: 40px 107px;
+    animation: round 60s linear infinite;
+}
+#part5 .pic{
+    overflow: visible;
+    animation: round 20s linear infinite;
+}
+#part5 .pic img,#part6 .pic img{
     width: 100%;
     height: 100%;
 }
@@ -223,6 +233,10 @@
 }
 #footer{
     background-color: #009ad6;
+}
+@keyframes round {
+    from {transform: rotate(0deg)}
+    to {transform: rotate(360deg)}
 }
 
 

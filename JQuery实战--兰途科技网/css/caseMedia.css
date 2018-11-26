@@ -1,0 +1,58 @@
+/* 1200 ~ 1500 */
+@media all and (max-width: 1500px) and (min-width: 1200px) {
+    #banner {
+        height: 616px;
+    }
+}
+/* 900 ~ 1200 */
+@media all and (max-width: 1200px) and (min-width: 900px) {
+    #banner {
+        height: 516px;
+    }
+}
+/* 600~ 900 */
+@media all and (max-width: 900px) and (min-width: 600px) {
+    #banner {
+        height: 400px;
+    }
+
+    #banner .b-part .img1 {
+        width: 270px;
+        height: 90px;
+        margin-top: -45px;
+    }
+}
+/* 0 ~ 600  */
+@media all and (max-width: 600px){
+    #banner{
+        height: 210px;
+    }
+    #banner .b-part .img1{
+        width: 150px;
+        height: 64px;
+        margin-top: -32px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

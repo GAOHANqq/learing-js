@@ -1,0 +1,137 @@
+/* 1200 ~ 1500 */
+@media all and (max-width: 1500px) and (min-width: 1200px) {
+    #banner {
+        height: 605px;
+    }
+    #banner .b-container{
+        height: 455px;
+    }
+    #classic{
+        background-size: 80%;
+    }
+
+}
+/* 900 ~ 1200 */
+@media all and (max-width: 1200px) and (min-width: 900px) {
+    #banner {
+        height: 585px;
+    }
+    #banner .b-container{
+        height: 435px;
+    }
+    #banner .b-container ul{
+        height: 165px;
+    }
+    #classic{
+        height: 510px;
+    }
+}
+/* 0~ 900 */
+@media all and (max-width: 900px){
+    #banner {
+        height: 585px;
+    }
+    #banner .b-container{
+        height: 435px;
+    }
+    #banner .b-container ul{
+        height: 165px;
+    }
+    #banner .b-container .b-c-img img{
+        width: 95px;
+        height: 95px;
+    }
+    #banner .b-container ul li img{
+        width: 45px;
+        height: 45px;
+    }
+    #banner .b-container ul li span{
+        font-size: 14px;
+    }
+    #classic{
+        background-image: none;
+    }
+}
+/* 0 ~ 600  */
+@media all and (max-width: 600px) {
+    #banner {
+        height: 500px;
+    }
+
+    #banner .b-container {
+        width: 100%;
+        height: 350px;
+    }
+
+    #banner .b-container .b-c-img {
+        padding-top: 10px;
+    }
+
+    #banner .b-container ul {
+        height: 200px;
+        margin: 0;
+    }
+
+    #banner .b-container ul li {
+        float: none;
+        width: 100%;
+        height: 45px;
+        margin: 0;
+    }
+
+    #banner .b-container .b-c-img {
+        height: 140px;
+    }
+
+    #banner .b-container .b-c-img img {
+        width: 95px;
+        height: 95px;
+    }
+
+    #banner .b-container ul li img {
+        float: left;
+        width: 45px;
+        height: 45px;
+        margin: 0px 120px -12px;
+    }
+
+    #banner .b-container ul li span {
+        float: right;
+        font-size: 14px;
+        margin: -25px 0 30px;
+    }
+
+    #classic .c-info {
+        height: 145px;
+    }
+
+    #classic .c-info img {
+        width: 55px;
+        height: 55px;
+    }
+
+    #classic .c-info p span {
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

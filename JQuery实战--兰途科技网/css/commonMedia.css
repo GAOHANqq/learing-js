@@ -32,6 +32,10 @@
     #header .h-main .h-m-nav ul.nav-list2{
         display: block;
     }
+    #classic .c-title{
+        width: 395px;
+        height: 140px;
+    }
 }
 /* 600~ 900 */
 @media all and (max-width: 900px) and (min-width: 600px) {

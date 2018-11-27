@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<!--suppress ALL -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <!--把数据插入到app作用域下,需要用 插值符号 {{ 变量 }}-->
+            {{ name }}
+
+            <h2 v-text="vText"></h2>
+            <hr>
+            <h2 v-html="vHtml"></h2>
+            <hr>
+            <h2 v-show="isFalse">{{ name }}</h2>
+            <hr>
+            <h2 v-show="isTrue">{{ name }}</h2>
+        </div>
+
+        <script src="../js/vue.js"></script>
+        <script>
+            /*
+                插值符号    {{ }}
+
+                v-text : 相当于innerText,不解析标签
+                v-html : 相当于innerHTML,解析标签
+                v-show : 显示,接受布尔值
+
+            */
+            let vue = new Vue();
+            console.log(vue);
+
+            new Vue({
+               el : "#app",
+                data : {    // 请求过来的数据
+                    name : "gaohan",
+                    vText : "这是v-text,相当与 innerText",
+                    vHtml : "这是<em>v-html</em>,相当与 innerHTML",
+                    isTrue : true,
+                    isFalse : false
+
+                }
+            });
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

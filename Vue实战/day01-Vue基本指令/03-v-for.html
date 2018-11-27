@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<!--suppress ALL -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select: none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>{{ msg }}</h2>
+
+        <ol>
+            <li v-for="item in arr">{{ item }}</li>
+        </ol>
+
+        <hr>
+
+        <ol>
+            <li>优化性能,绑定key,通过索引index找到对应的li,利于删除或添加</li>
+            <li v-for="(item,index) in arr" :key="index">{{ item }}</li>
+        </ol>
+
+        <hr>
+
+        <ol>
+            <li>遍历数组:</li>
+            <li v-for="(item,index) in user" :key="index">name:{{ item.name }} age:{{ item.age }}</li>
+        </ol>
+
+        <hr>
+
+        <ol>
+            <li>遍历对象:(在遍历对象时,经常绑定id索引)</li>
+            <li v-for="(key,value,index) in userName" :key="index">
+                key:{{ key }},
+                value:{{ value }},
+                index:{{ index }}
+            </li>
+        </ol>
+
+        <hr>
+        <ol>
+            <li>数组排序:</li>
+            <li v-for="(item,index) in sortArr" :key="index">{{ item }}</li>
+        </ol>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        /*
+           v-for  相当于 for in循环
+
+            v-if
+            v-else
+            v-else-if       相当于 if else
+
+        */
+        let vue = new Vue();
+        console.log(vue);
+
+        new Vue({
+            el : "#app",
+            data : {    // 请求过来的数据
+                msg : "v-for",
+                arr : [123,456,789],
+                user : [
+                    {name : "张三",age : 18},
+                    {name : "李四",age : 20},
+                    {name : "王五",age : 25}
+                ],
+                userName : {
+                    name : "张飞",
+                    age : 30,
+                    sex : "男"
+                }
+
+            },
+            computed : {
+                sortArr : function(){
+                    return this.arr.sort(function(a,b){
+                        // return a-b; // 从小到大
+                        return b-a; // 从大到小
+                    })
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

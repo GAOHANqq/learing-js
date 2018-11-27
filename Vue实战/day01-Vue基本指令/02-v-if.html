@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<!--suppress ALL -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select: none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1> {{ msg }} </h1>
+
+        <div v-if="isTrue">请输入你的用户名</div>
+        <hr>
+        <div v-if="isFalse">请输入你的用户名</div>
+        <div v-else="isFalse">请登录</div>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        /*
+            v-if 判断,接收布尔值,真则显示,假则注释DOM结构
+
+            v-if
+            v-else
+            v-else-if       相当于 if else
+
+        */
+        let vue = new Vue();
+        console.log(vue);
+
+        new Vue({
+            el : "#app",
+            data : {    // 请求过来的数据
+                msg : "v-if",
+                isTrue : true,
+                isFalse : false
+
+            }
+        });
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

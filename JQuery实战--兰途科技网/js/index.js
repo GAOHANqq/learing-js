@@ -11,14 +11,27 @@
             length = $tab.length,
             timer
         ;
+        // index变化
+        function changeIndex(){
+            index ++;
+            index %= length;
+            change(index);
+        }
+        // 变化函数
+        function change(index){
+            $tab.eq(index).addClass("active").siblings().removeClass("active");
+            $bg.eq(index).fadeIn(500).siblings().fadeOut(500);
+        }
 
         // tab点击事件
         $tab.click(function(){
+            clearInterval(timer);
             index  = $(this).index();
             change(index);
         });
 
         // 轮播
+        timer = setInterval(changeIndex,3000);
         $banner.hover(function(){
             clearInterval(timer);
         },function(){
@@ -33,18 +46,6 @@
 			$(this).hide();
 			$videoControl.show();
 		});
-
-        // index变化
-        function changeIndex(){
-            index ++;
-            index %= length;
-            change(index);
-        }
-        // 变化函数
-        function change(index){
-            $tab.eq(index).addClass("active").siblings().removeClass("active");
-            $bg.eq(index).fadeIn(500).siblings().fadeOut(500);
-        }
     })();
 
     // classic区域

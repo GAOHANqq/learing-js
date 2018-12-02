@@ -17,28 +17,23 @@
 </head>
 <body>
     <div id="app">
-        <h2>{{ msg }}</h2>
 
         <hr>
+        双向数据绑定: <br>
+            页面数据的改变会影响到内存的变化 <br>
+            内存的改变会影响页面的显示 <br>
+        <em v-text="num"></em>
+        <input  v-model="num" @keyup.13 = "onEnter" placeholder="键盘事件"></input>
 
-        <h2>得分:{{ num }}</h2>
-        <button v-on:click="addition">加分</button>
-        <button v-on:click="subtraction">减分</button>
-        <hr>
-        <!--<input v-on:keyup.enter = "onEnter" value="键盘事件"></input>-->
-        <input v-on:keyup.13 = "onEnter" value="键盘事件"></input>
-
-        <p>-------------------------------------</p>
-        <p>v-on的简写</p>
-        <button @click="addition">加分</button>
     </div>
 
     <script src="../js/vue.js"></script>
     <script>
         /*
-           v-on 绑定事件
+           双向数据绑定:
+           v-model
 
-           v-on的简写 @事件
+
 
         */
         let vue = new Vue();

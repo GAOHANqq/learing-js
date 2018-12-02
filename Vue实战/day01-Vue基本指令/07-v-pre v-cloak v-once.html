@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<!--suppress ALL -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select: none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        .red{
+            background-color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>{{ msg }}</h2>
+        <hr>
+
+        <div v-pre="msg"> {{msg}} </div>
+
+        <div v-cloak>不会显示，直到编译结束。</div>
+
+        <div v-once>只渲染元素和组件一次</div>
+
+        <hr>
+        <input type="text" v-model="msg">
+        <p v-text="msg" v-once></p>
+
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        /*
+           v-pre:
+                跳过这个元素和它的子元素的编译过程。
+                可以用来显示原始 Mustache 标签。
+                跳过大量没有指令的节点会加快编译。
+           v-clock
+                这个指令保持在元素上直到关联实例结束编译
+                不需要表达式
+                不会显示，直到编译结束。
+           v-once
+                只渲染元素和组件一次
+
+
+
+        */
+
+        new Vue({
+            el : "#app",
+            data : {    // 请求过来的数据
+                msg : "v-pre v-clock v-one",
+                num : 0,
+            }
+        });
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

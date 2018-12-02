@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            Vue.extend  就是用来生成组件
+        </div>
+        <ifSmoke></ifSmoke>
+        <div id="box"></div>
+        <script src="../js/vue.js"></script>
+        <script>
+            /*
+                Vue.extend  就是用来生成组件
+                学Vue,就是在不停的使用组件
+
+
+                Vue.extend: 使用基础 Vue 构造器，创建一个“子类”。
+                参数:     1) template(参数是一个包含组件选项的对象)
+                         2)  data(){}
+            */
+
+            let extend = Vue.extend({
+                    // 模板中只能写一个子节点
+                template : `<h2><a :href="url">{{con}}</a></h2>` ,
+                data(){
+                    return {
+                        con : "extend",
+                        url : "http://baidu.com"
+                    }
+                }
+
+            });
+
+            console.log(extend);// 构造函数
+
+            // 挂载组件
+            new extend().$mount('ifSmoke');
+
+            // 以 ID 挂载
+            new extend().$mount("#box");
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

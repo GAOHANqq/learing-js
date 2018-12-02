@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select: none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ol>
+            <li v-for="item in arr">{{item}}</li>
+        </ol>
+    </div>
+    <button onclick="add()">点击修改li的数据</button>
+    <script src="../js/vue.js"></script>
+    <script>
+        /*
+            Vue.set( target(目标), key(索引), value )
+                返回值：设置的值。
+                向响应式对象中添加一个属性，并确保这个新属性同样是响应式的，且触发视图更新。
+                它必须用于向响应式对象上添加新属性，因为 Vue 无法探测普通的新增属性
+                注意对象不能是 Vue 实例，或者 Vue 实例的根数据对象。
+
+        */
+
+        let app = new Vue({
+            el : "#app",
+            data(){
+                return {
+                    msg : "hello",
+                    arr : ["a","b","c"]
+                }
+            }
+        });
+
+
+        function add(){
+            console.log(app.arr);
+            //app.arr[2] = 123;// 页面不会改变
+            Vue.set(app.arr , 2 , 456);// 页面会改变
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select: none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <hd-nav :alt="msg" title="商品列表" main-title="主标题"></hd-nav>       <!--父组件-->
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+
+        /*
+            谁用,谁就是父组件
+            谁被用,谁就是子组件
+
+        */
+        new Vue({
+            el: "#box",
+            data:{
+                msg:"seo123"
+            },
+            // 声明组件
+            components:{
+                hdNav:{
+                    template:`<h2>选项组件 - {{title}} - {{mainTitle}} - {{alt}}</h2>`,  // 子组件
+                    // props 用于接受父组件的数据
+                    props:['title','mainTitle','alt']
+                }
+            }
+        });
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select: none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h1>{{ msg }}</h1>
+
+        <hd-nav></hd-nav>    <!--小写-->
+        <ft-nav></ft-nav>
+
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        /*
+            Vue.compontent
+                组件
+            参数:
+                {string} id
+                {Function | Object} [definition]
+        */
+
+
+        // 全局组件
+        Vue.component(
+            'hdNav', // 驼峰
+            {
+                template: `<h2 style="color: skyblue">全局组件</h2>`
+            }
+        );
+
+        new Vue({
+            el: "#box",
+            data : {
+                msg: "component 组件"
+            },
+            // 局部组件
+            components: {
+                "ftNav":{
+                    template: `<h2 style="color: green">局部组件</h2>`
+                }
+            }
+        });
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

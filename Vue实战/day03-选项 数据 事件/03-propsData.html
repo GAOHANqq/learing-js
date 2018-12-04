@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select: none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+        <ifSmoke></ifSmoke>
+
+
+
+
+    <script src="../js/vue.js"></script>
+    <script>
+        /*
+            propsData
+	            限制：只用于 new 创建的实例中。
+	            创建实例时传递 props。主要作用是方便测试。
+
+        */
+
+        let extend = Vue.extend({
+            // 模板中只能写一个子节点
+            template : `<h2><a :href="url">{{con}}--{{num}}</a></h2>` ,
+            data(){
+                return {
+                    con : "extend",
+                    url : "http://baidu.com"
+                }
+            },
+            props:["num"]
+
+        });
+
+        console.log(extend);// 构造函数
+
+        // 挂载组件
+        new extend({propsData:{num:123}}).$mount('ifSmoke');
+
+        // 以 ID 挂载
+        new extend({propsData:{num:123}}).$mount("#app");
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

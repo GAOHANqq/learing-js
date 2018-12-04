@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <h2>{{msg}} -- {{num}}</h2>
+
+            <button @click="add">add</button>
+        </div>
+
+        <button onclick="newAdd()">外部add</button>
+
+
+        <script src="../js/vue.js"></script>
+        <script>
+            // data
+            // 类型：Object | Function
+            // 限制：组件的定义只接受 function
+            // Vue 实例的数据对象
+            // 实例创建之后，可以通过 vm.$data 访问原始数据对象
+
+
+
+            let vm = new Vue({
+                el : "#app",
+
+            // Object类型
+                // data : {
+                //     msg : "data选项",
+                //     num : 123
+                // }
+
+            // function类型
+                data(){
+                    return {
+                        msg : "data选项",
+                        num : 0
+                    }
+                },
+                methods : {
+                    add(){
+                        this.num ++;
+                    }
+                }
+            });
+
+            function newAdd(){
+                vm.num ++;
+            }
+            console.log(vm);
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select: none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <hd-nav :alt="msg" title="商品列表" main-title="主标题"></hd-nav>   <!--父组件-->
+    </div>
+
+
+
+    <script src="../js/vue.js"></script>
+    <script>
+       /*
+           props
+                参数:Array<string> | Object
+                可以是数组或对象，用于接收来自父组件的数据。
+                可以是简单的数组，或使用对象作为替代
+                对象允许配置高级选项，如类型检测、自定义校验和设置默认值
+
+       */
+
+       new Vue({
+           el: "#app",
+           data:{
+               msg:"seo123"
+           },
+           // 声明组件
+           components:{
+               hdNav:{
+                   template:`<h2>选项组件 - {{title}}</h2>`,  // 子组件
+                    // props 用于接受父组件的数据
+                    // 数组类型
+               //     props:['title','mainTitle','alt']
+                    // 对象类型
+                   props: {
+                       title:{
+                          type:String,
+                          default:"",
+                           required:true,
+                           validate(valus){
+                              return valus;
+                           }
+                       }
+                   }
+               }
+           }
+       });
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>小书书</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="小书书">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select: none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <h1>{{msg}}</h1>
+            <ol>
+                <li v-for="(item,index) in list" :key="index">
+                    {{ item.date }} -- {{ item.title }}
+                </li>
+            </ol>
+            <hr>
+            <ul>
+                <li v-for="(item,index) in newsList" :key="index">
+                    {{ item.date }} -- {{ item.title }}
+                </li>
+            </ul>
+            <b><em>{{price}}</em></b>
+            <b><em>{{newPrice}}</em></b>
+        </div>
+
+        <script src="../js/vue.js"></script>
+        <script>
+            /*
+            computed
+                主要作用是对原始数据进行二次处理,例如:大小写转换,排序,拼接,拆分
+
+                计算属性将被混入到 Vue 实例中。
+                所有 getter 和 setter 的 this 上下文自动地绑定为 Vue 实例
+
+            */
+
+            new Vue({
+                el:"#app",
+                data:{
+                    msg:"computed:主要作用是对原始数据进行二次处理,例如:大小写转换,排序,拼接,拆分",
+                    price:200,
+                    list:[
+                        {
+                            title:"中国GDP最高的100个县：江苏省“土豪县”最多?入围26个",
+                            date:"2018-12-4"
+                        },
+                        {
+                            title:"京城气温周五创30年同期最低 预计最高气温零下4℃",
+                            date:"2018-12-3"
+                        },
+                        {
+                            title:"调查：上海为亚洲生活成本最贵城市 香港排第三",
+                            date:"2018-12-1"
+                        }
+                    ]
+                },
+                computed:{
+                    newsList(){
+                        return this.list = this.list.reverse();
+                    },
+                    newPrice(){
+                        return ("￥" + this.price + "元");
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select: none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>{{msg}} -- {{num}}</h1>
+
+        <input type="button" value="add" @click="add">
+    </div>
+
+    <input type="button" value="reduce" onclick="reduce()">
+    <input type="button" value="reduceOne" onclick="reduceOne()">
+    <input type="button" value="off" onclick="off()">
+
+
+    <script src="../js/vue.js"></script>
+    <script>
+        /*
+            vm.$on
+	            监听当前实例上的自定义事件。
+	            事件可以由vm.$emit触发。回调函数会接收所有传入事件触发函数的额外参数。
+
+        vm.$on(event,fn)
+	        监听当前实例上的自定义事件。事件可以由vm.$emit触发。回调函数会接收所有传入事件触发函数的额外参数。
+        vm.$once(event,fn)
+	        监听一个自定义事件，但是只触发一次，在第一次触发之后移除监听器。
+        vm.$off(event)
+	        移除自定义事件监听器。
+        vm.$emit(event)
+	        触发当前实例上的事件。附加参数都会传给监听器回调。
+
+
+        */
+
+
+        let vm = new Vue({
+            el:"#app",
+            data: {
+                msg: "实例方法 / 事件",
+                num: 0
+
+            },
+            methods:{
+                add(){
+                    this.num ++;
+                }
+            }
+
+        });
+
+        // 事件监听
+        vm.$on("reduce",function(){
+            this.num --;
+        })
+        vm.$once("reduceOne",function(){
+            this.num --;
+        })
+
+
+        // 发送信息
+        function reduce(){
+            vm.$emit("reduce");
+        }
+        function reduceOne(){
+            vm.$emit("reduceOne");
+        }
+        function off(){
+            vm.$off("reduce");
+        }
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

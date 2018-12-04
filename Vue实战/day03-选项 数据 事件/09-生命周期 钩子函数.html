@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select: none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>{{msg}} -- {{num}}</h1>
+        <input type="button" @click="add" value="add">
+
+
+
+    </div>
+
+
+
+    <script src="../js/vue.js"></script>
+    <script>
+        /*
+         生命周期 钩子函数 事件函数
+         例如: DOM加载前,DOM加载完成后,数据更新后
+
+        */
+
+
+
+        let vm = new Vue({
+            el:"#app",
+            data: {
+                msg: "生命周期 钩子函数 事件函数",
+                num: 0,
+                arr:["第一页","第二页","第三页","第四页"]
+            },
+            methods:{
+                add(){
+                    this.num ++;
+                }
+            },
+            beforeCreate(){
+                console.log("1,在实例初始化之后，数据观测和事件配置之前被调用");
+            },
+            created(){
+                console.log("2,在实例创建完成后被立即调用");
+            },
+            beforeMount(){
+                console.log("3,在挂载开始之前被调用")
+            },
+            mounted(){
+                console.log("4,在挂载完成后被调用")
+            },
+            beforeUpdate(){
+                console.log("5,数据更新时调用")
+            },
+            updated(){
+                console.log("6,数据更新完成后调用")
+            },
+            activated(){
+                console.log("7,keep-alive 组件激活时调用")
+            },
+            deactivated(){
+                console.log("8,keep-alive 组件停用时调用")
+            },
+            beforeDestroy(){
+                console.log("9,实例销毁之前调用")
+            },
+            destroyed(){
+                console.log("10,Vue 实例销毁后调用")
+            },
+            errorCaptured(){
+                console.log("11,当捕获一个来自子孙组件的错误时被调用")
+            }
+
+        });
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select: none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>{{msg}}</h1>
+        <h2>{{temperature}} -- {{info}}</h2>
+
+        <button @click="add">++</button>
+        <button @click="reduce">--</button>
+
+    </div>
+    <br>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        /*
+            watch 监控数据的变化
+
+                  类型：{ [key: string]: string | Function | Object | Array }
+
+	            一个对象，键是需要观察的表达式，值是对应回调函数。
+	            值也可以是方法名，或者包含选项的对象。
+	            Vue 实例将会在实例化时调用 $watch()，遍历 watch 对象的每一个属性。
+
+        */
+
+
+        let vm = new Vue({
+            el:"#app",
+            data: {
+                msg: "watch 监控数据的变化",
+                temperature: 28,
+                info:""
+
+            },
+            methods:{
+                add(){
+                    this.temperature ++;
+                },
+                reduce(){
+                    this.temperature --;
+                }
+            },
+            watch:{
+                temperature(newVal,oldVal){
+                    console.log(newVal,oldVal);
+                    if( newVal>=30 ){
+                        this.info = "温度较高,适宜游泳";
+                    }else if( newVal<=10){
+                        this.info = "温度较低,建议穿外套";
+                    }else{
+                        this.info = "温度正常,适宜外出";
+                    }
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

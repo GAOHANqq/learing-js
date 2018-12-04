@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select: none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>{{msg}}</h1>
+        <hr>
+        <hi-dream>
+            <span slot="name">{{con.name}}</span>
+            <span slot="age">{{con.age}}</span>
+            <span slot="sex">{{con.sex}}</span>
+        </hi-dream>
+    </div>
+
+
+
+    <template id="tpl">
+        <div>
+            <h3>姓名: <slot name="name"></slot></h3>
+            <h3>年龄: <slot name="age"></slot></h3>
+            <h3>性别: <slot name="sex"></slot></h3>
+        </div>
+    </template>
+
+
+    <script src="../js/vue.js"></script>
+    <script>
+        /*
+            slot
+
+                用于标记往哪个具名插槽中插入子组件内容,
+                会在第三方组件上看到有slot属性。
+        */
+
+
+        let vm = new Vue({
+            el:"#app",
+            data: {
+                msg: "用于标记往哪个具名插槽中插入子组件内容,会在第三方组件上看到有slot属性",
+                con: {
+                    name : "高翰",
+                    age : 23,
+                    sex : "男"
+                }
+            },
+            components:{
+                'hi-dream':{
+                    template:"#tpl"
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

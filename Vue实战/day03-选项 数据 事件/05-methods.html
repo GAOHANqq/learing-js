@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select: none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>{{msg}} -- {{price}}</h1>
+
+        <button @click="add(5,$event)">Vue作用域调用函数add,使用$event获取事件对象</button>
+
+        <dream @click.native="add(1,this)" title="在组件中调用方法,要使用.native"></dream>
+    </div>
+    <br>
+    <button onclick="vm.add(3,this)">外部调用Vue里的add函数</button>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        /*
+        methods
+	        methods 将被混入到 Vue 实例中。
+	        可以直接通过 VM 实例访问这些方法，或者在指令表达式中使用。
+	        方法中的 this 自动绑定为 Vue 实例。
+
+            注意，不应该使用箭头函数来定义 method 函数
+                是箭头函数绑定了父级作用域的上下文，所以 this 将不会按照期望指向 Vue 实例，this.a 将是 undefined。
+
+        */
+
+        let dream = {
+            template:`<h2><button>{{title}}</button></h2>`,
+            props:["title"]
+        }
+        let vm = new Vue({
+            el:"#app",
+            data: {
+                msg: "methods",
+                price: 199
+
+            },
+            components:{
+                dream
+            },
+            methods:{
+                add(n,e){
+                    // console.log(this); // this指向Vue
+                    // this.price ++;
+                    this.price += n;
+                    console.log(n, e);
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select: none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h2>Vue.version 该版本是:${msg}</h2>
+        <h2>{{msg}}--${msg}</h2>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        console.log(Vue.version);
+
+        let version = Number(Vue.version.split('.')[0])
+
+        if (version === 2) {
+            alert("Vue.js是 2.x.x版本");
+        } else if (version === 1) {
+            alert("Vue.js是 1.x.x版本");
+        } else {
+            alert("Vue.js版本有问题,请联系开发者");
+        }
+
+        new Vue({
+            el:"#box",
+            data:{
+                msg:version
+            },
+            delimiters: ["${","}"] // 重新定义插值符号
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

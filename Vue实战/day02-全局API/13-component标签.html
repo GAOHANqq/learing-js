@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小书书</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="小书书">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select: none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h2>{{msg}}</h2>
+
+        <!--根据值得不同,显示不同的组件-->
+
+        <component v-bind:is="componentA"></component>
+        <component :is="componentB"></component>
+        <component :is="componentC"></component>
+
+        <component :is="toggleComponent"></component>
+        <button @click="toggle">切换组件</button>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+
+        // 在外部声明组件
+        let componentA = {
+            template : `<h2 style="color: red">组件A</h2>`
+        }
+        let componentB = {
+            template : `<h2 style="color: green">组件B</h2>`
+        }
+        let componentC = {
+            template : `<h2 style="color: pink">组件C</h2>`
+        }
+
+
+        new Vue({
+            el: "#box",
+            data:{
+                msg:"component标签",
+                componentA,
+                componentB,
+                componentC,
+                toggleComponent:componentA,
+                arr:[
+                    componentA,
+                    componentB,
+                    componentC
+                ]
+            },
+            components:{
+                componentA,
+                componentB,
+                componentC
+            },
+            methods:{
+                toggle(){
+                    this.toggleComponent = this.arr[Math.floor(Math.random()*3)];
+                }
+            }
+        });
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

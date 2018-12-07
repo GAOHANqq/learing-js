@@ -7,6 +7,7 @@
     </div>
 </template>
 
+
 <script>
     import connector from './call/connector'
     export default {

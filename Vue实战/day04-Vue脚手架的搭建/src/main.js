@@ -4,6 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import HDNav from './components/hdNav'
+import FTNav from './components/ftNav'
+
+Vue.component('hdNav',HDNav)
+Vue.component('ftNav',FTNav) // 全局组件
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

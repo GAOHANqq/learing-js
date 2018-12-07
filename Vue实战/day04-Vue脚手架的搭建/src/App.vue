@@ -1,7 +1,7 @@
 <!--suppress ALL -->
 <template>
   <div id="app" ref="abc">
-    <hd-nav title="主页头部"></hd-nav>
+    <hd-nav ref="header" title="主页头部"></hd-nav>
     <hr>
     <router-view/>
     <hr>
@@ -23,6 +23,8 @@
         this.$refs.abc.style.backgroundColor = "hotpink"
         console.log(this.$refs.footer.$el);
         this.$refs.footer.$el.style.backgroundColor = "skyblue"
+        console.log(this.$refs.header);
+        this.$refs.header.$el.style.color = "#fff"
       }
   }
 </script>

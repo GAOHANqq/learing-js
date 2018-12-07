@@ -267,7 +267,65 @@ vm.$emit
 
 
 
-​	
+## 八、666
+
+
+
+		1. 组件使用
+		2. 父组件传值
+		3. DOM元素获取
+		4. 子组件通信 
+		5. 文档分类
+		6. vue-router 404
+		7. router-link路由参数
+		8. 路径重定向
+		9. 编程导航
+		10. 多视图
+		11. 嵌套路由
+		12. axios
+
+
+
+
+
+
+```css
+
+
+ElementUI
+介绍：Element，一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库
+链接：https://element-cn.eleme.io/#/zh-CN
+
+Mint UI
+介绍：基于 Vue.js 的移动端组件库
+链接：https://mint-ui.github.io/#!/zh-cn
+
+
+Mui
+介绍：最接近原生APP体验的高性能前端框架
+链接：http://dev.dcloud.net.cn/mui/ui/
+
+Aui 框架
+介绍：使用了大量弹性响应式布局，采用容器+布局结构+控件的嵌套形式,借鉴了市场上其他优秀UI框架
+链接：http://www.auicss.com/
+
+
+we-vue
+介绍：使用 Vue2.x + weui1.x 开发的组件
+链接：https://github.com/tianyong90/we-vue
+
+Vue-Layout
+介绍：vue可视化布局
+链接：https://jaweii.github.io/Vue-Layout/dist/#/
+
+muse-ui
+https://muse-ui.org/#/zh-CN/tabs
+
+
+
+```
+
+
 
 ​	
 

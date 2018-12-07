@@ -3,6 +3,8 @@
   <div id="app" ref="abc">
     <hd-nav ref="header" title="主页头部"></hd-nav>
     <hr>
+    <button @click="callB">A先打电话-->父组件</button>
+    <hr>
     <router-view/>
     <hr>
     <ft-nav ref="footer" tip="主页底部"></ft-nav>
@@ -10,8 +12,22 @@
 </template>
 
 <script>
+  import connector from './components/call/connector'
+
   export default {
       name: 'App',
+      data() {
+          return{
+
+          }
+      },
+      methods:{
+          callB(){
+              connector.$on('phone',function(msg){
+                  console.log(msg);
+              })
+          }
+      },
       // 组件创建后,数据已经完成初始化,但是DOM还未完成
       created(){
 

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="Generator" content="EditPlus®"/>
+		<meta name="Author" content=""/>
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>Document</title>
+		<style type="text/css">
+			body,p,ul,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
+			ul,ol{list-style:none;}
+			img{display:block;border:0;}
+			a{text-decoration:none;color:#222;}
+
+		</style>
+	</head>
+	<body>
+		<select id="font-family">
+
+        </select>
+	</body>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		let fontFamily = {
+				黑体: "SimHei",
+				宋体: "SimSun",
+				仿宋: "FangSong",
+				楷体: "KaiTi",
+				仿宋_GB2312: "FangSong_GB2312",
+				微软雅黑: "Microsoft YaHei",
+				隶书: "LiSu",
+				幼圆: "YouYuan",
+				华文细黑: "STXihei",
+				华文楷体: "STKaiti",
+				华文宋体: "STSong",
+				方正姚体: "FZYaoti",
+				华文彩云: "STCaiyun",
+				华文琥珀: "STHupo",
+				华文隶书: "STLiti",
+				华文行楷: "STXingkai",
+				华文新魏: "STXinwei"
+			}
+
+
+			let $font = $("#font-family");
+
+	                (function(){
+
+	                    let oF = document.createDocumentFragment();
+						let text = "";
+	                    for(key in fontFamily){
+	                        let oP = document.createElement('option');
+							text = key;
+							console.log(text)
+							oP.html("text");
+							oP.setAttribute("value",fontFamily[key]);
+	                        oF.appendChild(oP);
+	                    }
+	                    $font.append(oF);
+	                })();
+
+
+	</script>
+</html>

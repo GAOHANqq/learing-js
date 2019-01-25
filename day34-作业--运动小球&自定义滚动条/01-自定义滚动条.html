@@ -181,7 +181,80 @@
             <div id="bar"></div>
         </div>
 
-        <script>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+
+		<script type="text/javascript">
+
+			//滚动条
+			$(function () {
+				//文本高度
+				var contentH = $('.content').height();
+				//可视高度
+				var viewH = $('#wrap').height();
+				//滚动条高度
+				var scrollH = $('#scroll').height();
+				//滑块高度
+				var sliderH = viewH/contentH*scrollH;
+				var sliderDistence = 0;
+				$('#bar').css('height', sliderH+'px' );
+				// 滚动事件
+				$('#wrap').on('scroll',function() {
+					//文本滚动距离
+					var scrollTop = $('#wrap').scrollTop();
+					//滑块滚动距离
+					sliderDistence = scrollTop/(contentH-viewH)*(scrollH-sliderH);
+					// console.log(scrollTop)
+					$('#bar').css('top', sliderDistence+'px' );
+				});
+
+				//点击事件
+				$('.scrollbar').click(function(event) {
+					// console.log(sliderDistence);
+					var move = 20;
+					if (event.offsetY > sliderDistence + sliderH) {
+						$('#bar').css('top', sliderDistence+move+'px' );
+						sliderDistence = sliderDistence + move;
+					} else if( event.offsetY < sliderDistence){
+						$('#bar').css('top', sliderDistence-move+'px' );
+						sliderDistence = sliderDistence - move;
+					}
+					$('#wrap').scrollTop(sliderDistence/(scrollH-sliderH)*(contentH-viewH))
+				});
+				// 拖拽
+				// var drag = false;
+				$('#bar').mousedown(function(e) {
+					// drag = true;
+					var startY = e.offsetY;
+					console.log(startY);
+
+					$(document).mousemove(function(e) {
+						// if (drag) {
+							var moveY = e.offsetY;
+							var dValue = moveY-startY;
+							var mouseH = sliderDistence+dValue;
+							if ( mouseH <= 0) {
+								mouseH = 0;
+							} else if (mouseH >= scrollH - sliderH){
+								mouseH = scrollH - sliderH;
+							}
+							$('#bar').css('top', mouseH+'px' );
+							$('#wrap').scrollTop(mouseH/(scrollH-sliderH)*(contentH-viewH));
+						// }
+					});
+					$(document).mouseup(function(e){
+						// drag = false;
+						$(document).off('mousemove');
+						$(document).off('mouseup');
+					});
+					return false;
+				});
+			})
+
+		</script>
+        <!-- <script>
             (function(){
             // 兼容封装
                 //事件监听
@@ -250,7 +323,7 @@
 
 
             })();
-        </script>
+        </script> -->
     </body>
 </html>
 

@@ -40,7 +40,64 @@
 </html>
 
 
+(function(){
+    // 重要变量
+    var oScroll = $(".scroll"),
+        oWrap = $(".test-questions"),
+        oBar = oScroll.find(".scroll-bar")
+    ;
 
+    var
+        // wrap的高度
+        wrapH = oWrap.offsetHeight
+    ;
+
+
+    // 各种事件的添加
+    (function(){
+        //公告变量
+        var downY,//按下时的Y坐标
+            downTop = oBar.offsetHeight//按下时的top值
+        ;
+        //添加事件
+        oWrap.on("mousewheel",scroll);
+        // oBar.on("mousedown",barDown);
+        // $(document).on("mouseup",docUp)
+        //相关函数
+        // 滑块bar的Down事件函数
+        // function barDown(ev){
+        //     downY = ev.clientY;
+            // $(document).on("mousemove",docMove);
+        // }
+        // document的move事件函数
+        // function docMove(ev){
+        //     let y_ = ev.clientY - downY;
+        //     let btop = downTop + y_;
+        //     changeTop(btop);
+        // }
+        // document的up事件函数
+        // function docUp(){
+        //     $(document).on("mousemove",docMove);
+        // }
+
+        //滚动事件函数
+        function scroll(ev){
+            //方位修正,往上- 往下+
+            var dir = ev.wheelDelta/120;
+            //执行变化
+            console.log(dir);
+            changeTop( oBar.offsetTop - dir*40);
+            ev.preventDefault();
+        }
+
+        //改变函数
+        function changeTop(btop){
+            //位置改变
+            oBar.attr("background-position-y",btop);
+        }
+    })();
+
+})();
 
 
 

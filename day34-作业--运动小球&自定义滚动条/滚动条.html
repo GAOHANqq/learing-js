@@ -198,74 +198,68 @@
             </div>
         </div>
 
-        <script>
+
+		<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+
+		<script>
 
             (function(){
                 // 重要变量
-                let
-					oWrap = document.getElementById("wrap"), // 可视区域
-					oContent = document.querySelector("#wrap .content"), // 内容区域
-
-					oScroll = document.querySelector("#wrap .scroll"), // 滚动条
-                    oBar = document.querySelector("#wrap .scroll .bar") // 滑块
+                var
+					oWrap = $("#wrap"), // 可视区域
+					oContent = $("#wrap .content"), // 内容区域
+					oScroll = $("#wrap .scroll"), // 滚动条
+                    oBar = $("#wrap .scroll .bar") // 滑块
                 ;
 
-                let
-                    // 可视区域的高度
-                     wrapH = oWrap.offsetHeight,
-                    // wrapH / content
+                var
+					wrapH = oWrap.offsetHeight,
                     prop = wrapH/oContent.offsetHeight // 滑块比
                 ;
 
-                // 根据内容大小求出滑块的高度
-                (function(){
-                    let height = wrapH*prop;
-                    oBar.style.height = height + "px";
-                })();
-                //如果content比wrap小,就不需要滑块了
+
+				var height = wrapH*prop;
+				oBar.height(height);
                 if(prop >= 1){
-                    oScroll.style.display = "none";
+                    oScroll.hide();
                     return;
                 }
 
                 // 各种事件的添加
-                (function(){
+
                     //公告变量
-                    let downY,//按下时的Y坐标
+                    var downY,//按下时的Y坐标
                         downTop = oBar.offsetHeight,//按下时的top值
                         barMax = wrapH - downTop,//最大运动高度
                         barMin = 0,//最小运动高度
                         contentMax = oContent.offsetHeight - wrapH,//content的最大高度
                         scrollStep = 20*barMax/contentMax//滚动速度
                     ;
-                //添加事件
                     //滚动事件
-                    oWrap.addEventListener("mousewheel",scroll);
+                    oWrap.on("mousewheel",scroll);
                     //down事件
-                    oBar.addEventListener("mousedown",barDown);
+                    oBar.on("mousedown",barDown);
                     //up事件
-                    document.addEventListener("mouseup",docUp)
-                //相关函数
-                    // 滑块bar的Down事件函数
+                    $(document).on("mouseup",docUp)
+
                     function barDown(ev){
                         downY = ev.clientY;
-                        document.addEventListener("mousemove",docMove);
+                        $(document).on("mousemove",docMove);
                     }
-                    // document的move事件函数
                     function docMove(ev){
-                        let y_ = ev.clientY - downY;
-                        let btop = downTop + y_;
+                        var y_ = ev.clientY - downY;
+                        var btop = downTop + y_;
                         changeTop(btop);
                     }
-                    // document的up事件函数
                     function docUp(){
-                        document.removeEventListener("mousemove",docMove);
+                        $(document).off("mousemove",docMove);
                     }
 
                     //滚动事件函数
                     function scroll(ev){
                         //方位修正,往上- 往下+
-                        let dir = ev.wheelDelta/120;
+                        var dir = ev.wheelDelta/120;
                         //执行变化
                         changeTop( oBar.offsetTop - dir*scrollStep);
                         ev.preventDefault();
@@ -277,12 +271,12 @@
                         btop = Math.min(btop,barMax);
                         btop = Math.max(btop,barMin);
                         // 对应的content的位置
-                        let cTop = btop*contentMax/barMax;
+                        var cTop = btop*contentMax/barMax;
                         //位置改变
-                        oBar.style.top = btop + "px";
-                        oContent.style.top = -cTop + "px";
+                        oBar.css({"top":btop+'px'});
+                        oContent.css({"top":-cTop+'px'});
                     }
-                })();
+
 
             })();
         </script>

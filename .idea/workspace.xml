@@ -1,0 +1,1356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d2ef0d21-a348-4041-91d4-e7ec6a290974" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1784188439">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="118" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.105" value="1" />
+          <entry key="project.open.time.11" value="2" />
+          <entry key="project.open.time.112" value="1" />
+          <entry key="project.open.time.113" value="1" />
+          <entry key="project.open.time.118" value="1" />
+          <entry key="project.open.time.129" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.198" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.25" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.30" value="1" />
+          <entry key="project.open.time.32" value="1" />
+          <entry key="project.open.time.33" value="2" />
+          <entry key="project.open.time.34" value="1" />
+          <entry key="project.open.time.35" value="3" />
+          <entry key="project.open.time.36" value="1" />
+          <entry key="project.open.time.37" value="2" />
+          <entry key="project.open.time.38" value="1" />
+          <entry key="project.open.time.39" value="1" />
+          <entry key="project.open.time.40" value="5" />
+          <entry key="project.open.time.41" value="4" />
+          <entry key="project.open.time.42" value="4" />
+          <entry key="project.open.time.43" value="5" />
+          <entry key="project.open.time.44" value="6" />
+          <entry key="project.open.time.45" value="3" />
+          <entry key="project.open.time.46" value="4" />
+          <entry key="project.open.time.47" value="5" />
+          <entry key="project.open.time.48" value="1" />
+          <entry key="project.open.time.49" value="6" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.50" value="1" />
+          <entry key="project.open.time.51" value="1" />
+          <entry key="project.open.time.52" value="2" />
+          <entry key="project.open.time.53" value="3" />
+          <entry key="project.open.time.55" value="1" />
+          <entry key="project.open.time.56" value="1" />
+          <entry key="project.open.time.57" value="4" />
+          <entry key="project.open.time.58" value="2" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.60" value="2" />
+          <entry key="project.open.time.62" value="2" />
+          <entry key="project.open.time.63" value="4" />
+          <entry key="project.open.time.64" value="1" />
+          <entry key="project.open.time.65" value="2" />
+          <entry key="project.open.time.66" value="1" />
+          <entry key="project.open.time.67" value="1" />
+          <entry key="project.open.time.68" value="2" />
+          <entry key="project.open.time.69" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.71" value="1" />
+          <entry key="project.open.time.73" value="1" />
+          <entry key="project.open.time.74" value="1" />
+          <entry key="project.open.time.75" value="2" />
+          <entry key="project.open.time.79" value="1" />
+          <entry key="project.open.time.83" value="1" />
+          <entry key="project.open.time.85" value="1" />
+          <entry key="project.open.time.88" value="1" />
+          <entry key="project.open.time.89" value="2" />
+          <entry key="project.open.time.91" value="3" />
+          <entry key="project.opened" value="120" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="css" value="52" />
+          <entry key="html" value="831" />
+          <entry key="iml" value="1" />
+          <entry key="jpg" value="41" />
+          <entry key="js" value="43" />
+          <entry key="json" value="1" />
+          <entry key="md" value="18" />
+          <entry key="png" value="54" />
+          <entry key="rnc" value="1" />
+          <entry key="ts" value="4" />
+          <entry key="txt" value="1" />
+          <entry key="vue" value="10" />
+          <entry key="作业" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="52" />
+          <entry key="HTML" value="831" />
+          <entry key="IDEA_MODULE" value="1" />
+          <entry key="Image" value="95" />
+          <entry key="JSON" value="1" />
+          <entry key="JavaScript" value="43" />
+          <entry key="PLAIN_TEXT" value="22" />
+          <entry key="RNG Compact" value="1" />
+          <entry key="TypeScript" value="4" />
+          <entry key="Vue.js" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="css" value="11494" />
+          <entry key="html" value="151872" />
+          <entry key="js" value="8630" />
+          <entry key="md" value="1" />
+          <entry key="rnc" value="1" />
+          <entry key="txt" value="717" />
+          <entry key="vue" value="976" />
+          <entry key="作业" value="33" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CSS" value="11497" />
+          <entry key="HTML" value="151867" />
+          <entry key="JavaScript" value="8629" />
+          <entry key="PLAIN_TEXT" value="751" />
+          <entry key="RNG Compact" value="1" />
+          <entry key="RegExp" value="3" />
+          <entry key="Vue.js" value="976" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.compare" value="1" />
+          <entry key="git.branch.delete.remote" value="1" />
+          <entry key="git.branch.merge" value="4" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/day41--面向对象编程/05-原型链.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="338">
+              <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML4 File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>label</find>
+      <find>#img</find>
+      <find>#tab</find>
+      <find>#btn</find>
+      <find>btn</find>
+      <find>var</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="2aa2e67dd6f35673d6a733f5310afaefee4fa17f" />
+      </map>
+    </option>
+    <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
+    <option name="RESET_MODE" value="MIXED" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/day08-判断和循环/案例5-产生左尖括号图形.html" />
+        <option value="$PROJECT_DIR$/day16-解析顺序  闭包/01-闭包.html" />
+        <option value="$PROJECT_DIR$/day16-解析顺序  闭包/02-闭包解决var的问题.html" />
+        <option value="$PROJECT_DIR$/day16-解析顺序  闭包/03-练习1--return作用域.html" />
+        <option value="$PROJECT_DIR$/day18-作业代码优化/02-鼠标移动切换海报.html" />
+        <option value="$PROJECT_DIR$/day21-数组常用的api/09-ES6--字符串.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day01-Vue基本指令/04-v-on.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day01-Vue基本指令/05-v-model.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day01-Vue基本指令/06-v-bind.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day01-Vue基本指令/07-v-pre v-clock v-one.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day01-Vue基本指令/07-v-pre v-clock v-once.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day01-Vue基本指令/07-v-pre v-cloak v-once.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day02-全局API/01-Vue.extend.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day02-全局API/02-Vue.nextTick.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day02-全局API/03-Vue.set.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day02-全局API/04-Vue.delete.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day02-全局API/5-directive.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day02-全局API/05-directive.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day02-全局API/05-Vue.directive.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day02-全局API/06-Vue.filter.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day02-全局API/07-Vue.component.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day02-全局API/08-选项模板.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day02-全局API/09-标签模板.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day02-全局API/10-script标签模板.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day02-全局API/11-component父组件传递数据到子组件.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day02-全局API/12-父组件引用子组件.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day02-全局API/13-component标签.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day02-全局API/14-Vue.mixin.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day02-全局API/15-Vue.compile.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day02-全局API/16-Vue.version.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day03-选项 数据 事件/01-data.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day03-选项 数据 事件/02-props.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day03-选项 数据 事件/03-propsData.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day03-选项 数据 事件/04-computed.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day03-选项 数据 事件/05-methods.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day03-选项 数据 事件/06-watch.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day03-选项 数据 事件/07-slot.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day03-选项 数据 事件/08-扩展事件实例.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day03-选项 数据 事件/09-生命周期 钩子函数.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day04/src/App.vue" />
+        <option value="$PROJECT_DIR$/Vue实战/day04-Vue脚手架的搭建/src/components/HelloWorld.vue" />
+        <option value="$PROJECT_DIR$/Vue实战/day04-Vue脚手架的搭建/src/router/index.js" />
+        <option value="$PROJECT_DIR$/Vue实战/day04-Vue脚手架的搭建/src/main.js" />
+        <option value="$PROJECT_DIR$/Vue实战/day04-Vue脚手架的搭建/src/components/hdNav.vue" />
+        <option value="$PROJECT_DIR$/Vue实战/day04-Vue脚手架的搭建/index.html" />
+        <option value="$PROJECT_DIR$/Vue实战/day04-Vue脚手架的搭建/src/components/ftNav.vue" />
+        <option value="$PROJECT_DIR$/Vue实战/day04-Vue脚手架的搭建/src/components/call/connector.js" />
+        <option value="$PROJECT_DIR$/Vue实战/day04-Vue脚手架的搭建/src/App.vue" />
+        <option value="$PROJECT_DIR$/Vue实战/day04-Vue脚手架的搭建/src/components/index.vue" />
+        <option value="$PROJECT_DIR$/Node.js/day01-认识Node/01-了解node.js" />
+        <option value="$PROJECT_DIR$/Node/day02-模块系统/01-模块系统.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="658" />
+    <option name="y" value="108" />
+    <option name="width" value="1052" />
+    <option name="height" value="860" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Assignment issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Data flowJavaScript</id>
+          </State>
+          <State>
+            <id>Error handlingJavaScript</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>HTML</id>
+          </State>
+          <State>
+            <id>Handlebars/Mustache</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript function metricsJavaScript</id>
+          </State>
+          <State>
+            <id>Naming conventionsJavaScript</id>
+          </State>
+          <State>
+            <id>TypeScript</id>
+          </State>
+          <State>
+            <id>XSLT</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>HtmlUnknownTag</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <showMembers ProjectPane="true" />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="day41--面向对象编程" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ChangesTree.GroupingKeys" value="directory" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/web前端vip/js/JQuery实战--兰途科技网/img/index/rd3.jpg" />
+    <property name="TODO_SCOPE" value="All Places" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.14.1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../项目" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/day29-作业代码优化及DOM操作/01-时钟滚动.html" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\web前端vip\js\Vue实战\day02-全局API" />
+      <recent name="D:\web前端vip\js\Vue实战" />
+      <recent name="D:\web前端vip\js\Vue实战\day01-Vue基础" />
+      <recent name="D:\web前端vip\js\JQuery实战--兰途科技网\css" />
+      <recent name="D:\web前端vip\js\JQuery实战--兰途科技网\js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\web前端vip\js\Node" />
+      <recent name="D:\web前端vip\js\Vue实战\day01-Vue基本指令" />
+      <recent name="D:\web前端vip\js\JQuery实战--兰途科技网\img\index" />
+      <recent name="D:\web前端vip\js\JQuery实战--兰途科技网\css" />
+      <recent name="D:\web前端vip\js\JQuery实战--兰途科技网" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\asus\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d2ef0d21-a348-4041-91d4-e7ec6a290974" name="Default Changelist" comment="" />
+      <created>1536282131098</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1536282131098</updated>
+      <workItem from="1536282143472" duration="78000" />
+      <workItem from="1536282250628" duration="1659000" />
+      <workItem from="1536324701301" duration="7071000" />
+      <workItem from="1536373378934" duration="1590000" />
+      <workItem from="1536409487750" duration="3980000" />
+      <workItem from="1536417328435" duration="605000" />
+      <workItem from="1536582809511" duration="7958000" />
+      <workItem from="1536650774810" duration="1108000" />
+      <workItem from="1536669421280" duration="8289000" />
+      <workItem from="1536719352177" duration="9084000" />
+      <workItem from="1536731036205" duration="276000" />
+      <workItem from="1536731335584" duration="469000" />
+      <workItem from="1536731935230" duration="581000" />
+      <workItem from="1536841940747" duration="6204000" />
+      <workItem from="1536997139343" duration="7695000" />
+      <workItem from="1537015474997" duration="7238000" />
+      <workItem from="1537063166206" duration="22650000" />
+      <workItem from="1537143490236" duration="8527000" />
+      <workItem from="1537173386086" duration="4928000" />
+      <workItem from="1537258811211" duration="128000" />
+      <workItem from="1537343728522" duration="14631000" />
+      <workItem from="1537362308861" duration="213000" />
+      <workItem from="1537446813132" duration="5338000" />
+      <workItem from="1537511463278" duration="12430000" />
+      <workItem from="1537768596921" duration="4453000" />
+      <workItem from="1537773164751" duration="9071000" />
+      <workItem from="1537799191203" duration="39000" />
+      <workItem from="1537857448070" duration="15042000" />
+      <workItem from="1537928743870" duration="33716000" />
+      <workItem from="1538996548859" duration="3941000" />
+      <workItem from="1539051852014" duration="22412000" />
+      <workItem from="1539093035205" duration="480000" />
+      <workItem from="1539157519766" duration="6293000" />
+      <workItem from="1539163901038" duration="8732000" />
+      <workItem from="1539258776774" duration="7909000" />
+      <workItem from="1539339351404" duration="11136000" />
+      <workItem from="1539392332081" duration="25973000" />
+      <workItem from="1539481407746" duration="16814000" />
+      <workItem from="1539528932603" duration="23000" />
+      <workItem from="1539590088930" duration="19317000" />
+      <workItem from="1539656382200" duration="5166000" />
+      <workItem from="1539683004499" duration="2344000" />
+      <workItem from="1539744175953" duration="27026000" />
+      <workItem from="1539850654880" duration="17770000" />
+      <workItem from="1539939166776" duration="16154000" />
+      <workItem from="1540008765235" duration="11849000" />
+      <workItem from="1540117039907" duration="9467000" />
+      <workItem from="1540128878160" duration="4374000" />
+      <workItem from="1540197514377" duration="6500000" />
+      <workItem from="1540260551105" duration="4431000" />
+      <workItem from="1540281625818" duration="4803000" />
+      <workItem from="1540349488403" duration="2621000" />
+      <workItem from="1540368540122" duration="9312000" />
+      <workItem from="1540466276079" duration="545000" />
+      <workItem from="1540536962669" duration="18269000" />
+      <workItem from="1540802649270" duration="10141000" />
+      <workItem from="1541039171596" duration="3914000" />
+      <workItem from="1541068999291" duration="10871000" />
+      <workItem from="1541145406773" duration="4099000" />
+      <workItem from="1541151229621" duration="143000" />
+      <workItem from="1541151427090" duration="122000" />
+      <workItem from="1541151579138" duration="142000" />
+      <workItem from="1541151758512" duration="9329000" />
+      <workItem from="1541164936781" duration="557000" />
+      <workItem from="1541218485595" duration="3842000" />
+      <workItem from="1541229929395" duration="10628000" />
+      <workItem from="1541319729043" duration="17122000" />
+      <workItem from="1541406100416" duration="14719000" />
+      <workItem from="1541501739486" duration="12472000" />
+      <workItem from="1541575013293" duration="9114000" />
+      <workItem from="1541584342229" duration="8435000" />
+      <workItem from="1541595221204" duration="102000" />
+      <workItem from="1541678224527" duration="7623000" />
+      <workItem from="1541746866553" duration="9962000" />
+      <workItem from="1541767604947" duration="4985000" />
+      <workItem from="1541839352531" duration="6133000" />
+      <workItem from="1542016614255" duration="14000" />
+      <workItem from="1542198597579" duration="5805000" />
+      <workItem from="1542267317062" duration="20923000" />
+      <workItem from="1542334506239" duration="2005000" />
+      <workItem from="1542354252925" duration="10410000" />
+      <workItem from="1542368799854" duration="9896000" />
+      <workItem from="1542442279495" duration="5521000" />
+      <workItem from="1542447913749" duration="1119000" />
+      <workItem from="1542457957572" duration="4340000" />
+      <workItem from="1542526212486" duration="18709000" />
+      <workItem from="1542593233649" duration="4850000" />
+      <workItem from="1542611346595" duration="14146000" />
+      <workItem from="1542630258145" duration="160000" />
+      <workItem from="1542702100108" duration="3196000" />
+      <workItem from="1542795816647" duration="12370000" />
+      <workItem from="1542851136296" duration="8138000" />
+      <workItem from="1542877646691" duration="2611000" />
+      <workItem from="1542880484769" duration="10178000" />
+      <workItem from="1542940570734" duration="3251000" />
+      <workItem from="1542958050121" duration="9616000" />
+      <workItem from="1542967812877" duration="11943000" />
+      <workItem from="1543044150253" duration="5096000" />
+      <workItem from="1543049356329" duration="19179000" />
+      <workItem from="1543121242824" duration="14000" />
+      <workItem from="1543121394614" duration="22558000" />
+      <workItem from="1543152912357" duration="5181000" />
+      <workItem from="1543209011675" duration="29816000" />
+      <workItem from="1543287278614" duration="14308000" />
+      <workItem from="1543321387454" duration="6705000" />
+      <workItem from="1543400899722" duration="10832000" />
+      <workItem from="1543487108733" duration="2426000" />
+      <workItem from="1543740365356" duration="8308000" />
+      <workItem from="1543823587906" duration="9587000" />
+      <workItem from="1543908646892" duration="16000000" />
+      <workItem from="1544011993747" duration="132000" />
+      <workItem from="1544012162797" duration="27000" />
+      <workItem from="1544096438365" duration="1591000" />
+      <workItem from="1544175295156" duration="10163000" />
+      <workItem from="1544272379050" duration="3961000" />
+      <workItem from="1544422509622" duration="75000" />
+      <workItem from="1544611740748" duration="236000" />
+      <workItem from="1544612297682" duration="751000" />
+      <workItem from="1544614715944" duration="8000" />
+      <workItem from="1544617789027" duration="463000" />
+    </task>
+    <task id="LOCAL-00158" summary="JQuery--事件与动画">
+      <created>1542806101404</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1542806101405</updated>
+    </task>
+    <task id="LOCAL-00159" summary="JQuery--事件与动画">
+      <created>1542808308859</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1542808308859</updated>
+    </task>
+    <task id="LOCAL-00160" summary="JQuery案例--360全屏滚动">
+      <created>1542859299806</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1542859299806</updated>
+    </task>
+    <task id="LOCAL-00161" summary="JQuery案例--360全屏滚动">
+      <created>1542883731931</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1542883731947</updated>
+    </task>
+    <task id="LOCAL-00162" summary="JQuery案例--360全屏滚动">
+      <created>1542883848522</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1542883848522</updated>
+    </task>
+    <task id="LOCAL-00163" summary="JQuery案例--360全屏滚动">
+      <created>1542883879256</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1542883879256</updated>
+    </task>
+    <task id="LOCAL-00164" summary="JQuery案例--360全屏滚动">
+      <created>1542884458528</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1542884458528</updated>
+    </task>
+    <task id="LOCAL-00165" summary="JQuery案例--360全屏滚动">
+      <created>1542884642713</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1542884642713</updated>
+    </task>
+    <task id="LOCAL-00166" summary="ES6补充知识">
+      <created>1542896505844</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1542896505845</updated>
+    </task>
+    <task id="LOCAL-00167" summary="ES6课件">
+      <created>1542940749878</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1542940749879</updated>
+    </task>
+    <task id="LOCAL-00168" summary="ES6补充知识">
+      <created>1542940775987</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1542940775987</updated>
+    </task>
+    <task id="LOCAL-00169" summary="ES6补充知识">
+      <created>1542943788000</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1542943788000</updated>
+    </task>
+    <task id="LOCAL-00170" summary="JQuery实战--响应式兰途科技网">
+      <created>1542971974397</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1542971974397</updated>
+    </task>
+    <task id="LOCAL-00171" summary="JQuery实战--响应式兰途科技网">
+      <created>1542973159886</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1542973159886</updated>
+    </task>
+    <task id="LOCAL-00172" summary="JQuery实战--响应式兰途科技网">
+      <created>1542973801239</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1542973801239</updated>
+    </task>
+    <task id="LOCAL-00173" summary="JQuery实战--响应式兰途科技网">
+      <created>1542982559796</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1542982559796</updated>
+    </task>
+    <task id="LOCAL-00174" summary="JQuery实战--响应式兰途科技网">
+      <created>1543071802087</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1543071802088</updated>
+    </task>
+    <task id="LOCAL-00175" summary="JQuery实战--响应式兰途科技网">
+      <created>1543072052644</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1543072052644</updated>
+    </task>
+    <task id="LOCAL-00176" summary="JQuery实战--响应式兰途科技网">
+      <created>1543144157174</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1543144157221</updated>
+    </task>
+    <task id="LOCAL-00177" summary="JQuery实战--响应式兰途科技网">
+      <created>1543158100998</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1543158100998</updated>
+    </task>
+    <task id="LOCAL-00178" summary="JQuery实战--响应式兰途科技网">
+      <created>1543220915902</created>
+      <option name="number" value="00178" />
+      <option name="presentableId" value="LOCAL-00178" />
+      <option name="project" value="LOCAL" />
+      <updated>1543220915903</updated>
+    </task>
+    <task id="LOCAL-00179" summary="JQuery实战--响应式兰途科技网">
+      <created>1543231342198</created>
+      <option name="number" value="00179" />
+      <option name="presentableId" value="LOCAL-00179" />
+      <option name="project" value="LOCAL" />
+      <updated>1543231342198</updated>
+    </task>
+    <task id="LOCAL-00180" summary="JQuery实战--响应式兰途科技网">
+      <created>1543243175142</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1543243175142</updated>
+    </task>
+    <task id="LOCAL-00181" summary="JQuery实战--响应式兰途科技网">
+      <created>1543292036451</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1543292036451</updated>
+    </task>
+    <task id="LOCAL-00182" summary="JQuery实战--响应式兰途科技网">
+      <created>1543305591473</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1543305591473</updated>
+    </task>
+    <task id="LOCAL-00183" summary="JQuery实战--响应式兰途科技网">
+      <created>1543306462275</created>
+      <option name="number" value="00183" />
+      <option name="presentableId" value="LOCAL-00183" />
+      <option name="project" value="LOCAL" />
+      <updated>1543306462275</updated>
+    </task>
+    <task id="LOCAL-00184" summary="Vue基本指令">
+      <created>1543328217014</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1543328217014</updated>
+    </task>
+    <task id="LOCAL-00185" summary="运算符">
+      <created>1543740827506</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1543740827506</updated>
+    </task>
+    <task id="LOCAL-00186" summary="Vue基本指令">
+      <created>1543744628738</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1543744628738</updated>
+    </task>
+    <task id="LOCAL-00187" summary="Vue的全局API">
+      <created>1543748092866</created>
+      <option name="number" value="00187" />
+      <option name="presentableId" value="LOCAL-00187" />
+      <option name="project" value="LOCAL" />
+      <updated>1543748092881</updated>
+    </task>
+    <task id="LOCAL-00188" summary="Vue的全局API">
+      <created>1543834713094</created>
+      <option name="number" value="00188" />
+      <option name="presentableId" value="LOCAL-00188" />
+      <option name="project" value="LOCAL" />
+      <updated>1543834713094</updated>
+    </task>
+    <task id="LOCAL-00189" summary="Vue的全局API">
+      <created>1543912930495</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
+      <option name="project" value="LOCAL" />
+      <updated>1543912930495</updated>
+    </task>
+    <task id="LOCAL-00190" summary="Vue的全局API">
+      <created>1543912962895</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
+      <option name="project" value="LOCAL" />
+      <updated>1543912962895</updated>
+    </task>
+    <task id="LOCAL-00191" summary="选项  数据  事件">
+      <created>1543927423465</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
+      <option name="project" value="LOCAL" />
+      <updated>1543927423465</updated>
+    </task>
+    <task id="LOCAL-00192" summary="Vue脚手架的搭建">
+      <created>1544097679441</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1544097679441</updated>
+    </task>
+    <task id="LOCAL-00193" summary="Vue脚手架的搭建">
+      <created>1544097705830</created>
+      <option name="number" value="00193" />
+      <option name="presentableId" value="LOCAL-00193" />
+      <option name="project" value="LOCAL" />
+      <updated>1544097705830</updated>
+    </task>
+    <task id="LOCAL-00194" summary="Vue脚手架的搭建">
+      <created>1544175801034</created>
+      <option name="number" value="00194" />
+      <option name="presentableId" value="LOCAL-00194" />
+      <option name="project" value="LOCAL" />
+      <updated>1544175801035</updated>
+    </task>
+    <task id="LOCAL-00195" summary="Vue脚手架的搭建">
+      <created>1544175849689</created>
+      <option name="number" value="00195" />
+      <option name="presentableId" value="LOCAL-00195" />
+      <option name="project" value="LOCAL" />
+      <updated>1544175849689</updated>
+    </task>
+    <task id="LOCAL-00196" summary="Vue脚手架的搭建">
+      <created>1544178174860</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1544178174860</updated>
+    </task>
+    <task id="LOCAL-00197" summary="Vue脚手架的搭建">
+      <created>1544181088903</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
+      <option name="project" value="LOCAL" />
+      <updated>1544181088903</updated>
+    </task>
+    <task id="LOCAL-00198" summary="Vue脚手架的搭建">
+      <created>1544181255458</created>
+      <option name="number" value="00198" />
+      <option name="presentableId" value="LOCAL-00198" />
+      <option name="project" value="LOCAL" />
+      <updated>1544181255458</updated>
+    </task>
+    <task id="LOCAL-00199" summary="组件传值 DOM获取与操作">
+      <created>1544185237858</created>
+      <option name="number" value="00199" />
+      <option name="presentableId" value="LOCAL-00199" />
+      <option name="project" value="LOCAL" />
+      <updated>1544185237858</updated>
+    </task>
+    <task id="LOCAL-00200" summary="组件传值 DOM获取与操作">
+      <created>1544185488537</created>
+      <option name="number" value="00200" />
+      <option name="presentableId" value="LOCAL-00200" />
+      <option name="project" value="LOCAL" />
+      <updated>1544185488537</updated>
+    </task>
+    <task id="LOCAL-00201" summary="子组件通信">
+      <created>1544187231499</created>
+      <option name="number" value="00201" />
+      <option name="presentableId" value="LOCAL-00201" />
+      <option name="project" value="LOCAL" />
+      <updated>1544187231499</updated>
+    </task>
+    <task id="LOCAL-00202" summary="子组件通信">
+      <created>1544187330691</created>
+      <option name="number" value="00202" />
+      <option name="presentableId" value="LOCAL-00202" />
+      <option name="project" value="LOCAL" />
+      <updated>1544187330691</updated>
+    </task>
+    <task id="LOCAL-00203" summary="认识Node 安装与测试">
+      <created>1544272879001</created>
+      <option name="number" value="00203" />
+      <option name="presentableId" value="LOCAL-00203" />
+      <option name="project" value="LOCAL" />
+      <updated>1544272879012</updated>
+    </task>
+    <task id="LOCAL-00204" summary="认识Node 安装与测试">
+      <created>1544277346476</created>
+      <option name="number" value="00204" />
+      <option name="presentableId" value="LOCAL-00204" />
+      <option name="project" value="LOCAL" />
+      <updated>1544277346477</updated>
+    </task>
+    <task id="LOCAL-00205" summary="认识Node 安装与测试">
+      <created>1544277616092</created>
+      <option name="number" value="00205" />
+      <option name="presentableId" value="LOCAL-00205" />
+      <option name="project" value="LOCAL" />
+      <updated>1544277616092</updated>
+    </task>
+    <task id="LOCAL-00206" summary="模块系统">
+      <created>1544612947801</created>
+      <option name="number" value="00206" />
+      <option name="presentableId" value="LOCAL-00206" />
+      <option name="project" value="LOCAL" />
+      <updated>1544612947801</updated>
+    </task>
+    <option name="localTasksCounter" value="207" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="929785000" />
+  </component>
+  <component name="TodoView" selected-index="3">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="658" y="108" width="1052" height="860" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49919486" visible="true" weight="0.16863905" />
+      <window_info id="Structure" order="1" sideWeight="0.50080514" side_tool="true" weight="0.09905163" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32965517" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49408284" weight="0.32551724" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4852071" weight="0.3048276" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49308756" weight="0.64" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50591713" side_tool="true" weight="0.3048276" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49367756" weight="0.32790446" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49919486" visible="true" weight="0.23175542" />
+      <window_info id="Structure" order="1" sideWeight="0.50080514" side_tool="true" weight="0.09905163" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49585253" weight="0.3258427" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.48663595" weight="0.322237" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49308756" weight="0.32356858" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50691247" side_tool="true" weight="0.32242423" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49367756" weight="0.32790446" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="SHOW_OTHER_BRANCHES" value="true" />
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="作业--表单验证" />
+    <MESSAGE value="ES6相关课件" />
+    <MESSAGE value="Cookie" />
+    <MESSAGE value="作业--自定义滚动条+运动小球" />
+    <MESSAGE value="综合案例" />
+    <MESSAGE value="正则表达式" />
+    <MESSAGE value="面向对象编程" />
+    <MESSAGE value="JQuery实战--兰途科技网" />
+    <MESSAGE value="JQuery" />
+    <MESSAGE value="JQuery--CSS与文档处理" />
+    <MESSAGE value="JQuery--筛选" />
+    <MESSAGE value="JQuery--事件与动画" />
+    <MESSAGE value="JQuery案例--360全屏滚动" />
+    <MESSAGE value="ES6课件" />
+    <MESSAGE value="ES6补充知识" />
+    <MESSAGE value="JQuery实战--响应式兰途科技网" />
+    <MESSAGE value="运算符" />
+    <MESSAGE value="Vue基本指令" />
+    <MESSAGE value="Vue的全局API" />
+    <MESSAGE value="选项  数据  事件" />
+    <MESSAGE value="Vue脚手架的搭建" />
+    <MESSAGE value="组件传值 DOM获取与操作" />
+    <MESSAGE value="子组件通信" />
+    <MESSAGE value="认识Node 安装与测试" />
+    <MESSAGE value="模块系统" />
+    <option name="LAST_COMMIT_MESSAGE" value="模块系统" />
+  </component>
+  <component name="XPathView.XPathProjectComponent">
+    <history />
+    <find-history />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Vue实战/day01-Vue基本指令/03-v-for.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="79" column="18" lean-forward="true" selection-start-line="79" selection-start-column="18" selection-end-line="79" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day01-Vue基本指令/04-v-on.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="21" column="12" selection-end-line="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day01-Vue基本指令/05-v-model.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day01-Vue基本指令/07-v-pre v-cloak v-once.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day02-全局API/vue.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="102" column="13" lean-forward="true" selection-start-line="102" selection-start-column="13" selection-end-line="102" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day01-Vue基本指令/01-v-text v-html v-show.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-936" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day02-全局API/03-Vue.set.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="676">
+          <caret line="26" column="40" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day02-全局API/04-Vue.delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day01-Vue基本指令/06-v-bind.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="44" column="10" lean-forward="true" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day02-全局API/02-Vue.nextTick.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="962">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day02-全局API/05-Vue.directive.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1664">
+          <caret line="64" column="13" selection-end-line="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day02-全局API/06-Vue.filter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day02-全局API/15-Vue.compile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="36" column="22" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day02-全局API/16-Vue.version.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day03-选项 数据 事件/04-computed.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="47" column="13" selection-end-line="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day03-选项 数据 事件/05-methods.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="29" column="10" lean-forward="true" selection-end-line="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day03-选项 数据 事件/06-watch.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="72" column="7" lean-forward="true" selection-end-line="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day02-全局API/01-Vue.extend.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day03-选项 数据 事件/01-data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="30" column="23" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/web-forms2.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="788">
+          <caret line="552" column="25" lean-forward="true" selection-start-line="552" selection-start-column="25" selection-end-line="552" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day02-全局API/10-script标签模板.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day02-全局API/14-Vue.mixin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1211">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day02-全局API/08-选项模板.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day02-全局API/09-标签模板.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="21" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day02-全局API/12-父组件引用子组件.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="676">
+          <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day02-全局API/11-component父组件传递数据到子组件.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="42" column="11" lean-forward="true" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day02-全局API/13-component标签.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1560">
+          <caret line="60" column="27" lean-forward="true" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day03-选项 数据 事件/03-propsData.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1014">
+          <caret line="39" column="17" lean-forward="true" selection-start-line="39" selection-start-column="17" selection-end-line="40" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day03-选项 数据 事件/02-props.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="999">
+          <caret line="61" column="13" lean-forward="true" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day02-全局API/07-Vue.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-67">
+          <caret line="35" column="15" lean-forward="true" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day03-选项 数据 事件/08-扩展事件实例.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day03-选项 数据 事件/07-slot.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="728">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day03-选项 数据 事件/09-生命周期 钩子函数.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day04-Vue脚手架的搭建/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day04-Vue脚手架的搭建/dist/index.html" />
+    <entry file="file://$PROJECT_DIR$/Vue实战/day04-Vue脚手架的搭建/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day04-Vue脚手架的搭建/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day04-Vue脚手架的搭建/src/components/hdNav.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day04-Vue脚手架的搭建/src/components/ftNav.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day04-Vue脚手架的搭建/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day04-Vue脚手架的搭建/src/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day04-Vue脚手架的搭建/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day04-Vue脚手架的搭建/src/components/call/connector.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue实战/day04-Vue脚手架的搭建/src/components/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Node/day02-模块系统/01-模块系统.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="15" column="11" lean-forward="true" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Node/day01-认识Node/01-了解node.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day41--面向对象编程/01-面向对象.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="62" column="32" lean-forward="true" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day41--面向对象编程/02-new.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-104">
+          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day41--面向对象编程/03-构造函数(类).html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-572">
+          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day41--面向对象编程/04-原型.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="36" column="31" lean-forward="true" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day41--面向对象编程/05-原型链.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

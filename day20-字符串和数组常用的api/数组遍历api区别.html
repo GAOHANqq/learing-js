@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="Generator" content="EditPlus®"/>
+		<meta name="Author" content=""/>
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>Document</title>
+		<style type="text/css">
+			body,p,ul,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
+			ul,ol{list-style:none;}
+			img{display:block;border:0;}
+			a{text-decoration:none;color:#222;}
+
+		</style>
+	</head>
+	<body>
+
+
+		map():
+			创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果
+			新数组的长度和原来的是一样的，他只不过是逐一对原来数据里的每个元素进行操作。
+
+		</br>
+		filter():
+			创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。
+			新数组和原来的数组长度不一定一样。
+			如果没有任何数组元素通过测试，则返回空数组。
+		</br>
+		some():
+			返回一个boolean,测试是否至少有一个元素通过由提供的函数实现的测试。
+			数组里面所有的元素有一个符合条件就返回true。
+		</br>
+		every():
+			返回一个boolean，判断每个元素是否符合func条件。
+			数组里面所有的元素都符合才返回true。
+		</br>
+		forEach():
+			没有返回值，只是针对每个元素调用func。
+			循环数组。和for的用法一样的。
+	</body>
+
+	<script>
+		/*
+
+		arr.map(function callback(currentValue,index,array) {},[thisArg])
+			callback
+				生成新数组元素的函数，使用三个参数：
+			currentValue
+				callback数组中正在处理的当前元素。
+			index	可选
+				callback 数组中正在处理的当前元素的索引。
+			array可选
+				callback  map 方法被调用的数组。
+			thisArg可选
+				执行 callback 函数时使用的this 值。
+
+		arr.filter(callback(element,index,array),thisArg)
+
+		arr.some(callback(element[, index[, array]])[, thisArg])
+
+		arr.every(callback[, thisArg])
+		foreach
+
+
+
+		*/
+
+		var  arr = [1,2,3,4,5,6];
+
+    // map()
+		var mapArr = arr.map(function(currentValue,index,array){
+			return currentValue *= 2;
+		});
+		console.log(mapArr); // [2, 4, 6, 8, 10, 12]
+
+
+	// filter()
+		var filterArr = arr.filter(function(x){
+			return x > 5;
+		});
+		console.log(filterArr); // [6]
+
+
+	// some()
+
+		var bool = arr.some(fn);
+		function fn(element, index, arra){
+			return element >2;
+		}
+		console.log(bool); // true
+
+	// every()
+		var everyBool = arr.every(function(element){
+			return  element >= 2
+		});
+
+		console.log(everyBool); // false
+	</script>
+</html>

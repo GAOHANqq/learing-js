@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="Generator" content="EditPlus®"/>
+		<meta name="Author" content=""/>
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>Document</title>
+		<style type="text/css">
+			body,p,ul,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
+			ul,ol{list-style:none;}
+			img{display:block;border:0;}
+			a{text-decoration:none;color:#222;}
+
+		</style>
+	</head>
+	<body>
+
+	</body>
+	<script>
+		var keyCodeodeObj = {
+				38  : '上方向键',
+				40  : "下方向键",
+				37  : "左方向键",
+				39  : "右方向键",
+				96  : "小键盘0",
+				97  : "小键盘1",
+				98  : "小键盘2",
+				99  : "小键盘3",
+				100 : "小键盘4",
+				101 : "小键盘5",
+				102 : "小键盘6",
+				103 : "小键盘7",
+				104 : "小键盘8",
+				105 : "小键盘9",
+			}
+
+		var strObj = {};
+
+		for(var key in keyCodeodeObj){
+			strObj[keyCodeodeObj[key]] = key;
+		}
+		console.log(strObj);
+		console.log(strObj["小键盘8"]);
+
+	</script>
+</html>

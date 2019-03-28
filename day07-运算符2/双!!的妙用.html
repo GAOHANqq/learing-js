@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="Generator" content="EditPlus®"/>
+		<meta name="Author" content=""/>
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>Document</title>
+		<style type="text/css">
+			body,p,ul,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
+			ul,ol{list-style:none;}
+			img{display:block;border:0;}
+			a{text-decoration:none;color:#222;}
+
+		</style>
+	</head>
+	<body>
+			!!
+
+	</body>
+	<script>
+		var a = 1;
+		if(a != '' && typeof(a) != undefined && a != null ){
+			alert(a);
+		}
+
+
+		// 以上可以改为
+
+		if(!!a){
+			alert(a);
+		}
+
+
+		if(!'' == true){
+			alert("正确");
+		}
+
+
+		// !
+
+		/*
+
+			!'' == true;
+			!null == true;
+			!undefined == true;
+			!100 == false;
+			!'abc' == false
+		*/
+	</script>
+</html>
